@@ -1,0 +1,17 @@
+# incremental data. DO NOT EDIT.
+# format is <lastModified> <length> <SHA-1> <path>
+# Encoding is UTF-8
+1370935658000 343 e7ee730d65e4f67688b300edc14be5cd882682e9 /Users/sijiewang/Projects/exercise/android/EnventsProject/Envents/build/classes/debug/com/example/envents/R$attr.class
+1370957491000 434 2caedd83c2d819ddb5be855c79bc47f59f566b9c /Users/sijiewang/Projects/exercise/android/EnventsProject/Envents/build/classes/debug/com/example/envents/R$style.class
+1370955146000 1339 3164ced828037d7a7f5a15a3347f9eec2389c842 /Users/sijiewang/Projects/exercise/android/EnventsProject/Envents/build/classes/debug/com/example/envents/EventsData.class
+1370935559000 484258 bd6479f5dd592790607e0504e66e0f31c2b4d308 /Users/sijiewang/Projects/exercise/android/EnventsProject/Envents/libs/android-support-v4.jar
+1370957491000 549 3d17c08de6b424afc6b1a74a225e480c7ce6fa8c /Users/sijiewang/Projects/exercise/android/EnventsProject/Envents/build/classes/debug/com/example/envents/R$id.class
+1370954541000 301 22ed5dde66b00dc67d1706c2234edb1238b2a13b /Users/sijiewang/Projects/exercise/android/EnventsProject/Envents/build/classes/debug/com/example/envents/Constants.class
+1370935658000 347 c33f7a6295bd1b52c7eb3555551a476a5a962faf /Users/sijiewang/Projects/exercise/android/EnventsProject/Envents/build/classes/debug/com/example/envents/BuildConfig.class
+1370935658000 410 c6e42ee2bca0d7aef722055aa22a4083ffe4a083 /Users/sijiewang/Projects/exercise/android/EnventsProject/Envents/build/classes/debug/com/example/envents/R$drawable.class
+1370957491000 391 202eaa764323efdbf4d70aea47dc8f80eb447ac8 /Users/sijiewang/Projects/exercise/android/EnventsProject/Envents/build/classes/debug/com/example/envents/R$menu.class
+1370957491000 2811 9d03ae62a2d329937232c205c8afaa4e17857418 /Users/sijiewang/Projects/exercise/android/EnventsProject/Envents/build/classes/debug/com/example/envents/MainActivity.class
+1370935658000 464 2b6f8635a55397d985273036acf72f8a0cd779d1 /Users/sijiewang/Projects/exercise/android/EnventsProject/Envents/build/classes/debug/com/example/envents/R$dimen.class
+1370957491000 434 60cf023134b4f686546214b0b5ed2ad1b52a294a /Users/sijiewang/Projects/exercise/android/EnventsProject/Envents/build/classes/debug/com/example/envents/R$layout.class
+1370957491000 687 f2308ad56766572bd9a1ed6be33dd57548f95993 /Users/sijiewang/Projects/exercise/android/EnventsProject/Envents/build/classes/debug/com/example/envents/R.class
+1370957491000 469 663be70e49394d89dcef1a148ac920c76e5c9681 /Users/sijiewang/Projects/exercise/android/EnventsProject/Envents/build/classes/debug/com/example/envents/R$string.class

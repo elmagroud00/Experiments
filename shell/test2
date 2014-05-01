@@ -1,0 +1,7 @@
+
+aaaaa
+bbbbb
+#!/bin/bash
+ccccc
+echo $var
+var="a.so"

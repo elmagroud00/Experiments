@@ -1,0 +1,25 @@
+# incremental data. DO NOT EDIT.
+# format is <lastModified> <length> <SHA-1> <path>
+# Encoding is UTF-8
+1370140657000 484258 bd6479f5dd592790607e0504e66e0f31c2b4d308 /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/libs/android-support-v4.jar
+1370140913000 428 31355ae34ead08258e2b5d356e07e1d01e469875 /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/build/classes/debug/com/example/myapplication/R$drawable.class
+1370140913000 753 408ab206895ccda68ca9af88af1ec44a317c6fcb /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/build/classes/debug/com/example/myapplication/R.class
+1370140913000 611 d0769c20c79194ca78529fa04281a5e012e3b052 /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/build/classes/debug/com/example/myapplication/R$style.class
+1370140913000 359 fdc73ac1e1da2010356e9bbf147ce969332b18da /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/build/classes/debug/com/example/myapplication/BuildConfig.class
+1370140913000 504 1e0d70b7e1ba6ed077b2e0319de0b90c0cebaf5d /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/build/classes/debug/com/example/myapplication/R$id.class
+1370140913000 651 e5661c0503e7b75701719eb693f43431f9c358a3 /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/build/classes/debug/com/example/myapplication/R$styleable.class
+1370140913000 311 85f51e2d8f8f8db9fafe843d868fb90642f6aa7c /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/build/classes/debug/com/example/myapplication/util/SystemUiHider$OnVisibilityChangeListener.class
+1370140913000 971 83f045157426f26e54412495b1c2706aabb88b4b /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/build/classes/debug/com/example/myapplication/FullscreenActivity$3.class
+1370140913000 2284 171192c8e6cd2b0c72f7d78c0ae8498f48af4bf5 /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/build/classes/debug/com/example/myapplication/util/SystemUiHiderHoneycomb.class
+1370140913000 667 b1cf02384df33208e37c88fb024cc5fde3e7a9b3 /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/build/classes/debug/com/example/myapplication/util/SystemUiHider$1.class
+1370140913000 870 de060d19cd34f3a9ef21d4c6a93cb09b05fa4169 /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/build/classes/debug/com/example/myapplication/FullscreenActivity$4.class
+1370140913000 1494 f1dfe0d61afead76dbc4b8b7112484954f61b58a /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/build/classes/debug/com/example/myapplication/util/SystemUiHiderBase.class
+1370140913000 463 039d3b11c97cfdc43e84baa9a58353615a53f9d9 /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/build/classes/debug/com/example/myapplication/R$attr.class
+1370140913000 1985 73b7e47e977d9640aa964ad65f225b0edfed2825 /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/build/classes/debug/com/example/myapplication/FullscreenActivity$1.class
+1370140913000 430 5b981822bef98d7f5bb2ed51c6ca330fea850e78 /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/build/classes/debug/com/example/myapplication/R$layout.class
+1370140913000 2069 01f8bf18da26ca18d5354df754d9315129ff1294 /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/build/classes/debug/com/example/myapplication/util/SystemUiHiderHoneycomb$1.class
+1370140913000 3122 d01b23e545aecfdad56de375cd4ed90f045b70d1 /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/build/classes/debug/com/example/myapplication/FullscreenActivity.class
+1370140913000 421 518f138dd23098af5f7b4ffa87bfe8e3703f64d1 /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/build/classes/debug/com/example/myapplication/R$color.class
+1370140913000 1045 b08a658183969e3c8a4dfd7750d0d24c27bad339 /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/build/classes/debug/com/example/myapplication/FullscreenActivity$2.class
+1370140913000 2095 71d0e717cd19fd269c206eb211652bf3edbad20c /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/build/classes/debug/com/example/myapplication/util/SystemUiHider.class
+1370140913000 492 3a0fe0240fb32d6adb8d0a0acaa54a848d5f5c0c /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/build/classes/debug/com/example/myapplication/R$string.class

@@ -1,0 +1,15 @@
+# incremental data. DO NOT EDIT.
+# format is <lastModified> <length> <SHA-1> <path>
+# Encoding is UTF-8
+1372694805000 400 fb3f28362e964af4d1d7bf95c2f53cf60a9ee699 /Users/sijiewang/Projects/exercise/android/Projects/aaaaa/build/classes/debug/com/example/aaaaa/R$layout.class
+1372694805000 343 5b02a139cf06e80b73bbc7e9ea51dbb1f1287f52 /Users/sijiewang/Projects/exercise/android/Projects/aaaaa/build/classes/debug/com/example/aaaaa/BuildConfig.class
+1372694805000 428 fcd34122901fd5ca0ca142f706e101c24c401ad4 /Users/sijiewang/Projects/exercise/android/Projects/aaaaa/build/classes/debug/com/example/aaaaa/R$style.class
+1372694805000 385 38b687cc7ee6d32e75cf2b724a244771cd2efce2 /Users/sijiewang/Projects/exercise/android/Projects/aaaaa/build/classes/debug/com/example/aaaaa/R$menu.class
+1372694805000 667 562a3627069b64f633d15aca93ece2b50711c740 /Users/sijiewang/Projects/exercise/android/Projects/aaaaa/build/classes/debug/com/example/aaaaa/R.class
+1372694805000 815 4cabd030e4af52f451081c6ba5beda67db3eae62 /Users/sijiewang/Projects/exercise/android/Projects/aaaaa/build/classes/debug/com/example/aaaaa/MainActivity.class
+1372694691000 484258 bd6479f5dd592790607e0504e66e0f31c2b4d308 /Users/sijiewang/Projects/exercise/android/Projects/aaaaa/libs/android-support-v4.jar
+1372694805000 458 e43ec3d0514fa9dc0ca38c463800a5a677d9e7de /Users/sijiewang/Projects/exercise/android/Projects/aaaaa/build/classes/debug/com/example/aaaaa/R$dimen.class
+1372694805000 337 c02dbd2486697ac8d9bb802f82856479a1f0d3cd /Users/sijiewang/Projects/exercise/android/Projects/aaaaa/build/classes/debug/com/example/aaaaa/R$attr.class
+1372694805000 404 4913e23bd65d829ac9646e24e1a0f09c26438315 /Users/sijiewang/Projects/exercise/android/Projects/aaaaa/build/classes/debug/com/example/aaaaa/R$drawable.class
+1372694805000 469 25c81afd1ff23048135d90b08eb0cecfb11d6780 /Users/sijiewang/Projects/exercise/android/Projects/aaaaa/build/classes/debug/com/example/aaaaa/R$string.class
+1372694805000 390 c32f9bd35c24057fadcab56ec50f5ebcc6090e25 /Users/sijiewang/Projects/exercise/android/Projects/aaaaa/build/classes/debug/com/example/aaaaa/R$id.class

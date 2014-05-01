@@ -1,0 +1,14 @@
+# incremental data. DO NOT EDIT.
+# format is <lastModified> <length> <SHA-1> <path>
+# Encoding is UTF-8
+1370140657000 1718 51ce1ae5444703963ad9f9e948745ba7c3660fd3 /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/src/main/res/values/styles.xml
+1370140657000 247 7e196d5647123e0b196a84a3b036fff3fd08c43d /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/src/main/res/values/strings.xml
+1370140657000 381 b129b276e01126de5b3b753572ac67cbfc19454c /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/src/main/res/values-v14/styles.xml
+1370140657000 77 279f2987057cb473bdb9ffc8bdc3d1740fc241cb /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/src/main/res/values/colors.xml
+1370140657000 7783 03172612ec7d8d2cc6295a185410c3e6501771aa /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/src/main/res/drawable-hdpi/ic_launcher.png
+1370140657000 1078 2122be1c18de878aab98422ac03172cee9d1afe1 /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/src/main/res/values-v11/styles.xml
+1370140657000 489 69d532142c914e35dd14b9c42adf646f0f223949 /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/src/main/res/values/attrs.xml
+1370140657000 1833 6558f0c97910e51b4ac5458f1ddd4ffdd652c0ce /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/src/main/res/layout/activity_fullscreen.xml
+1370140657000 12356 75154d4f6e93c8832a74d3c27c8cf0d44672ea3e /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/src/main/res/drawable-xhdpi/ic_launcher.png
+1370140657000 3760 9d45e7de00dac30e9738dc369dece2835bf9677e /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/src/main/res/drawable-mdpi/ic_launcher.png
+1370140657000 24780 6c2954bdacb8129ac00edfd084b98daf226518e3 /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/src/main/res/drawable-xxhdpi/ic_launcher.png

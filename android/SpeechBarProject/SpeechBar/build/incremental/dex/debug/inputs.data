@@ -1,0 +1,15 @@
+# incremental data. DO NOT EDIT.
+# format is <lastModified> <length> <SHA-1> <path>
+# Encoding is UTF-8
+1376402009000 351 8365bced970021bf33f5d0f8fd682e066502d540 /Users/sijiewang/Projects/exercise/android/SpeechBarProject/SpeechBar/build/classes/debug/com/example/speechbar/BuildConfig.class
+1376403211000 707 ed19b43d9c58f369f398b132c23825d67fc83233 /Users/sijiewang/Projects/exercise/android/SpeechBarProject/SpeechBar/build/classes/debug/com/example/speechbar/R.class
+1376401953000 484258 bd6479f5dd592790607e0504e66e0f31c2b4d308 /Users/sijiewang/Projects/exercise/android/SpeechBarProject/SpeechBar/libs/android-support-v4.jar
+1376402009000 416 dcea4fa71df80c7bc1846306580d9bab61b85b79 /Users/sijiewang/Projects/exercise/android/SpeechBarProject/SpeechBar/build/classes/debug/com/example/speechbar/R$drawable.class
+1376402009000 823 8b5e259e24626656542e2ca186945db4a3bb422d /Users/sijiewang/Projects/exercise/android/SpeechBarProject/SpeechBar/build/classes/debug/com/example/speechbar/MainActivity.class
+1376403211000 440 34bc6c281aeb530fbd8b727f32bc7910b5dfd050 /Users/sijiewang/Projects/exercise/android/SpeechBarProject/SpeechBar/build/classes/debug/com/example/speechbar/R$style.class
+1376403211000 472 906ded892bdbfa402e41eac88fa7689602da758e /Users/sijiewang/Projects/exercise/android/SpeechBarProject/SpeechBar/build/classes/debug/com/example/speechbar/R$id.class
+1376403211000 397 a87e071da6cc74265c4f004e0c14c659bed02b83 /Users/sijiewang/Projects/exercise/android/SpeechBarProject/SpeechBar/build/classes/debug/com/example/speechbar/R$menu.class
+1376403211000 412 056de11bfadd4af7a88e762e054f393f808242a2 /Users/sijiewang/Projects/exercise/android/SpeechBarProject/SpeechBar/build/classes/debug/com/example/speechbar/R$layout.class
+1376402009000 470 4e9263974312b12fd17f09a9429cb9ead60855cf /Users/sijiewang/Projects/exercise/android/SpeechBarProject/SpeechBar/build/classes/debug/com/example/speechbar/R$dimen.class
+1376402009000 349 31bd10ad37b7812e546ade1dad915ca2d37508a9 /Users/sijiewang/Projects/exercise/android/SpeechBarProject/SpeechBar/build/classes/debug/com/example/speechbar/R$attr.class
+1376403211000 481 b8f7d3a97ed3b78d3cba43358119da0f4ca7383c /Users/sijiewang/Projects/exercise/android/SpeechBarProject/SpeechBar/build/classes/debug/com/example/speechbar/R$string.class

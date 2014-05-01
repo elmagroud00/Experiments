@@ -1,0 +1,11 @@
+# incremental data. DO NOT EDIT.
+# format is <lastModified> <length> <SHA-1> <path>
+# Encoding is UTF-8
+1370140908000 1833 6558f0c97910e51b4ac5458f1ddd4ffdd652c0ce /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/build/res/all/debug/layout/activity_fullscreen.xml
+1370140908000 24780 6c2954bdacb8129ac00edfd084b98daf226518e3 /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/build/res/all/debug/drawable-xxhdpi/ic_launcher.png
+1370140908000 12356 75154d4f6e93c8832a74d3c27c8cf0d44672ea3e /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/build/res/all/debug/drawable-xhdpi/ic_launcher.png
+1370140908000 1640 4d36cce6702ec25bbe4075efaabde5cf77d839f4 /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/build/res/all/debug/values/values.xml
+1370140908000 807 a60965c79ac14066b96320829180f763e9f64f60 /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/build/res/all/debug/values-v11/values.xml
+1370140908000 3760 9d45e7de00dac30e9738dc369dece2835bf9677e /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/build/res/all/debug/drawable-mdpi/ic_launcher.png
+1370140908000 7783 03172612ec7d8d2cc6295a185410c3e6501771aa /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/build/res/all/debug/drawable-hdpi/ic_launcher.png
+1370140908000 217 f02e000d05a079992d2dba18039216c1e6b8784f /Users/sijiewang/Projects/exercise/android/MyApplicationProject/MyApplication/build/res/all/debug/values-v14/values.xml

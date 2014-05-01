@@ -1,0 +1,114 @@
+((point)concat "abc" "def")
+(substring "The quick brown fox jumped." 16 19)
+(+ 2 fill-column)
+(+)
+(*)
+(+ 3)
+(* 3)
+(+ 3 4 5)
+(* 3 4 5)
+(message "This message appears in the echo area!")
+(message "He saw %d %s"
+	 (- fill-column 34)
+	 (concat "red"
+		 (substring
+		   "The quick brown foxes jumped." 16 21)
+		   "leeaping."))
+
+(+ 3 4
+   5 6 7
+   )
+(message "This saw %d %s"
+	 (- fill-column 34)
+	 (concat))
+(+ 3 4)
+
+
+
+
+
+(set 'flowers '(rose violet daisy buttercup))
+flowers
+(setq carnivores '(lion tiger leopard))
+carnivores
+(setq counter 0)
+(setq counter (+ counter 1))
+counter
+(buffer-file-name)"/Users/sijiewang/Projects/exercise/lisp/test3.lisp"
+(buffer-name)
+"*scratch*
+(current-buffer)
+(buffer-name)"test3.lisp"
+(other-buffer)#<buffer *scratch*>
+(switch-to-buffer (other-buffer))
+(buffer-size)
+(point)
+(defun multiply-by-seven (number)
+  "Multiply NUMBER by seven."
+  (* 7 number))
+(multiply-by-seven 3)
+(defun multiply-by-seven (number)    ;Second Version.
+  "Multiply NUMBER by seven."
+  (+ number number number number number number))
+(multiply-by-seven 3)
+(defun multiply-by-seven (number) ;Interactive Version
+  (interactive "p")
+  (message "The result is %d" (* 7 number)))
+(multiply-by-seven 2)
+(defun name-of-function (buffer start end)
+  "documentation..."
+  (interactive "BAppend to buffer: \nr")
+  body-of-function)
+(let ((zebra 'stripes)
+      (tiger 'fierce))
+  (message "One kind of animial has %s and another is %s."
+	   zebra tiger))
+(if (> 5 4)
+    (message "5 is greater than 4!"))
+(defun type-of-animial (characteristic)
+  "Print message in echo area depending on CHARACTERISTIC.
+   If the CHARACTERISTIC is symbol 'fierce',
+   then warn of a tiger"
+  (if(equal characteristic 'fierce)
+      (message "Its a tiger!")))
+(type-of-animial 'fierce)
+(type-of-animial 'zebra)
+(if (> 4 5)
+    (message "5 is greater than 4!")
+  (message "4 is not greater than 5!"))
+(message "We are %d characters into this buffer,
+	 (- (point)
+	    (save-excursion
+	      (goto-char (point-min)) (point))))
+(point)
+(point)
+('save-excursion)
+
+(defun insert-buffer (buffer)
+  "Insert after point the contents of BUFFER.
+  Puts mark after the inserted text.
+  BUFFER may be a buffer or a buffer name."
+  (interactive "*bInsert buffer: ")
+  (or (bufferp buffer)
+      (setq buffer (ge)
+  (let (start end newmark)
+    (save-excursion
+      (save-excursion
+		
+	(set-buffer buffer)
+	(setq start (point-min) end (point-max)))
+      (insert-buffer-substring buffer start end)
+      (setq newmark (point)))
+    (push-mark newmark)))
+
+(kill (0 19))q start (point-min) end (point-max)))
+      (insert-buffer-substring buffer start end)
+      (setq newmark (point)))
+    (push-mark newmark)))q start (point-min) end (point-max)))
+      (insert-buffer-substring buffer start end)
+      (setq newmark (point)))
+    (push-mark newmark)))
+kill-ring-yank-pointer
+(rotate-yank-pointer)
+kill-ring-yank-pointer
+(kill 0 (1- point))
