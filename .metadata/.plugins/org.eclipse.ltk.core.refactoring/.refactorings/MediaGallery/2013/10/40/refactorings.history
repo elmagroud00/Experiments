@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.example.mediastoregallery&apos; to &apos;net.lnmcc.mediaGallery&apos;&#x0A;- Original project: &apos;MediaStoreGallery&apos;&#x0A;- Original element: &apos;MediaStoreGallery/src/com.example.mediastoregallery&apos;&#x0A;- Renamed element: &apos;MediaStoreGallery/src/net.lnmcc.mediaGallery&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings&#x0A;- Rename subpackages of the package" description="Rename package &apos;com.example.mediastoregallery&apos;" flags="589830" hierarchical="true" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;com.example.mediastoregallery" name="net.lnmcc.mediaGallery" qualified="false" references="true" stamp="1380617673208" textual="false" version="1.0"/>
+</session>

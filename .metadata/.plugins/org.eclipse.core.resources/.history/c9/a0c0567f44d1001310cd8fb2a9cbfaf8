@@ -1,0 +1,18 @@
+package headfirst.combined.djview;
+
+import java.util.ArrayList;
+
+import javax.sound.midi.MetaEventListener;
+import javax.sound.midi.Sequence;
+import javax.sound.midi.Sequencer;
+import javax.sound.midi.Track;
+
+public class BeatModel implements BeatModelInterface, MetaEventListener{
+	Sequence sequence;
+	Sequencer sequencer;
+	Track track;
+	ArrayList<BeatObserver> beatObservers = new ArrayList<BeatObserver>();
+	ArrrayList<BPMObserver> BPMObservers = new ArrayList<BPMObserver>();
+	int bpm = 90;
+	
+}

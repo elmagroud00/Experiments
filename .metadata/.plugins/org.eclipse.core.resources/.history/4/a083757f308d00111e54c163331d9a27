@@ -1,0 +1,27 @@
+package widget.demo.namespace;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+
+public class Ex07_WidgetDemoActivity extends Activity {
+    /** Called when the activity is first created. */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+    }
+
+    private void find_and_modify_button(){
+    	Button button = (Button)findViewById(R.id.button1);
+    	button.setOnClickListener(button_listener);
+    }
+    
+    private Button.OnClickListener button_listener = new OnClickListener(){
+    	public void onClick(View v){
+    		setTitle("Button Clicked!");
+    	}
+    };
+}

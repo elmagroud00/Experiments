@@ -1,0 +1,14 @@
+1379956537530	Delete element
+1379956964940	Move 1 resources to 'aidl'
+1379957019333	Delete element
+1379959826687	Copy compilation unit
+1379959834831	Delete element
+1379959843530	Move compilation unit
+1380037042634	Delete element
+1380037136346	Rename type 'rpc'
+1380037186497	Rename type 'rpcService'
+1380037202119	Rename type 'Client'
+1380037229832	Rename resource 'IAdditionalService.aidl'
+1380037379014	Delete element
+1380037861757	Rename package 'net.lnmcc.ipctest'
+1380037886889	Rename package 'net.lnmcc.ipctest.aidl'

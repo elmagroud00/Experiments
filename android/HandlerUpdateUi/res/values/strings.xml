@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HandlerUpdateUi</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello">Hello World, HandleUpdateUi</string>
+    <string name="action">Press to Start</string>
+    <string name="start">Starting ...</string>
+    <string name="first">First Done</string>
+    <string name="second">Second Done</string>
+</resources>

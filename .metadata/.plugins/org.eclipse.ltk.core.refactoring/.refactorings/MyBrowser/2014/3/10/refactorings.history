@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.example.mybroswer&apos; to &apos;com.example.mybrowser&apos;&#x0A;- Original project: &apos;MyBrowser&apos;&#x0A;- Original element: &apos;MyBrowser/src/com.example.mybroswer&apos;&#x0A;- Renamed element: &apos;MyBrowser/src/com.example.mybrowser&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings&#x0A;- Rename subpackages of the package" description="Rename package &apos;com.example.mybroswer&apos;" flags="589830" hierarchical="true" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;com.example.mybroswer" name="com.example.mybrowser" qualified="false" references="true" stamp="1394178417531" textual="false" version="1.0"/>
+</session>

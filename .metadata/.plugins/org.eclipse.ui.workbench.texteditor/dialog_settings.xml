@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="263" key="DIALOG_WIDTH"/>
+		<item value="239" key="DIALOG_Y_ORIGIN"/>
+		<item value="907" key="DIALOG_X_ORIGIN"/>
+		<item value="399" key="DIALOG_HEIGHT"/>
+		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="true" key="wrap"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="isRegEx"/>
+		<item value="false" key="incremental"/>
+		<item value="false" key="wholeword"/>
+		<item value="menuGV" key="selection"/>
+		<list key="findhistory">
+			<item value="settingsGV"/>
+			<item value="settingsGV "/>
+			<item value="&gt;"/>
+			<item value="&lt;"/>
+			<item value="descriptionEditText"/>
+			<item value="titleEditText"/>
+			<item value="descriptionTextView"/>
+			<item value="titleTextView"/>
+		</list>
+		<list key="replacehistory">
+			<item value="menuGV"/>
+			<item value="&amp;gt;"/>
+			<item value="&amp;lt;"/>
+			<item value="descriptionET"/>
+			<item value="titleET"/>
+			<item value="descriptionTV"/>
+			<item value="titleTV"/>
+			<item value="saveDataBT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item value="256" key="DIALOG_Y_ORIGIN"/>
+		<item value="404" key="DIALOG_X_ORIGIN"/>
+	</section>
+</section>

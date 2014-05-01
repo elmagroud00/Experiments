@@ -1,0 +1,240 @@
+package com.example.mybroswer;
+
+import android.app.Activity;
+import android.gesture.GestureOverlayView.OnGestureListener;
+import android.graphics.Bitmap;
+import android.os.Bundle;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.Window;
+import android.view.View.OnTouchListener;
+import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
+import android.webkit.URLUtil;
+import android.webkit.WebChromeClient;
+import android.webkit.WebIconDatabase;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class UrlInput extends Activity implements View.OnTouchListener,
+		android.view.GestureDetector.OnGestureListener {
+
+	private RelativeLayout relativeLayout01;
+
+	private LinearLayout enter01;
+	private EditText enterurl01;
+	private ProgressBar progressBar;
+	private LinearLayout enter02;
+	private EditText enterurl02;
+	private ImageView okImageView;
+	private GestureDetector gestureDetector;
+	private WebView webView01;
+	boolean flag;
+	private TextView titleTV;
+	private ImageView iconIV;
+	private WebIconDatabase webIcondb;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+				WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		setContentView(R.layout.address);
+
+		relativeLayout01 = (RelativeLayout) findViewById(R.id.skin01);
+		titleTV = (TextView) findViewById(R.id.title01);
+		iconIV = (ImageView) findViewById(R.id.icon);
+		webIcondb = WebIconDatabase.getInstance();
+		webIcondb.open(getDir("icons", MODE_PRIVATE).getPath());
+		progressBar = (ProgressBar)findViewById(R.id.progress_horizontal01);
+		
+		webView01 = (WebView) findViewById(R.id.WebView01);
+		webView01.setOnTouchListener(this);
+		webView01.setWebViewClient(new WebViewClient() {
+
+		});
+		webView01.setWebChromeClient(new WebChromeClient() {
+			@Override
+			public void onReceivedTitle(WebView view, String title) {
+				super.onReceivedTitle(view, title);
+				titleTV.setText(title);
+			}
+
+			@Override
+			public void onReceivedIcon(WebView view, Bitmap icon) {
+				super.onReceivedIcon(view, icon);
+				iconIV.setImageBitmap(icon);
+			}
+			
+			@Override
+			public void onProgressChanged(WebView view, int newProgress) {
+				progressBar.setProgress(newProgress);
+				if(newProgress == 100) {
+					progressBar.setProgress(0);
+				}
+			}
+			
+			@Override
+			public void onReceivedTouchIconUrl(WebView view, String url,
+					boolean precomposed) {
+				super.onReceivedTouchIconUrl(view, url, precomposed);
+				if(precomposed) {
+					enter01.setText(url);
+				}
+			}
+		});
+		// webView01.loadUrl("http://lnmcc.net");
+
+		enter01 = (LinearLayout) findViewById(R.id.enter01);
+		enterurl01 = (EditText) findViewById(R.id.enterurl01);
+		enterurl01.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				enter01.setVisibility(View.GONE);
+				enter02.setVisibility(View.VISIBLE);
+			}
+		});
+
+		enter02 = (LinearLayout) findViewById(R.id.enter02);
+		enterurl02 = (EditText) findViewById(R.id.enterurl02);
+
+		okImageView = (ImageView) findViewById(R.id.ImageView01);
+		okImageView.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				enter02.setVisibility(View.GONE);
+				enter01.setVisibility(View.VISIBLE);
+
+				String strUrl = enterurl02.getText().toString();
+				int length = strUrl.length();
+				if (length == 0) {
+					Toast.makeText(UrlInput.this, "Please input URL",
+							Toast.LENGTH_LONG).show();
+				} else {
+					String strindex = strUrl.substring(0, 7);
+					boolean bln = strindex.equalsIgnoreCase("http://");
+					if (bln == true) {
+						if (URLUtil.isNetworkUrl(strUrl)) {
+							webView01.loadUrl(strUrl);
+						} else {
+							Toast.makeText(UrlInput.this,
+									"Please input correct URL",
+									Toast.LENGTH_LONG).show();
+						}
+					} else {
+						strUrl = "http://" + strUrl;
+						if (URLUtil.isNetworkUrl(strUrl)) {
+							webView01.loadUrl(strUrl);
+						} else {
+							Toast.makeText(UrlInput.this,
+									"Please input correct URL",
+									Toast.LENGTH_LONG).show();
+						}
+					}
+				}
+				enterurl02.setText("");
+			}
+		});
+
+		gestureDetector = new GestureDetector(this, this);
+		flag = true;
+	}
+
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+		return false;
+	}
+
+	@Override
+	public boolean onDown(MotionEvent e) {
+		if (flag == true) {
+			int height = relativeLayout01.getHeight();
+			Animation myTranslateAnimation = new TranslateAnimation(0, 0, 0,
+					-height);
+			myTranslateAnimation.setDuration(500);
+			relativeLayout01.setAnimation(myTranslateAnimation);
+			relativeLayout01.setVisibility(View.GONE);
+			flag = false;
+		}
+		return false;
+	}
+
+	@Override
+	public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
+			float velocityY) {
+
+		float vx = Math.abs(velocityX);
+		float vy = Math.abs(velocityY);
+
+		if (vy > vx) {
+			if (velocityY > 0) {
+				if (flag == false) {
+					int height = relativeLayout01.getHeight();
+					Animation myTranslateAnimation = new TranslateAnimation(0,
+							0, -height, 0);
+					myTranslateAnimation.setDuration(500);
+					relativeLayout01.setAnimation(myTranslateAnimation);
+					relativeLayout01.setVisibility(View.VISIBLE);
+					flag = true;
+				}
+			} else if (velocityY < 0) {
+				if (flag == true) {
+					int height = relativeLayout01.getHeight();
+					Animation myTranslateAnimation = new TranslateAnimation(0,
+							0, 0, -height);
+					myTranslateAnimation.setDuration(500);
+					relativeLayout01.setAnimation(myTranslateAnimation);
+					relativeLayout01.setVisibility(View.VISIBLE);
+					flag = false;
+				}
+			}
+		}
+
+		return false;
+	}
+
+	@Override
+	public boolean onTouch(View v, MotionEvent event) {
+		gestureDetector.onTouchEvent(event);
+		// webView01.requestFocus();
+		return false;
+	}
+
+	@Override
+	public void onLongPress(MotionEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX,
+			float distanceY) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void onShowPress(MotionEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public boolean onSingleTapUp(MotionEvent e) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

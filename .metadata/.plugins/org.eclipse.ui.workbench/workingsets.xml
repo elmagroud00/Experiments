@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1397228971481_2" label="SyncPlayer" name="SyncPlayer">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/commonLib" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/main" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/xlibEnv" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/bmpPlugin" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/openGlPaintPlugin" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/socketLib" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ddsPlugin" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/eventLib" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/threadLib" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/pluginManager" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1398137146010_3" label="StreamServer" name="StreamServer">
+<item elementID="=StreamConfigure" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=TestGetPost" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1335067994190_0" label="Window Working Set" name="Aggregate for window 1335067994188"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1390654896502_1" label="Window Working Set" name="Aggregate for window 1390654896501"/>
+<mruList name="StreamServer"/>
+<mruList name="SyncPlayer"/>
+</workingSetManager>

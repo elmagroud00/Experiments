@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;CameraIntent&apos; to &apos;CameraExample&apos;" description="Rename resource &apos;CameraIntent&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/CameraIntent" name="CameraExample" stamp="1380471950400" updateReferences="true"/>
+</session>

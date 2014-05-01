@@ -1,0 +1,95 @@
+package net.lnmcc.mediaprovider;
+
+import android.os.Bundle;
+import android.provider.MediaStore;
+import android.app.Activity;
+import android.content.ContentResolver;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+public class MainActivity extends Activity {
+
+	private Cursor mCursor = null;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		
+		findViewById(R.id.ShowImage).setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				ContentResolver cr = getContentResolver();
+				String[] columns = {
+						MediaStore.Images.Media.DATA,
+						MediaStore.Images.Media.DISPLAY_NAME };
+				mCursor = cr.query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, 
+						columns, 
+						null, 
+						null, 
+						MediaStore.Images.Media.DEFAULT_SORT_ORDER);
+				if(mCursor != null) {
+					mCursor.moveToFirst();
+					showImage();
+				}
+			}
+		});
+		
+		findViewById(R.id.NextImage).setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				if(mCursor != null) {
+					if(!mCursor.moveToNext()) {
+						mCursor.moveToFirst();
+					}
+					showImage();
+				}
+			}
+		});
+		
+		findViewById(R.id.PrevImage).setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				if(mCursor != null) {
+					if(!mCursor.moveToPrevious()) {
+						mCursor.moveToLast();
+					}
+					showImage();
+				}
+			}
+		});
+	}
+
+	void showImage() {
+		int columnIndex;
+		String columnName;
+		
+		columnIndex = mCursor.getColumnIndex(MediaStore.Images.Media.DISPLAY_NAME);
+		columnName = mCursor.getString(columnIndex);
+		((TextView)findViewById(R.id.DisplayName)).setText(columnName);
+		
+		columnIndex = mCursor.getColumnIndex(MediaStore.Images.Media.DATA);
+		columnName = mCursor.getColumnName(columnIndex);
+		
+		Bitmap bmp = BitmapFactory.decodeFile(columnName);
+		((ImageView)findViewById(R.id.CurrentImage)).setImageBitmap(bmp);
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+}

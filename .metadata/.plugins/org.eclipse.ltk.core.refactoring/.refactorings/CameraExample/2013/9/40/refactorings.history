@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.example.cameraintent&apos; to &apos;net.lnmcc.cameraExample&apos;&#x0A;- Original project: &apos;CameraIntent&apos;&#x0A;- Original element: &apos;CameraIntent/src/com.example.cameraintent&apos;&#x0A;- Renamed element: &apos;CameraIntent/src/net.lnmcc.cameraExample&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.example.cameraintent&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;com.example.cameraintent" name="net.lnmcc.cameraExample" qualified="false" references="true" stamp="1380470701277" textual="false" version="1.0"/>
+</session>

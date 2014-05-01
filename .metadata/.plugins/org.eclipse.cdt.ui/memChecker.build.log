@@ -1,0 +1,110 @@
+01:42:55 **** Build of configuration Default for project memChecker ****
+make all 
+g++ -c -O2 -DMEM_DEBUG -g MemRecord.cpp 
+In file included from MemRecord.cpp:21:
+./memRecord.h:41:19: error: use of undeclared identifier 'FILENAME_LENGTH'
+        char m_szMsgPath[FILENAME_LENGTH];      
+                         ^
+./memRecord.h:48:17: error: use of undeclared identifier 'FILENAME_LENGTH'
+        char            Filename[FILENAME_LENGTH];       
+                                 ^
+./memRecord.h:56:6: warning: 'operator delete' is missing exception specification 'throw()'
+void operator delete(void *ptr);
+     ^
+                                throw()
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/new:133:30: note: previous declaration is here
+_LIBCPP_NEW_DELETE_VIS void  operator delete(void* __p) _NOEXCEPT;
+                             ^
+In file included from MemRecord.cpp:21:
+./memRecord.h:57:6: warning: 'operator delete[]' is missing exception specification 'throw()'
+void operator delete[](void *ptr);
+     ^
+                                  throw()
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/new:142:30: note: previous declaration is here
+_LIBCPP_NEW_DELETE_VIS void  operator delete[](void* __p) _NOEXCEPT;
+                             ^
+In file included from MemRecord.cpp:21:
+./memRecord.h:62:25: error: use of undeclared identifier 'FILENAME_LENGTH'
+extern char DELETE_FILE[FILENAME_LENGTH];
+                        ^
+MemRecord.cpp:27:1: error: unknown type name 'memRecord'
+memRecord appMemory;
+^
+MemRecord.cpp:79:18: error: no member named 'Filename' in 'MemOperation'; did you mean 'fileName'?
+                strncpy(record.Filename, pszFileName, FILENAME_LENGTH - 1);
+                               ^~~~~~~~
+                               fileName
+./memCheckHeader.h:20:15: note: 'fileName' declared here
+    char                    fileName[ FILENAME_LEN ];
+                            ^
+MemRecord.cpp:79:41: error: use of undeclared identifier 'FILENAME_LENGTH'
+                strncpy(record.Filename, pszFileName, FILENAME_LENGTH - 1);
+                                                      ^
+MemRecord.cpp:80:10: error: no member named 'LineNum' in 'MemOperation'; did you mean 'lineNum'?
+                record.LineNum = nLineNum;
+                       ^~~~~~~
+                       lineNum
+./memCheckHeader.h:21:19: note: 'lineNum' declared here
+    unsigned long       lineNum;
+                        ^
+MemRecord.cpp:81:10: error: no member named 'AllocSize' in 'MemOperation'
+                record.AllocSize = nSize;
+                ~~~~~~ ^
+MemRecord.cpp:82:10: error: no member named 'OperationType' in 'MemOperation'
+                record.OperationType = SINGLE_NEW;
+                ~~~~~~ ^
+MemRecord.cpp:83:10: error: no member named 'errCode' in 'MemOperation'
+                record.errCode = 0;
+                ~~~~~~ ^
+MemRecord.cpp:84:10: error: no member named 'pBuffer' in 'MemOperation'
+                record.pBuffer = pResult;
+                ~~~~~~ ^
+MemRecord.cpp:99:18: error: no member named 'Filename' in 'MemOperation'; did you mean 'fileName'?
+                strncpy(record.Filename, pszFileName, FILENAME_LENGTH - 1);
+                               ^~~~~~~~
+                               fileName
+./memCheckHeader.h:20:15: note: 'fileName' declared here
+    char                    fileName[ FILENAME_LEN ];
+                            ^
+MemRecord.cpp:99:41: error: use of undeclared identifier 'FILENAME_LENGTH'
+                strncpy(record.Filename, pszFileName, FILENAME_LENGTH - 1);
+                                                      ^
+MemRecord.cpp:100:10: error: no member named 'LineNum' in 'MemOperation'; did you mean 'lineNum'?
+                record.LineNum = nLineNum;
+                       ^~~~~~~
+                       lineNum
+./memCheckHeader.h:21:19: note: 'lineNum' declared here
+    unsigned long       lineNum;
+                        ^
+MemRecord.cpp:101:10: error: no member named 'AllocSize' in 'MemOperation'
+                record.AllocSize = nSize;
+                ~~~~~~ ^
+MemRecord.cpp:102:10: error: no member named 'OperationType' in 'MemOperation'
+                record.OperationType = ARRAY_NEW;
+                ~~~~~~ ^
+MemRecord.cpp:103:10: error: no member named 'errCode' in 'MemOperation'
+                record.errCode = 0;
+                ~~~~~~ ^
+MemRecord.cpp:104:10: error: no member named 'pBuffer' in 'MemOperation'
+                record.pBuffer = pResult;
+                ~~~~~~ ^
+MemRecord.cpp:111:6: warning: 'operator delete' is missing exception specification 'throw()'
+void operator delete(void *ptr) {
+     ^
+                                throw()
+./memRecord.h:56:6: note: previous declaration is here
+void operator delete(void *ptr);
+     ^
+MemRecord.cpp:113:10: error: no member named 'Unlock' in 'SemMutex'; did you mean 'unlock'?
+                g_lock.Unlock();
+                       ^~~~~~
+                       unlock
+./semMutex.h:20:7: note: 'unlock' declared here
+        void unlock();
+             ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+3 warnings and 20 errors generated.
+make: *** [MemRecord.o] Error 1
+
+01:43:11 Build Finished (took 15s.426ms)
+

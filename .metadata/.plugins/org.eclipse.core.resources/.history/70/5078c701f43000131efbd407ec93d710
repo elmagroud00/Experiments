@@ -1,0 +1,15 @@
+package com.example.backgroundaudiobind;
+
+import android.app.Service;
+import android.content.Intent;
+import android.media.MediaPlayer.OnCompletionListener;
+import android.os.IBinder;
+
+public class BackgrondAudioService extends Service implements OnCompletionListener {
+
+	@Override
+	public IBinder onBind(Intent intent) {
+		
+	}
+
+}

@@ -1,0 +1,7 @@
+package headfirst.combined.djview;
+
+import javax.sound.midi.MetaEventListener;
+
+public class BeatModel implements BeatModelInterface, MetaEventListener{
+	
+}

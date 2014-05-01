@@ -1,0 +1,6 @@
+
+public interface Null { }
+
+class Person{
+	public final String final 
+}

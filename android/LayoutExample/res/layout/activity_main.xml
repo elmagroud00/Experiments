@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <Button
+        android:id="@+id/tv1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#ff00ffff"
+        android:gravity="center"
+        android:text="1" />
+
+    <Button
+        android:id="@+id/tv2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/tv1"
+        android:background="#ffffff00"
+        android:gravity="center"
+        android:text="2" />
+
+    <Button
+        android:id="@+id/tv3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/tv2"
+        android:background="#ffff00ff"
+        android:gravity="center"
+        android:text="3" />
+
+    <Button
+        android:id="@+id/tv4"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/tv2"
+        android:layout_toRightOf="@+id/tv3"
+        android:background="#ffff0000"
+        android:gravity="center"
+        android:text="4" />
+
+</RelativeLayout>

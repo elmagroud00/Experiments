@@ -1,0 +1,73 @@
+
+**** Build of configuration Debug for project sys-chk ****
+
+make all 
+Building file: ../nvidia/nvidia-info.c
+Invoking: GCC C Compiler
+gcc -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"nvidia/nvidia-info.d" -MT"nvidia/nvidia-info.d" -o "nvidia/nvidia-info.o" "../nvidia/nvidia-info.c"
+In file included from ../nvidia/nvidia-info.h:4,
+                 from ../nvidia/nvidia-info.c:1:
+../nvidia/../common.h:14:22: warning: sys/klog.h: No such file or directory
+In file included from ../nvidia/../common.h:18,
+                 from ../nvidia/nvidia-info.h:4,
+                 from ../nvidia/nvidia-info.c:1:
+/usr/include/net/if.h:300: error: field 'ifru_addr' has incomplete type
+/usr/include/net/if.h:301: error: field 'ifru_dstaddr' has incomplete type
+/usr/include/net/if.h:302: error: field 'ifru_broadaddr' has incomplete type
+/usr/include/net/if.h:346: error: field 'ifra_addr' has incomplete type
+/usr/include/net/if.h:347: error: field 'ifra_broadaddr' has incomplete type
+/usr/include/net/if.h:348: error: field 'ifra_mask' has incomplete type
+/usr/include/net/if.h:431: error: field 'addr' has incomplete type
+/usr/include/net/if.h:432: error: field 'dstaddr' has incomplete type
+../nvidia/../common.h:24:24: warning: sys/statfs.h: No such file or directory
+../nvidia/../common.h:28:25: warning: sys/sysinfo.h: No such file or directory
+../nvidia/../common.h:30:18: warning: nvml.h: No such file or directory
+In file included from ../nvidia/nvidia-info.c:1:
+../nvidia/nvidia-info.h:8: error: expected specifier-qualifier-list before 'nvmlDevice_t'
+../nvidia/nvidia-info.c: In function 'getNVCardInfo':
+../nvidia/nvidia-info.c:5: error: 'nvmlReturn_t' undeclared (first use in this function)
+../nvidia/nvidia-info.c:5: error: (Each undeclared identifier is reported only once
+../nvidia/nvidia-info.c:5: error: for each function it appears in.)
+../nvidia/nvidia-info.c:5: error: expected ';' before 'result'
+../nvidia/nvidia-info.c:9: error: 'result' undeclared (first use in this function)
+../nvidia/nvidia-info.c:9: warning: implicit declaration of function 'nvmlInit'
+../nvidia/nvidia-info.c:10: error: 'NVML_SUCCESS' undeclared (first use in this function)
+../nvidia/nvidia-info.c:16: warning: implicit declaration of function 'nvmlDeviceGetCount'
+../nvidia/nvidia-info.c:29: error: 'nvmlDevice_t' undeclared (first use in this function)
+../nvidia/nvidia-info.c:29: error: expected ';' before 'device'
+../nvidia/nvidia-info.c:31: error: 'nvmlPciInfo_t' undeclared (first use in this function)
+../nvidia/nvidia-info.c:31: error: expected ';' before 'pci'
+../nvidia/nvidia-info.c:32: error: 'nvmlMemory_t' undeclared (first use in this function)
+../nvidia/nvidia-info.c:32: error: expected ';' before 'memory'
+../nvidia/nvidia-info.c:34: warning: implicit declaration of function 'nvmlDeviceGetHandleByIndex'
+../nvidia/nvidia-info.c:34: error: 'device' undeclared (first use in this function)
+../nvidia/nvidia-info.c:40: warning: implicit declaration of function 'nvmlDeviceGetName'
+../nvidia/nvidia-info.c:46: error: 'struct nvCardInfo' has no member named 'name'
+../nvidia/nvidia-info.c:46: error: 'struct nvCardInfo' has no member named 'name'
+../nvidia/nvidia-info.c:46: error: 'struct nvCardInfo' has no member named 'name'
+../nvidia/nvidia-info.c:46: error: 'struct nvCardInfo' has no member named 'name'
+../nvidia/nvidia-info.c:46: error: 'struct nvCardInfo' has no member named 'name'
+../nvidia/nvidia-info.c:46: error: 'struct nvCardInfo' has no member named 'name'
+../nvidia/nvidia-info.c:48: warning: implicit declaration of function 'nvmlDeviceGetPciInfo'
+../nvidia/nvidia-info.c:48: error: 'pci' undeclared (first use in this function)
+../nvidia/nvidia-info.c:54: error: 'struct nvCardInfo' has no member named 'pci'
+../nvidia/nvidia-info.c:54: error: 'struct nvCardInfo' has no member named 'pci'
+../nvidia/nvidia-info.c:54: error: 'struct nvCardInfo' has no member named 'pci'
+../nvidia/nvidia-info.c:54: error: 'struct nvCardInfo' has no member named 'pci'
+../nvidia/nvidia-info.c:54: error: 'struct nvCardInfo' has no member named 'pci'
+../nvidia/nvidia-info.c:54: error: 'struct nvCardInfo' has no member named 'pci'
+../nvidia/nvidia-info.c:56: warning: implicit declaration of function 'nvmlDeviceGetTemperature'
+../nvidia/nvidia-info.c:56: error: 'NVML_TEMPERATURE_GPU' undeclared (first use in this function)
+../nvidia/nvidia-info.c:62: error: 'struct nvCardInfo' has no member named 'temperature'
+../nvidia/nvidia-info.c:64: warning: implicit declaration of function 'nvmlDeviceGetMemoryInfo'
+../nvidia/nvidia-info.c:64: error: 'memory' undeclared (first use in this function)
+../nvidia/nvidia-info.c:70: error: 'struct nvCardInfo' has no member named 'gpu_memory'
+../nvidia/nvidia-info.c:70: error: 'struct nvCardInfo' has no member named 'gpu_memory'
+../nvidia/nvidia-info.c:70: error: 'struct nvCardInfo' has no member named 'gpu_memory'
+../nvidia/nvidia-info.c:70: error: 'struct nvCardInfo' has no member named 'gpu_memory'
+../nvidia/nvidia-info.c:70: error: 'struct nvCardInfo' has no member named 'gpu_memory'
+../nvidia/nvidia-info.c:70: error: 'struct nvCardInfo' has no member named 'gpu_memory'
+../nvidia/nvidia-info.c:73: warning: implicit declaration of function 'nvmlShutdown'
+make: *** [nvidia/nvidia-info.o] Error 1
+
+**** Build Finished ****

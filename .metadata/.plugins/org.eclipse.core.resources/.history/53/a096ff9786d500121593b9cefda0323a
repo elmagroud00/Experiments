@@ -1,0 +1,16 @@
+package extendth;
+
+public class Machine extends Thread {
+	public void run() {
+		for(int a = 0; a < 50; a++) {
+			System.out.println(currentThread().getName() + a);
+		}
+	}
+	
+	public static void main(String args[]) {
+		Machine machine = new Machine();
+		Machine machine2 = new Machine();
+		machine.start();
+		machine2.start();
+	}
+}
