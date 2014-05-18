@@ -33,9 +33,11 @@ public class ToDoListItemView extends TextView {
 		Resources myResources = getResources();
 		marginPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 		marginPaint.setColor(myResources.getColor(R.color.notepad_margin));
+		marginPaint.setStrokeWidth(5);;
 		
 		linePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 		linePaint.setColor(myResources.getColor(R.color.notepad_lines));
+		linePaint.setStrokeWidth(10);
 		
 		paperColor = myResources.getColor(R.color.notepad_paper);
 		margin = myResources.getDimension(R.dimen.notepad_margin);

@@ -6,6 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.accessibility.AccessibilityEvent;
 
 public class CompassView extends View {
 
@@ -21,6 +22,22 @@ public class CompassView extends View {
 
 	public void setBearing(float _bearing) {
 		bearing = _bearing;
+		sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_TEXT_CHANGED);
+	}
+
+	@Override
+	public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event) {
+		super.dispatchPopulateAccessibilityEvent(event);
+		if (isShown()) {
+			String bearingStr = String.valueOf(bearing);
+			if (bearingStr.length() > AccessibilityEvent.MAX_TEXT_LENGTH)
+				bearingStr = bearingStr.substring(0,
+						AccessibilityEvent.MAX_TEXT_LENGTH);
+
+			event.getText().add(bearingStr);
+			return true;
+		} else
+			return false;
 	}
 
 	public float getBearing() {
@@ -93,28 +110,30 @@ public class CompassView extends View {
 				String dirString = "";
 				switch (i) {
 				case (0): {
-						dirString = northString;
-						int arrowY = 2 * textHeight;
-						canvas.drawLine(px, arrowY, px - 5, 3 * textHeight, markerPaint);
-						canvas.drawLine(px, arrowY, px + 5, 3 * textHeight, markerPaint);
-						break;
-					}
-				case(6):
+					dirString = northString;
+					int arrowY = 2 * textHeight;
+					canvas.drawLine(px, arrowY, px - 5, 3 * textHeight,
+							markerPaint);
+					canvas.drawLine(px, arrowY, px + 5, 3 * textHeight,
+							markerPaint);
+					break;
+				}
+				case (6):
 					dirString = eastString;
 					break;
-				case(12):
+				case (12):
 					dirString = southString;
 					break;
-				case(18):
+				case (18):
 					dirString = weastString;
 					break;
 				}
 				canvas.drawText(dirString, cardinalX, cardinalY, textPaint);
-			} else if(i % 3 == 0) {
+			} else if (i % 3 == 0) {
 				String angle = String.valueOf(i * 15);
 				float angleTextWidth = textPaint.measureText(angle);
-				
-				int angleTextX = (int)(px - angleTextWidth / 2);
+
+				int angleTextX = (int) (px - angleTextWidth / 2);
 				int angleTextY = py - radius + textHeight;
 				canvas.drawText(angle, angleTextX, angleTextY, textPaint);
 			}

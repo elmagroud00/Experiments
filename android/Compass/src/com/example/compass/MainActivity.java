@@ -6,10 +6,21 @@ import android.view.Menu;
 
 public class MainActivity extends Activity {
 
+	CompassView cv;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
+		cv = (CompassView) this.findViewById(R.id.compassView);
+		// cv.setBearing(45);
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		cv.setBearing(45);
 	}
 
 	@Override
