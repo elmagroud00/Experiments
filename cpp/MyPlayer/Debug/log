@@ -1,0 +1,335 @@
+vdp_output_surface_create: 2
+vdp_output_surface_create: 3
+vdp_output_surface_create: 4
+vdp_output_surface_create: 5
+avformat_open_input file: /home/sijiewang/Videos/thisis40-dancingmachine_h1080p.mov
+m_videoindex = 0
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/home/sijiewang/Videos/thisis40-dancingmachine_h1080p.mov':
+  Metadata:
+    major_brand     : qt  
+    minor_version   : 537199360
+    compatible_brands: qt  
+    creation_time   : 2012-12-18 22:39:58
+    comment         : Encoded and delivered by apple.com/trailers/
+    copyright       : © 2012 All Rights Reserved
+    title           : This is 40
+    timecode        : 01:11:59:00
+  Duration: 00:02:44.96, bitrate: N/A
+    Stream #0:0(eng): Video: h264 (avc1 / 0x31637661), 1920x1080, 9430 kb/s, 23.98 fps, 23.98 tbr, 2997 tbn
+    Metadata:
+      creation_time   : 2012-12-18 22:39:58
+      handler_name    : Apple Alias Data Handler
+    Stream #0:1(eng): Audio: aac (mp4a / 0x6134706D), 44100 Hz, 2 channels, 83 kb/s
+    Metadata:
+      creation_time   : 2012-12-18 22:39:58
+      handler_name    : Apple Alias Data Handler
+    Stream #0:2(eng): Data: none (tmcd / 0x64636D74)
+    Metadata:
+      creation_time   : 2012-12-18 22:39:58
+      handler_name    : Apple Alias Data Handler
+      timecode        : 01:11:59:00
+Find CODEC_ID_H264
+m_codecContext->pix_fmt = -1, m_codecContext->width = 1920, m_codecContext->height = 1080
+vdp_video_mixer_create success: handle = 6
+vdp_decoder_create: 7
+create video surface :1920 1080 8
+create video surface :1920 1080 9
+create video surface :1920 1080 10
+create video surface :1920 1080 11
+create video surface :1920 1080 12
+create video surface :1920 1080 13
+create video surface :1920 1080 14
+create video surface :1920 1080 15
+create video surface :1920 1080 16
+create video surface :1920 1080 17
+create video surface :1920 1080 18
+create video surface :1920 1080 19
+create video surface :1920 1080 20
+create video surface :1920 1080 21
+create video surface :1920 1080 22
+create video surface :1920 1080 23
+create video surface :1920 1080 24
+create video surface :1920 1080 25
+updateDisplayContext
+use output surface: 2
+use output surface: 3
+demux thread start
+VideoDecoderThread start
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+pix fmt list is:
+36	begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+m_decoderContext->updateframe(m_frame)
+begin to putPacket
+decode used: 2024
+DecoderThread sleepTime 40.000000
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+m_decoderContext->updateframe(m_frame)
+decoderVideo2OutputSurface begin
+decoderVideo2OutputSurface finish
+begin to putPacket
+decode used: 776
+DecoderThread sleepTime 41.000000
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+begin to putPacket
+packet list full, sleep now
+X Error of failed request:  GLXBadDrawable
+  Major opcode of failed request:  135 (GLX)
+  Minor opcode of failed request:  11 (X_GLXSwapBuffers)
+  Serial number of failed request:  33
+  Current serial number in output stream:  72
+packet list full, sleep now
+decode used: 17727
+DecoderThread sleepTime 24.000000
