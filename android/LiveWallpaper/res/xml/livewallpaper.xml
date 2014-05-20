@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="author">sijiewang</string>
+    <string name="description">a test</string>
+    <string name="thumbnail">@drawable/thumbnail</string>
+</resources>
