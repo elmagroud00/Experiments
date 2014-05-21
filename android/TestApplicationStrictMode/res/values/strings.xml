@@ -3,6 +3,7 @@
 
     <string name="app_name">TestApplicationStrictMode</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="TestStrictMode">TestStrictMode</string>
+    <string name="FibonacciBtn">Fibonacci !!!</string>
 
 </resources>
