@@ -3,16 +3,20 @@ package com.example.testaction;
 import android.os.Bundle;
 import android.app.ActionBar;
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.app.ActionBar.Tab;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends Activity {
+
+	private static String ACTION_BAR_INDEX = "ACTION_BAR_INDEX";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -101,6 +105,49 @@ public class MainActivity extends Activity {
 		default:
 			return super.onOptionsItemSelected(item);
 		}
+	}
+
+	@Override
+	protected void onSaveInstanceState(Bundle outState) {
+		int actionBarIndex = getActionBar().getSelectedTab().getPosition();
+		SharedPreferences.Editor editor = getPreferences(Activity.MODE_PRIVATE)
+				.edit();
+		editor.putInt(ACTION_BAR_INDEX, actionBarIndex);
+		editor.apply();
+
+		super.onSaveInstanceState(outState);
+	}
+
+	@Override
+	protected void onRestoreInstanceState(Bundle savedInstanceState) {
+		super.onRestoreInstanceState(savedInstanceState);
+		SharedPreferences sp = getPreferences(Activity.MODE_PRIVATE);
+		int actionBarIndex = sp.getInt(ACTION_BAR_INDEX, 0);
+		getActionBar().setSelectedNavigationItem(actionBarIndex);
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		SharedPreferences sp = getPreferences(Activity.MODE_PRIVATE);
+		int actionBarIndex = sp.getInt(ACTION_BAR_INDEX, 0);
+		getActionBar().setSelectedNavigationItem(actionBarIndex);
+	}
+
+	@Override
+	protected void onStop() {
+		int actionBarIndex = getActionBar().getSelectedTab().getPosition();
+		SharedPreferences.Editor editor = getPreferences(Activity.MODE_PRIVATE)
+				.edit();
+		editor.putInt(ACTION_BAR_INDEX, actionBarIndex);
+		editor.apply();
+		super.onStop();
+	}
+
+	@Override
+	protected void onDestroy() {
+
+		super.onDestroy();
 	}
 
 	@Override
