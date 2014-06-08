@@ -1,0 +1,137 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <GL/glew.h>
+#include "VdpauContext.h"
+#include "VdpauDecoderContext.h"
+
+int main(int argc, char **argv)
+{
+	Window win;
+	Display *m_display = XOpenDisplay(NULL);
+	static int attributes[] = {GLX_RGBA,
+							   GLX_DOUBLEBUFFER,
+							   GLX_DEPTH_SIZE, 16,
+							   GLX_RED_SIZE, 8,
+							   GLX_BLUE_SIZE, 8,
+							   GLX_GREEN_SIZE, 8,
+							   0};
+	XVisualInfo *visualInfo = glXChooseVisual(m_display, DefaultScreen(m_display), attributes);
+	XSetWindowAttributes winAttribs;
+	winAttribs.event_mask = ExposureMask | VisibilityChangeMask |
+							KeyPressMask | PointerMotionMask    |
+							StructureNotifyMask;
+	winAttribs.bit_gravity = StaticGravity;
+	winAttribs.colormap = XCreateColormap(m_display, RootWindow(m_display, visualInfo->screen), 
+										  visualInfo->visual, AllocNone);
+	unsigned long winmask = CWBorderPixel | CWBitGravity | CWEventMask | CWColormap;
+	win = XCreateWindow(m_display, DefaultRootWindow(m_display), 0, 0, 
+					    1920, 1080, 0,
+						visualInfo->depth, InputOutput,
+						visualInfo->visual, winmask, &winAttribs);
+	XMapWindow(m_display, win);
+
+	GLXContext glContext = glXCreateContext(m_display, visualInfo, 0, True);
+	glXMakeCurrent(m_display, win, glContext);
+
+	GLXDrawable m_glDrawable = glXGetCurrentDrawable();
+
+	VdpauContext *g_deviceContext = new VdpauContext(m_display, DefaultScreen(m_display));
+	g_deviceContext->init();
+
+	VdpauDecoderContext *m_decoderContext = new VdpauDecoderContext(g_deviceContext);
+	VdpauDisplayContext *m_dispContext = new VdpauDisplayContext(m_glDrawable, g_deviceContext);
+
+	m_decoderContext->setDisplayHandle(m_dispContext);
+
+//	initializeGL();
+
+	av_register_all();
+	avcodec_register_all();
+	AVFormatContext *m_pFormatCtx = NULL;
+	printf("argv[1] = %s\n", argv[1]);
+	char filename[256] = {0};
+	memset(filename, 0x0, sizeof(filename));
+	memcpy(filename, argv[1], strlen(argv[1]));
+	printf("filename: %s\n", filename);
+	int m_videoindex = -1;
+	int avret = avformat_open_input(&m_pFormatCtx, filename, NULL, NULL);
+	if(avret != 0)
+	{
+		fprintf(stderr, "avformat_open_input failed with %d\n", avret);
+		return -1;
+	}
+	avret = avformat_find_stream_info(m_pFormatCtx, NULL);
+	if(avret < 0)
+	{
+		fprintf(stderr, "avformat_find_stream_info failed with %d\n", avret);
+		return -1;
+	}	
+	for(unsigned int i = 0; i < m_pFormatCtx->nb_streams; i++)
+	{
+		if(m_pFormatCtx->streams[i]->codec->codec_type == AVMEDIA_TYPE_VIDEO)
+		{
+			m_videoindex = i;
+	//		break;
+		}
+	}
+	fprintf(stderr, "find video stream: %d\n", m_videoindex);
+	AVCodecContext *m_codecContext = m_pFormatCtx->streams[m_videoindex]->codec;
+	AVCodec *codec = NULL;
+	if(m_codecContext->codec_id == CODEC_ID_H264)
+	{
+		fprintf(stderr, "find h264\n");
+		codec = avcodec_find_decoder_by_name("h264_vdpau");
+		m_codecContext->get_format = decoder_get_format;
+		m_codecContext->get_buffer = decoder_get_buffer;
+		m_codecContext->release_buffer = decoder_release_buffer;
+		m_codecContext->draw_horiz_band = decoder_draw_horiz_band;
+		m_codecContext->reget_buffer = decoder_get_buffer;
+		m_codecContext->slice_flags = SLICE_FLAG_CODED_ORDER | SLICE_FLAG_ALLOW_FIELD;
+	}
+	else
+		fprintf(stderr, "not found h264\n");
+
+	avret = avcodec_open(m_codecContext, codec);
+	if(avret < 0)
+	{
+		fprintf(stderr, "avcodec_open failed with %d\n", avret);
+		return -1;
+	}
+	fprintf(stderr, "fmt = %d, width = %d, height = %d\n", m_codecContext->pix_fmt, m_codecContext->width, m_codecContext->height);
+	m_codecContext->opaque = (void*)m_decoderContext;
+	AVStream *m_stream = m_pFormatCtx->streams[m_videoindex];
+	m_decoderContext->updateDecoderContext(PIX_FMT_VDPAU_H264, m_codecContext->width, m_codecContext->height);
+	m_dispContext->updateDisplayContext(m_codecContext->width, m_codecContext->height);
+	int frameFinished;
+	AVFrame *m_frame = avcodec_alloc_frame();
+	AVPacket m_decodePkt;
+	av_dump_format(m_pFormatCtx, 0, filename, 0);
+	while(1)
+	{
+		avret = av_read_frame(m_pFormatCtx, &m_decodePkt);
+		if(avret < 0)
+		{
+			fprintf(stderr, "av_read_frame failed\n");
+			return -1;
+		}
+		int declen = avcodec_decode_video2(m_stream->codec, m_frame, &frameFinished, &m_decodePkt);
+		if(declen < 0)
+		{
+			fprintf(stderr, "declen < 0\n");
+		}
+		if(frameFinished)
+		{
+			fprintf(stderr, "decode a frame\n");
+			m_decoderContext->updateframe(m_frame);
+		}
+		av_free_packet(&m_decodePkt);
+	//		av_free(m_decodePkt);
+	//		m_decodePkt = NULL;
+//		glXSwapBuffers(m_display, win);
+	}
+
+	usleep(100 * 1000 * 1000);
+	fprintf(stderr, "hello\n");
+	return 0;
+}

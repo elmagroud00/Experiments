@@ -42,7 +42,7 @@ public class MainActivity extends Activity implements
 	}
 
 	private void initTextToSpeech() {
-		Intent intent = new Intent(Engine.ACTION_INSTALL_TTS_DATA);
+		Intent intent = new Intent(Engine.ACTION_CHECK_TTS_DATA);
 		startActivityForResult(intent, TTS_DATA_CHECK);
 	}
 

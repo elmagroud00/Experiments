@@ -1,0 +1,70 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <GL/gl.h>
+#include <GL/glut.h>
+#include <pthread.h>
+void RenderScence(void)
+{
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glLoadIdentity();
+	glTranslatef(-0.0f, 0.0f, -4.0f);
+	glBindTexture(GL_TEXTURE_2D,texture);
+	glBegin(GL_QUADS);
+	glTexCoord2f(0.0f,0.0f);
+	glVertex3f(-1.0f,-1.5f,0.0f);
+	glTexCoord2f(1.0f,0.0f);
+	glVertex3f(2.0f,-1.5f,0.0f);
+	glTexCoord2f(1.0f,1.0f);
+	glVertex3f(2.0f,0.5f,0.0f);
+	glTexCoord2f(0.0f,1.0f);
+	glVertex3f(-1.0f,0.5f,0.0f);
+	glEnd();
+
+	glFlush();
+}
+
+void SetupRC(void)
+{
+	glClearColor(1.0f, 1.0f, 1.0f, 0.0f);// 清屏为黑色
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	gluPerspective(45,(float)640/(float)480,0.1f,100);
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+	glClearDepth(1.0f);													// 设置深度缓存
+	glEnable(GL_DEPTH_TEST);											// 开启深度测试
+	glDepthFunc(GL_LEQUAL);												// 选择深度测试方式
+	glShadeModel(GL_SMOOTH);											// 阴暗处理采用平滑方式
+	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);					// 最精细的透视计算
+
+}
+
+static int argc2 = 0;
+static char **argv2 = NULL;
+
+static void *CreateWindow(void *arg)
+{
+	glutInit(&argc2, argv2);
+	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGBA);
+	glutInitWindowSize(1920, 1080);
+	glutCreateWindow("Simple");
+	glutDisplayFunc(RenderScence);
+	SetupRC();
+	glutMainLoop();
+}	
+
+int main(int argc, char **argv)
+{
+	argc2 = argc;
+	argv2 = argv;	
+	pthread_t pId;
+	if(pthread_create(&pId, NULL, CreateWindow, NULL))
+	{
+		perror("Create thread failed\n");
+		return -1;
+	}
+	pause();
+	printf("main thread\n");
+	pause();
+	return 0;
+}
