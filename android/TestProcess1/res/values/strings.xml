@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TestProcess1</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="hello_world">This is TestProcess1</string>
+
+</resources>

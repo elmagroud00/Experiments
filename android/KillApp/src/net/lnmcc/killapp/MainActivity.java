@@ -28,8 +28,9 @@ public class MainActivity extends Activity {
 	ListView running_apps_lv;
 
 	ActivityManager am;
-	List<RunningTaskInfo> runningTaskInfos = null;
+	// List<RunningTaskInfo> runningTaskInfos = null;
 	List<RunningAppProcessInfo> runningAppProcessInfos = null;
+	List<String> whiteList = new ArrayList<String>();
 
 	SimpleAdapter running_apps_adapter = null;
 	ArrayList<HashMap<String, String>> pkgNames = new ArrayList<HashMap<String, String>>();
@@ -42,6 +43,9 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
+		whiteList.add("net.lnmcc.killapp");
+		whiteList.add("com.thunderst.weather");
 
 		handler = new Handler() {
 			public void handleMessage(Message msg) {
@@ -109,9 +113,10 @@ public class MainActivity extends Activity {
 			 * }
 			 */
 			for (RunningAppProcessInfo info : runningAppProcessInfos) {
-				if (info.pid != android.os.Process.myPid()) {
+				if (/* info.pid != android.os.Process.myPid() */!whiteList
+						.contains(info.processName)) {
 					Log.d(TAG, "Will kill " + info.processName);
-					android.os.Process.killProcess(info.pid);
+					//android.os.Process.killProcess(info.pid);
 					am.killBackgroundProcesses(info.processName);
 				}
 			}
@@ -124,8 +129,9 @@ public class MainActivity extends Activity {
 			if (runningAppProcessInfos != null)
 				runningAppProcessInfos.clear();
 
-			if (runningTaskInfos != null)
-				runningTaskInfos.clear();
+			/*
+			 * if (runningTaskInfos != null) runningTaskInfos.clear();
+			 */
 
 			pkgNames.clear();
 
@@ -136,17 +142,18 @@ public class MainActivity extends Activity {
 					map.put("pkgName", info.processName);
 					pkgNames.add(map);
 				}
-
-				runningTaskInfos = am.getRunningTasks(1000);
-				for (RunningTaskInfo info : runningTaskInfos) {
-					HashMap<String, String> map = new HashMap<String, String>();
-					map.put("pkgName", info.baseActivity.getPackageName());
-					// pkgNames.add(map);
-				}
+				/*
+				 * runningTaskInfos = am.getRunningTasks(1000); for
+				 * (RunningTaskInfo info : runningTaskInfos) { HashMap<String,
+				 * String> map = new HashMap<String, String>();
+				 * map.put("pkgName", info.baseActivity.getPackageName()); //
+				 * pkgNames.add(map); }
+				 */
 
 			} catch (SecurityException ex) {
 				Log.d(TAG, "Permission ERROR !");
-				runningTaskInfos = null;
+				// runningTaskInfos = null;
+				runningAppProcessInfos = null;
 			}
 		}
 	}

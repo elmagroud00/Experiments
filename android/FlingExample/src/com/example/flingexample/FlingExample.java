@@ -49,7 +49,7 @@ public class FlingExample extends Activity {
 			public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
 					float velocityY) {
 				if(e1.getY() - e2.getY() > LARGE_MOVE) {
-					tv.append("\nFling Up woth velocityY" + velocityY);
+					tv.append("\nFling Up with velocityY" + velocityY);
 					return true;
 				} else if(e2.getY() - e1.getY() > LARGE_MOVE) {
 					tv.append("\nFling Down with velocity " + velocityY);
