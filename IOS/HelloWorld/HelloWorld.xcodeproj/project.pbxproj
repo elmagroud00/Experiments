@@ -6,11 +6,34 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		31EDA29A19B379E200566B9D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 31EDA29619B379E100566B9D /* Hello_OBJC.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 31EDA28519B379E100566B9D;
+			remoteInfo = Hello_OBJC;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		31EDA29619B379E100566B9D /* Hello_OBJC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Hello_OBJC.xcodeproj; path = Hello_OBJC/Hello_OBJC.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
 /* Begin PBXGroup section */
 		31EDA25A19B378AF00566B9D = {
 			isa = PBXGroup;
 			children = (
+				31EDA29619B379E100566B9D /* Hello_OBJC.xcodeproj */,
 			);
+			sourceTree = "<group>";
+		};
+		31EDA29719B379E100566B9D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				31EDA29B19B379E200566B9D /* Hello_OBJC */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -30,11 +53,27 @@
 			);
 			mainGroup = 31EDA25A19B378AF00566B9D;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 31EDA29719B379E100566B9D /* Products */;
+					ProjectRef = 31EDA29619B379E100566B9D /* Hello_OBJC.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		31EDA29B19B379E200566B9D /* Hello_OBJC */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = Hello_OBJC;
+			remoteRef = 31EDA29A19B379E200566B9D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin XCBuildConfiguration section */
 		31EDA25F19B378AF00566B9D /* Debug */ = {
