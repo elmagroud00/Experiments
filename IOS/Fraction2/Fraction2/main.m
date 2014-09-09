@@ -15,6 +15,12 @@ int main(int argc, const char * argv[])
         Fraction *aFraction = [[Fraction alloc]init];
         [aFraction setTo:100 over:200];
         [aFraction print];
+        
+        Fraction *bFraction = [[Fraction alloc]init];
+        [bFraction setTo:1 over:2];
+        [bFraction print];
+
+        [
     }
     return 0;
 }
