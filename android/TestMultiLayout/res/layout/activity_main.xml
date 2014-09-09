@@ -5,19 +5,13 @@
     android:orientation="vertical"
     tools:context="${relativePackage}.${activityClass}" >
 
-    <FrameLayout
+    <net.lnmcc.testmultilayout.ZFrameLayout
         android:id="@+id/first_LL"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="bottom"
-        android:orientation="vertical" />
-
-    <FrameLayout
-        android:id="@+id/second_LL"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
+        android:background="#00000000"
         android:orientation="vertical" />
 
 </LinearLayout>
