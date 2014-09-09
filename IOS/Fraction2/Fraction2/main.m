@@ -20,7 +20,11 @@ int main(int argc, const char * argv[])
         [bFraction setTo:1 over:2];
         [bFraction print];
 
-        [
+        [aFraction add:bFraction];
+        [aFraction print];
+        
+        [aFraction reduce];
+        [aFraction print];
     }
     return 0;
 }
