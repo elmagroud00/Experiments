@@ -26,4 +26,10 @@
     numerator = n;
     denominator = d;
 }
+-(void) add: (Fraction*) f
+{
+    numerator = numerator * f.denominator +
+    denominator * f.numerator;
+    denominator = denominator * f.denominator;
+}
 @end
