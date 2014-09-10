@@ -7,13 +7,15 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.BatteryManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
-
+    private static final String TAG = "TestBattery";
     private TextView batteryInfo;
     private ImageView imageBatteryState;
 
@@ -39,6 +41,11 @@ public class MainActivity extends Activity {
 
         @Override
         public void onReceive(Context context, Intent intent) {
+            Log.d(TAG, "Get Battery Broadcast: " + intent.toString());
+            Toast.makeText(MainActivity.this,
+                    "Get Battery Broadcast: " + intent.toString(),
+                    Toast.LENGTH_SHORT).show();
+
             int health = intent.getIntExtra(BatteryManager.EXTRA_HEALTH, 0);
             int icon_small = intent.getIntExtra(
                     BatteryManager.EXTRA_ICON_SMALL, 0);
