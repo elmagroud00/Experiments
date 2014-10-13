@@ -7,11 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <Foundation/NSObject.h>
+#import <Foundation/NSString.h>
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        NSString *str1 = @"This is string A";
+        NSString *search, *relpace;
+        NSMutableString *mstr;
+        NSRange substr;
+        
+        mstr = [NSMutableString stringWithString: str1];
+        NSLog(@"%@", mstr);
+        
+        [mstr insertString: @"mutable" atIndex: 8];
+        NSLog(@"%@", mstr);
     }
     return 0;
 }
