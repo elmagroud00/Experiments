@@ -7,11 +7,31 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Foundation/NSObject.h>
+
+@interface Foo : NSObject
+{
+    int x;
+}
+@end
+
+@implementation Foo
+@end
 
 int main(int argc, const char * argv[]) {
-    @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
-    }
+
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc]init];
+    Foo *myFoo = [[Foo alloc]init];
+    NSLog(@"myFoo retain count = %lu", (unsigned long)[myFoo retainCount]);
+    [pool drain];
+    pool = [[NSAutoreleasePool alloc]init];
+    [myFoo autorelease];
+    NSLog(@"myFoo retain count = %lu", (unsigned long)[myFoo retainCount]);
+    [myFoo retain];
+    NSLog(@"myFoo retain count = %lu", (unsigned long)[myFoo retainCount]);
+    [pool drain];
+    NSLog(@"myFoo retain count = %lu", (unsigned long)[myFoo retainCount]);
+    [myFoo release];
+    
     return 0;
 }
