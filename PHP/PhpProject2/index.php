@@ -55,6 +55,96 @@ and open the template in the editor.
         
         $person = new Person("Andi Gutmas");
         print $person;
+        
+        class NumberSquared implements Iterator {
+            public function __construct($start, $end) {
+                $this->start = $start;
+                $this->end = $end;
+            }
+            
+            public function rewind() {
+                $this->cur = $this->start;
+            }
+            
+            public function key() {
+                return $this->cur;
+            }
+            
+            public function current() {
+                return pow($this->cur, 2);
+            }
+            
+            public function next() {
+                $this->cur++;
+            }
+            
+            public function valid() {
+                return $this->cur <= $this->end;
+            }
+            
+            private $start, $end;
+            private $cur;
+        }
+        
+  
+        
+        ?>
+        <h1>Test Class NumberSquared</h1>
+        <?php
+        $obj = new NumberSquared(3, 7);
+        
+        foreach($obj as $key=>$value) {
+            print "\nThe square of $key is $value\n";
+        }
+        ?>
+        
+        <?php
+        class NumberSquared2 implements IteratorAggregate {
+            public function __construct($start, $end) {
+                $this->start = $start;
+                $this->end = $end;
+            }
+            public function getIterator() {
+                return new NumberSquared2Iterator($this);
+            }
+            public function getStart() {
+                return $this->start;
+            }
+            public function getEnd() {
+                return $this->end;
+            }
+            private $start, $end;
+        }
+        
+        class NumberSquared2Iterator implements Iterator {
+            public function __construct($obj) {
+                $this->obj = $obj;
+            }
+            public function rewind() {
+                $this->cur = $this->obj->getStart();
+            }
+            public function key() {
+                return $this->cur;
+            }
+            public function current() {
+                return pow($this->cur, 2);
+            }
+            public function next() {
+                $this->cur++;
+            }
+            public function valid() {
+                return $this->cur <= $this->obj->getEnd();
+            }
+            private $cur;
+            private $obj;
+        }
+        ?>
+        <h1>NumberSquared2</h1>
+        <?php
+        $obj = new NumberSquared2(3, 7);
+        foreach($obj as $key=>$value) {
+            print "The square of $key is $value\n";
+        }
         ?>
     </body>
 </html>
