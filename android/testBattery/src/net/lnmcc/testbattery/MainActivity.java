@@ -45,7 +45,6 @@ public class MainActivity extends Activity {
             Toast.makeText(MainActivity.this,
                     "Get Battery Broadcast: " + intent.toString(),
                     Toast.LENGTH_SHORT).show();
-
             int health = intent.getIntExtra(BatteryManager.EXTRA_HEALTH, 0);
             int icon_small = intent.getIntExtra(
                     BatteryManager.EXTRA_ICON_SMALL, 0);
