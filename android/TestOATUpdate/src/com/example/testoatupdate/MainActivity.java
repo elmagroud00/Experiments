@@ -30,7 +30,7 @@ public class MainActivity extends Activity implements OnClickListener {
     @Override
     public void onClick(View v) {
         Intent updateIntent = new Intent(this, UpdateActivity.class);
-        startActivity(updateIntent);
+        startActivity(updateIntent);  
     }
 
 }
