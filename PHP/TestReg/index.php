@@ -72,9 +72,9 @@ END;
                 '           #closing quote
 END;
         preg_match("($pattern)x", $input, $match);
-        echo $match[1];      
+        echo $match[1];
         ?>
-        
+
         <h2>Test 7</h2>
         <?php
         $string = <<< END
@@ -91,31 +91,31 @@ END;
         ?>
         <h2>Test 8</h2>
         <?php
-        if(getenv('REQUEST_METHOD') == 'POST') {
+        if (getenv('REQUEST_METHOD') == 'POST') {
             $url = $_POST['url'];
         } else {
             $url = $_GET['url'];
         }
         ?>
-        
+
         <form action="<?php echo $SERVER['PHP_SELF']; ?>" method="POST">
             <p>URL: <input type="text" name="url" value="<?php echo $url ?>" /><br />
-            <input type="submit">
+                <input type="submit">
         </form>
-        
+
         <?php
-        if($url) {
+        if ($url) {
             $remote = fopen($url, 'r'); {
                 $html = fread($remote, 1048576);
             }
             fclose($remote);
-            
+
             $urls = '(http|telnet|gopher|file|wais|ftp)';
             $ltrs = '\w';
             $gunk = '/#~:.?+=&%@!\-';
             $punc = '.:?\-';
             $any = "{$ltrs}{$gunk}{$punc}";
-            
+
             preg_match_all("{
                 \b                  #start at word boundary
                 {$urls}:            #need resource and a colon
@@ -127,13 +127,13 @@ END;
                 \$                  #the end of the string
                 )
                 }x", $html, $matches);
-                
-                printf("I found %d URLs<p>\n", sizeof($matches[0]));
-                
-                foreach($matches[0] as $u) {
-                    $link = $_SERVER['PHP_SELF'] . '?url=' . urlencode($u);
-                    echo "<a href=\"{$link}\">{$u}</a><br />\n";
-                }
+
+            printf("I found %d URLs<p>\n", sizeof($matches[0]));
+
+            foreach ($matches[0] as $u) {
+                $link = $_SERVER['PHP_SELF'] . '?url=' . urlencode($u);
+                echo "<a href=\"{$link}\">{$u}</a><br />\n";
+            }
         }
         ?>
         <h2>Test 9</h2>
@@ -141,17 +141,192 @@ END;
         $name = "wangsijie";
         $person = array('name' => "lnmcc", 'age' => 100);
         extract($person, EXTR_PREFIX_ALL, "person");
-        echo "name: {$name}, Person Name: {$person_name}, Person Age: {$person_age}";   
+        echo "name: {$name}, Person Name: {$person_name}, Person Age: {$person_age}";
         ?>
-        
+
         <h2>Test 10</h2>
         <?php
-        function printRow($value, $key) {
+
+        function printRow2($value, $key) {
             print("<tr><td>{$value}</td><td>{$key}</td></tr>\n");
-        };
-        $person = array('name'=>"Fred", 'age'=>35, 'wife'=>"Wilma");
-        array_walk($person, printRow);
+        }
+
+        ;
+        $person = array('name' => "Fred", 'age' => 35, 'wife' => "Wilma");
+        array_walk($person, printRow2);
+        ?>
+
+        <h2>Test11</h2>
+        <?php
+
+        function printRow($value, $key, $color) {
+            echo "<tr>\n<td bgcolor=\"{$color}\">{$value}</td>";
+            echo "<td bgcolor=\"{$color}\">{$key}</td>\n</tr>\n";
+        }
+
+        $person = array('name' => "Fred", 'age' => 35, 'wifi' => "Wilma");
+        echo "<table border=\"1\">";
+        array_walk($person, "printRow", "lightblue");
+        echo "</table>";
+        ?>
+
+        <h2>Test 12</h2>
+        <?php
+
+        function hasRequired($array, $requiredFields) {
+            $keys = array_keys($array);
+            foreach ($requiredFields as $fieldName) {
+                if (!in_array($fieldName, $keys)) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        if ($_POST['submitted']) {
+            echo "<p>You";
+            echo hasRequired($_POST, array('name', 'email')) ? "did" : "did not";
+            echo " hava all the required fields.</p>";
+        }
+        ?>
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+            <p>Name: <input type="text" name="name" /> <br />
+                Email: <input type="text" name="email" /> <br />
+                Age(Optional): <input type="text" name="age" /> </p>
+
+            <p align="left"><input type="submit" value="submit" name="submitted" /></p>
+        </form>
+
+        <h2>Test 13</h2>
+        <?php
+
+        function isOdd($element) {
+            return $element % 2;
+        }
+
+        $callback = 'isOdd';
+        $numbers = array(9, 23, 24, 27);
+        $odd = array_filter($numbers, $callback);
+        print_r($odd);
+        ?>
+        <h2>Test 14</h2>
+        <?php
+        $callTrace = array();
+
+        function enterFunction($name) {
+            global $callTrace;
+            $callTrace[] = $name;
+            echo "Entering {$name} (stack is now: " . join('->', $callTrace) . ")<br />";
+        }
+
+        function exitFunction() {
+            echo "Exiting <br />";
+            global $callTrace;
+            array_pop($callTrace);
+        }
+
+        function first() {
+            enterFunction("first");
+            exitFunction();
+        }
+
+        function second() {
+            enterFunction("second");
+            first();
+            exitFunction();
+        }
+
+        function third() {
+            enterFunction("third");
+            second();
+            first();
+            exitFunction();
+        }
+
+        first();
+        third();
+        ?>
+        <h2>Test 15</h2>
+        <?php
+
+        trait Logger {
+
+            public function log($logString) {
+                $className = __CLASS__;
+                echo date("Y-m-d:h:i:s", time()) . ": [{$className}] {$logString} <br />";
+            }
+
+        }
+
+        class User {
+
+            use Logger;
+
+            function __construct($name = '') {
+                $this->name = $name;
+                $this->log("Create user '{$this->name}'");
+            }
+
+            function __toString() {
+                return $this->name;
+            }
+
+        }
+
+        Class UserGroup {
+
+            use Logger;
+
+            private $users = array();
+
+            public function addUser(User $user) {
+                if(!$this->includesUser($user)) {
+                    $this->users[] = $user;
+                    $this->log("Added user '{$user}' to group");
+                }
+            }
+
+            private function includesUser(User $user) {
+                return array_search($user, $this->users, true);
+            }
+            
+            public function showAll() {
+                foreach($this->users as $name) {
+                    echo "{$name} <br />";
+                }
+            }
+        }
+        
+        $group = new UserGroup;
+        $group->addUser(new User("lnmcc"));
+        $group->addUser(new User("wangsijie"));
+        $group->showAll();
         ?>
         
+        <h2>Test 16</h2>
+        <?php
+        trait Command1 {
+            function run() {
+                echo "executing command1 ... <br />";
+            }
+        }
+        
+        trait Command2 {
+            function run() {
+                echo "executing command2 ... <br />";
+            }
+        }
+        
+        class TestCommand {
+            use Command1, Command2 {
+                Command1::run as Command1Run;
+                Command2::run insteadof Command1;
+            }
+        }
+        
+        $test = new TestCommand();
+        $test->run();
+        $test->Command1Run();
+        ?>
     </body>
 </html>
