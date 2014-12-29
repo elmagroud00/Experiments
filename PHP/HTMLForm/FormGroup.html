@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <h1>Form Group</h1>
+            <form action="http://www.lnmcc.net" method="post" name="frmComp">
+                <fieldset>
+                    <legend>
+                        <em>Contact Information</em>
+                    </legend>
+                    <label>First name: <input type="text" name="txtFName" size="20" /></label><br />
+                    <label>Last name: <input type="text" name="txtLName" size="20" /></label><br />
+                    <label>E-mail: <input type="text" name="txtEmail" size="20" /></label><br />
+                </fieldset>
+                <fieldset>
+                    <legend><em>Competition Question</em>></legend>
+                    How tall is the Eiffel Tower in Pairs, France? <br />
+                    <label><input type="radio" name="radAnswer" value="584">584ft</label><br />
+                    <label><input type="radio" name="radAnswer" value="784">784ft</label><br />
+                    <label><input type="radio" name="radAnswer" value="984">984ft</label><br />
+                </fieldset>
+                <fieldset>
+                    <legend><em>Tibbreaker Question</em></legend>
+                    <label>In 25 words or less, say why you would like to win $10,000:
+                        <textarea name="txtTiebreaker" rows="10" cols="40"></textarea>
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <legend><em>Enter competition</em></legend>
+                    <input type="submit" value="Enter Competition" />
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>
