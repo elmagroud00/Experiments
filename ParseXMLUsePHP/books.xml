@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<library>
+    <book>
+        <title>Programming PHP</title>
+        <authors>
+            <author>Rasmus Lerdorf</author>
+            <author>Kevin Tatroe</author>
+            <author>Peter MacIntyre</author>
+        </authors>
+        <isbn>1-5692-610-2</isbn>
+        <comment>A great book!</comment>
+    </book>
+    
+    <book>
+        <title>PHP Pocket Reference</title>
+        <authors>
+            <author>Rasmus Lerdorf</author>
+        </authors>
+        <isbn>1-56592-769-9</isbn>
+        <comment>It really does fit in your pocket</comment>
+    </book>
+</library>
