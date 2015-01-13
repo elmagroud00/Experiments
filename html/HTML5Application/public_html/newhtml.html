@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+
+        <pre class="brush:java">
+<h1>结点类型</h1>
+XPath中有七种结点类型：元素、属性、文本、命名空间、处理指令、注释以及文档节点（或成为根节点）。 文档的根节点即是文档结点；对应属性有属性结点，元素有元素结点。
+
+<h1>常用路径表达式</h1>
+<table broder="2" bgcolor="#D3D3D3">
+<tr>
+<th>表达式</th> <th>描述</th>
+</tr>
+
+<tr>
+<td>nodename</td> <td>选取此节点的所有子节点</td>
+</tr>
+
+<tr>
+<td>/</td> <td>从根节点选取</td>
+</tr>
+<tr>
+<td>//</td> <td>从匹配选择的当前节点选择文档中的节点，而不考虑它们的位置</td>
+</tr>
+
+<tr>
+<td>.</td> <td>选取当前节点</td>
+</tr>
+
+<tr>
+<td>..</td> <td>选取当前节点的父节点</td>
+</tr>
+
+<tr>
+<td>@</td> <td>选取属性</td>
+</tr>
+</table>
+
+例如有文档：
+<pre class="brush:xml">
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+<bookstore>
+<book>
+  <title lang="eng">Harry Potter</title>
+  <price>29.99</price>
+</book>
+<book>
+  <title lang="eng">Learning XML</title>
+  <price>39.95</price>
+</book>
+</bookstore>
+            </pre>
+
+            则：
+            <!--more-->
+            <table broder="2" bgcolor="#D3D3D3">
+                <tr>
+                    <th>路径表达式</th>
+                    <th>结果</th>
+                </tr>
+                <tr>
+                    <td>bookstore</td>
+                    <td>选取 bookstore 元素的所有子节点</td>
+                </tr>
+                <tr>
+                    <td>/bookstore</td>
+                    <td>选取根元素 bookstore 注释：假如路径起始于正斜杠( / )，则此路径始终代表到某元素的绝对路径！</td>
+                </tr>
+                <tr>
+                    <td>bookstore/book</td>
+                    <td>选取所有属于 bookstore 的子元素的 book 元素</td>
+                </tr>
+                <tr>
+                    <td>//book</td>
+                    <td>选取所有 book 子元素，而不管它们在文档中的位置</td>
+                </tr>
+                <tr>
+                    <td>bookstore//book</td>
+                    <td>选择所有属于 bookstore 元素的后代的 book 元素，而不管它们位于 bookstore 之下的什么位置</td>
+                </tr>
+                <tr>
+                    <td>//@lang</td>
+                    <td>选取所有名为 lang 的属性</td>
+                </tr>
+            </table>
+            <h1>限定语</h1>
+            用来查找某个特定的节点或者包含某个指定的值的节点。以方括号括起。
+            例如：
+            <table broder="2" bgcolor="#D3D3D3">
+                <tr>
+                    <th>路径表达式</th>
+                    <th>结果</th>
+                </tr>
+                <tr>
+                    <td>/bookstore/book[1]</td>
+                    <td>选取属于 bookstore 子元素的第一个 book 元素</td>
+                </tr>
+                <tr>
+                    <td>/bookstore/book[last()]</td>
+                    <td>选取属于 bookstore 子元素的最后一个 book 元素</td>
+                </tr>
+                <tr>
+                    <td>/bookstore/book[last()-1]</td>
+                    <td>选取属于 bookstore 子元素的倒数第二个 book 元素</td>
+                </tr>
+                <tr>
+                    <td>/bookstore/book[position()<3]</td>
+                    <td>选取最前面的两个属于 bookstore 元素的子元素的 book 元素</td>
+                </tr>
+                <tr>
+                    <td>//title[@lang]</td>
+                    <td>选取所有拥有名为 lang 的属性的 title 元素</td>
+                </tr>
+                <tr>
+                    <td>//title[@lang='eng']</td>
+                    <td>选取所有 title 元素，且这些元素拥有值为 eng 的 lang 属性</td>
+                </tr>
+                <tr>
+                    <td>/bookstore/book[price>35.00]</td>
+                    <td>选取所有 bookstore 元素的 book 元素，且其中的 price 元素的值须大于 35.00</td>
+                </tr>
+                <tr>
+                    <td>/bookstore/book[price>35.00]/title</td>
+                    <td>选取所有 bookstore 元素中的 book 元素的 title 元素，且其中的 price 元素的值须大于 35.00</td>
+                </tr>
+            </table>
+
+            <h1>通配符</h1>
+            <table broder="2" bgcolor="#D3D3D3">
+                <tr>
+                    <th>通配符</th>
+                    <th>描述</th>
+                </tr>
+                <tr>
+                    <td>*</td>
+                    <td>匹配任何元素节点</td>
+                </tr>
+                <tr>
+                    <td>@*</td>
+                    <td>匹配任何属性节点</td>
+                </tr>
+                <tr>
+                    <td>node()</td>
+                    <td>匹配任何类型的节点</td>
+                </tr>
+                <tr>
+                    <td>|</td>
+                    <td>选取若干路径</td>
+                </tr>
+            </table>
+
+            例如：
+            <table broder="2" bgcolor="#D3D3D3">
+                <tr>
+                    <th>路径表达式</th>
+                    <th>结果</th>
+                </tr>
+                <tr>
+                    <td>/bookstore/*</td>
+                    <td>选取 bookstore 元素的所有子节点</td>
+                </tr>
+                <tr>
+                    <td>//*</td>
+                    <td>选取文档中的所有元素</td>
+                </tr>
+                <tr>
+                    <td>//title[@*]</td>
+                    <td>选取所有带有属性的 title 元素</td>
+                </tr>
+                <tr>
+                    <td>//book/title | //book/price</td>
+                    <td>选取所有 book 元素的 tilte 和 price 元素</td>
+                </tr>
+                <tr>
+                    <td>//title | //price</td>
+                    <td>选取所有文档中的 title 和 price 元素</td>
+                </tr>
+                <tr>
+                    <td>/bookstore/book/title | //price</td>
+                    <td>选取所有属于 bookstore 元素的 book 元素的 title 元素，以及文档中所有的 price 元素</td>
+                </tr>
+            </table>
+
+            <h1>函数</h1>
+            <table broder="2" bgcolor="#D3D3D3">
+                <tr>
+                    <th>名称</th>
+                    <th>结果</th>
+                </tr>
+                <tr>
+                    <td>ancestor</td>
+                    <td>选取当前节点的所有先辈（父、祖父等</td>
+                </tr>
+                <tr>
+                    <td>ancestor-or-self</td>
+                    <td>选取当前节点的所有先辈（父、祖父等）以及当前节点本身</td>
+                </tr>
+                <tr>
+                    <td>attribute</td>	
+                    <td>选取当前节点的所有属性</td>
+                </tr>
+                <tr>
+                    <td>child</td>	
+                    <td>选取当前节点的所有子元素</td>
+                </tr>
+                <tr>
+                    <td>descendant</td>	
+                    <td>选取当前节点的所有后代元素（子、孙等）</td>
+                </tr>
+                <tr>
+                    <td>descendant-or-self</td>	
+                    <td>选取当前节点的所有后代元素（子、孙等）以及当前节点本身</td>
+                </tr>
+                <tr>
+                    <td>following</td>	
+                    <td>选取文档中当前节点的结束标签之后的所有节点</td>
+                </tr>
+                <tr>
+                    <td>namespace</td>	
+                    <td>选取当前节点的所有命名空间节点</td>
+                </tr>
+                <tr>
+                    <td>parent</td>	
+                    <td>选取当前节点的父节点</td>
+                </tr>
+                <tr>
+                    <td>preceding</td>	
+                    <td>选取文档中当前节点的开始标签之前的所有节点</td>
+                </tr>
+                <tr>
+                    <td>preceding-sibling</td>	
+                    <td>选取当前节点之前的所有同级节点</td>
+                </tr>
+                <tr>
+                    <td>self</td>
+                    <td>选取当前节点</td>
+                </tr>
+            </table>
+
+            ref: <a href="http://blog.csdn.net/ilibaba/article/details/4013694#" target="_blank">http://blog.csdn.net/ilibaba/article/details/4013694#</a>
+    </body>
+</html>

@@ -5,5 +5,8 @@
         <data xmlns="http://www.netbeans.org/ns/clientside-project/1">
             <name>HTML5Application</name>
         </data>
+        <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
+            <word>选取当前节点的所有文本子节点</word>
+        </spellchecker-wordlist>
     </configuration>
 </project>
