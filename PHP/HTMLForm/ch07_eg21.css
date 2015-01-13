@@ -1,0 +1,35 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 1, 2015, 9:55:55 PM
+    Author     : sijiewang
+*/
+
+body {
+    color:#000000;
+    background-color:#ffffff;
+    font-family:arial, verdana, sans-serif;
+    font-size:12px;
+    line-height:24px;
+}
+
+body {
+    background-image: url("http://lnmcc.net/wordpress/wp-content/uploads/2014/04/DSCF2801.jpg");
+    background-position: 50% 20%;
+    background-repeat: no-repeat;
+    background-color: #eaeaea;
+}
+
+body, h1, p, img, b {
+    border-style:outset;
+    border-width:2px;
+    border-color:#000000;
+    padding:2px;
+}
+
+h1, b {
+    background-color: #cccccc;
+}
