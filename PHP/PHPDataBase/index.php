@@ -137,6 +137,10 @@ and open the template in the editor.
             print_r($row);
             print  "<br />\n";
         }
+        require('XML/RPC.jjjphp');
+        require("XML/RPC/Server.php");
+        
+        new XML_RPC_Response()
         ?>
 
     </body>
