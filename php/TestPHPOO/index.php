@@ -10,7 +10,9 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
+
         <?php
+        error_reporting(null);
 
         class HelloWorld {
 
@@ -98,7 +100,119 @@ and open the template in the editor.
         print_r($arr);
         echo "<br />";
         $arr2 = array_splice($arr, 1);
+
         print_r($arr2);
+        ?>
+        <h1>Test Error Handler</h1>
+        <?php
+
+        //error_reporting(1);
+
+        function my_error_handler($num, $str, $file, $line) {
+            /* if (error_reporting() === 0) {
+              print "(Silenced)";
+              return;
+              } */
+            switch ($num) {
+                case E_WARNING:
+                case E_USER_WARNING:
+                    $type = "Warning";
+                    break;
+                case E_NOTICE:
+                case E_USER_NOTICE:
+                    $type = "Notice";
+                    break;
+                default:
+                    $type = "Error";
+                    break;
+            }
+            $file = basename($file);
+            print "$type: $file: $line: $str\n";
+        }
+
+        set_error_handler("my_error_handler");
+
+        trigger_error("not silenced error", E_USER_NOTICE);
+        @trigger_error("silenced error", E_USER_NOTICE);
+        ?>
+
+        <h1>USE SAX</h1>
+        <?php
+        $level = 0;
+        $char_data = '';
+
+        $xml = xml_parser_create('UTF-8');
+        xml_set_element_handler($xml, 'start_handler', 'end_handler');
+        xml_set_character_data_handler($xml, 'character_handler');
+        xml_parser_set_option($xml, XML_OPTION_CASE_FOLDING, false);
+        xml_parse($xml, file_get_contents('test1.xhtml'));
+        
+        function flush_data() {
+            global $level, $char_data;
+            
+            $char_data  = trim($char_data);
+            if(strlen($char_data) > 0) {
+                echo "\n";
+                $data = preg_split("/\n/", wordwrap($char_data, 76 - ($level * 2)));
+                foreach($data as $line) {
+                    echo str_repeat(' ', ($level + 1)) . "[" . $line . "]\n";
+                }
+            }
+            $char_data = '';
+        }
+        
+        function start_handler($xml, $tag, $attrobutes) {
+            global $level;
+            
+            flush_data();
+            echo "\n" . str_repeat(' ', $level) . "$tag";
+            foreach($attrobutes as $key => $value) {
+                echo " $key = '$value'";
+            }
+            $level++;
+        }
+        
+        function end_handler($xml, $tag) {
+            global $level;
+            
+            flush_data();
+            $level--;
+            echo "\n" . str_repeat(' ', $level) . "/$tag";
+        }
+        
+        function character_handler($xml, $data) {
+            global $level, $char_data;
+            
+            $char_data .= ' ' . $data;
+        }
+
+        /*
+          function start_handler($xml, $tag, $attributes) {
+          global $level;
+
+          echo "\n" . str_repeat(' ', $level) . ">>>$tag" . "<br />";
+          foreach ($attributes as $key => $value) {
+          echo " $key $value";
+          }
+          $level++;
+          }
+
+          function end_handler($xml, $tag) {
+          global $level;
+
+          $level--;
+          echo str_repeat(' ', $level) . "<<<$tag" . "<br />";
+          }
+
+          function character_handler($xml, $data) {
+          global $level;
+
+          $data = preg_split("/\n/", wordwrap($data, 76 - ($level * 2)));
+          foreach ($data as $line) {
+          echo str_repeat(' ', $level) . $line . "<br />";
+          }
+          }
+         */
         ?>
     </body>
 </html>
