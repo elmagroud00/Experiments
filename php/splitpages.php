@@ -1,5 +1,6 @@
-<table width="550" border="1" cellpadding="1" cellspacing="1" bordercolor="#FFFFFF" bgcolor="#999999">
-   <tr align="center" bgcolor="#f0f0f0">
+<table border="1" cellpadding="20" cellspacing="1" bordercolor="#FFFFFF" bgcolor="#999999">
+   <tr align="center" bgcolor="#666666">
+        <td width="50">Id</td>
         <td width="221">Name</td>
         <td width="329">Age</td>
    </tr>
@@ -8,10 +9,9 @@
     $conn = mysql_connect("localhost", "root", "") or die(mysql_error());
     mysql_select_db("testDB", $conn) or die(mysql_error());
 
-    if(!$page_num)
-        $page_num = 1;
+    $page_num = isset($_GET['page_num']) ? intval($_GET['page_num']) : 1; 
 
-    $page_size = 50;   // show 50 records per page
+    $page_size = 5;   // show 5 records per page
 
     $query = "select count(*) as total from persons order by id";
     $result = mysql_query($query);
@@ -34,4 +34,38 @@
 <?php
     }
 ?>
+</table>
+
+<table border="0" cellpadding="5">
+    <tr>
+        <td width="100" align="center">
+        Current: <?php echo $page_num;?>
+        </td>
+
+        <td width="50" align="center">
+<?php
+    if($page_num != 1) {
+        echo "<a href=splitpages.php?page_num=1>First</a>";
+?>
+        </td>
+        <td width="50" align="center">
+<?php
+        echo "<a href=splitpages.php?page_num=" . ($page_num - 1) . ">Prev</a>";
+    }
+?>
+
+        </td>
+        <td width="50" align="center">
+<?php
+    if($page_num < $page_count) {
+        echo "<a href=splitpages.php?page_num=" . ($page_num + 1) . ">Next</a>";
+?>
+        </td>
+        <td width="50" align="center">
+<?php
+        echo "<a href=splitpages.php?page_num=" . $page_count . ">Last</a>";
+    }
+?>
+        </td>
+    <tr>
 </table>
