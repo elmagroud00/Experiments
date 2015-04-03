@@ -3,6 +3,8 @@ import java.io.*;
 public class Main {
 
     public static void main(String[] args) {
+        
+        
 
         String value = "true";
         System.out.println(String.valueOf(Boolean.valueOf(value)));
