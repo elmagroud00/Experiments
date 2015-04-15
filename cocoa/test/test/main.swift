@@ -6,7 +6,71 @@
 //  Copyright (c) 2015 lnmcc. All rights reserved.
 //
 
+let numberSymbol: Character = "三"
+var possibleIntegerValue: Int?
+switch numberSymbol {
+case "1", "一":
+    possibleIntegerValue = 1
+case "3", "三":
+    possibleIntegerValue = 3
+default:
+    break
+}
+if let integerValue = possibleIntegerValue {
+    println("The integer value of \(numberSymbol) is \(integerValue)")
+} else {
+    println("An integer value could not be found for \(numberSymbol)")
+}
+
+
 import Foundation
+
+let puzzleInput = "great minds think alike"
+var puzzleOutput = ""
+for character in puzzleInput {
+    switch character {
+        case "a", "e", "i", "o", "u", " ":
+            continue
+    default:
+        break
+        puzzleOutput += String(character)
+    }
+}
+println(puzzleOutput)
+
+let yetAnotherPoint = (1, -1)
+switch yetAnotherPoint {
+case let(x, y) where x == y:
+    println("(\(x), \(y)) is on the line x == y")
+case let(x, y) where x == -y:
+    println("(\(x), \(y)) is on the line x == -y")
+case let(x, y):
+    println("(\(x), \(y)) is just some arbitary point")
+}
+
+let anotherPoint = (2, 2)
+switch anotherPoint {
+case (let x, 0):
+    println("on the x-axis with an x value of \(x)")
+case (0, let y):
+    println("on the y-axis with an y value of \(y)")
+case (let x, let y):
+    println("somewhere else at (\(x), \(y))")
+}
+
+let somepoint = (1, 1)
+switch somepoint {
+case (0, 0):
+    println("(0, 0) is at the orign")
+case (_, 0):
+    println("(\(somepoint.0), 0) is on the x-axis")
+case (0, _):
+    println("(0, \(somepoint.1)) is on the y-axis")
+case (-2...2, -2...2):
+    println("(\(somepoint.0), \(somepoint.1)) is inside the box")
+default:
+    println("(\(somepoint.0), \(somepoint.1)) is ouside the box")
+}
 
 var shoppingList = ["mac", "iphone", "ipad"];
 
@@ -141,3 +205,4 @@ default:
 }
 
 println("There are \(naturalCount) \(countedThings).");
+
