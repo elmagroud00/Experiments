@@ -1,2 +1,3 @@
 bin/
 /php/PHPExper/nbproject/private/
+*bin*
