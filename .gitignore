@@ -1,7 +1,3 @@
-
-/PHP/PHPGD/nbproject/private/
-/html/TESTCSS/nbproject/private/
-/PHP/PHPTemplate/nbproject/private/
-/PHP/HandingOutput/nbproject/private/
-/html/TestReflect/nbproject/private/
-/PHP/testThinkPHP/nbproject/private/
+bin/
+/php/PHPExper/nbproject/private/
+*bin*
