@@ -8,6 +8,406 @@
 
 import Foundation
 
+class Person113 {
+    var residence: Residence113?
+}
+
+class Room113 {
+    let name: String
+    init(name: String) {
+        self.name = name
+    }
+}
+
+class Address {
+    var buildingName: String?
+    var building
+}
+
+class Residence113 {
+    var rooms = [Room113]()
+    var numberOfRooms: Int {
+        return rooms.count
+    }
+    subscript(i: Int) -> Room113 {
+        return rooms[i]
+    }
+    func printNumberOfRooms() {
+        println("The number of rooms is \(numberOfRooms)")
+    }
+    var address: Address113?
+}
+
+class Person112 {
+    var residence: Residence?
+}
+
+class Residence {
+    var numberOfRooms = 1
+}
+
+let john112 = Person112()
+
+if let roomCount = john112.residence?.numberOfRooms {
+    println("John's residence has \(roomCount) rooms")
+} else {
+    println("Unable to retrive the number of rooms.")
+}
+
+john112.residence = Residence()
+
+
+class HTMLElement2 {
+    let name: String
+    let text: String?
+    
+    lazy var asHTML: () -> String = {
+        [unowned self] in
+        if let text = self.text {
+            return "<\(self.name)>\(text)</\(self.name)>"
+        } else {
+            return "<\(self.name) />"
+        }
+    }
+    
+    init(name: String, text: String? = nil) {
+        self.name = name
+        self.text = text
+    }
+    
+    deinit {
+        println("\(name) is being deinitialized")
+    }
+}
+
+var p2: HTMLElement2? = HTMLElement2(name: "p", text: "Hello, world2")
+println(p2!.asHTML())
+p2 = nil
+
+class HTMLElement {
+    let name: String
+    let text: String?
+    
+    lazy var asHTML: () -> String = {
+        if let text = self.text {
+            return "<\(self.name)>\(text)</\(self.name)>"
+        } else {
+            return "<\(self.name) />"
+        }
+    }
+    
+    init(name: String, text: String? = nil) {
+        self.name = name
+        self.text = text
+    }
+    
+    deinit {
+        println("\(name) is being deinitialzed")
+    }
+}
+
+var paragraph: HTMLElement? = HTMLElement(name: "p", text: "hello, world")
+println(paragraph!.asHTML())
+
+
+/*
+class Country {
+    let name: String
+    let capitalCity: City!
+    
+    init(name: String, capitalName: String) {
+        self.name = name
+        self.capitalCity = City(name: capitalName, country: self)
+    }
+}
+
+class City {
+    let name: String
+    unowned let country: Country
+    
+    init(name: String, country: Country) {
+        self.name = name
+        self.country = country
+    }
+}
+*/
+class Customer {
+    let name: String
+    var card: CreditCard?
+    
+    init(name: String) {
+        self.name = name
+    }
+    
+    deinit {
+        println("\(name) is being deinitialized")
+    }
+}
+
+class CreditCard {
+    let number: Int
+    unowned let customer: Customer
+    
+    init(number: Int, customer: Customer) {
+        self.number = number
+        self.customer = customer
+    }
+    
+    deinit {
+        println("Card #\(number) is being deinitialized")
+    }
+}
+
+var john: Customer?
+john = Customer(name: "John Appleseed")
+john!.card = CreditCard(number: 1234_567_999, customer: john!)
+john = nil
+
+
+/*
+class Person31 {
+    let name: String
+    init(name: String) {
+        self.name = name
+    }
+    var apartment: Apartment?
+    deinit {
+        println("\(name) is being deinitialized")
+    }
+}
+
+class Apartment {
+    let number: Int
+    init(number: Int) {
+        self.number = number
+    }
+    
+    weak var tenant: Person31?
+    
+    deinit {
+        println("Apartment #\(number) is being deinitialized")
+    }
+}
+
+var john: Person31?
+var number73: Apartment?
+
+john = Person31(name: "John Appleseed")
+number73 = Apartment(number: 73)
+
+john!.apartment = number73
+number73!.tenant = john
+
+john = nil
+number73 = nil
+
+*/
+struct Bank {
+    static var coinsInBank = 10_000
+    static func vendCoins(var numberOfCoinsToVend: Int) -> Int {
+        numberOfCoinsToVend = min(numberOfCoinsToVend, coinsInBank)
+        coinsInBank -= numberOfCoinsToVend
+        return numberOfCoinsToVend
+    }
+    static func receiveCoins(coins: Int) {
+        coinsInBank += coins
+    }
+}
+
+class Player14 {
+    var coinsInPurse: Int
+    
+    init(coins: Int) {
+        coinsInPurse = Bank.vendCoins(coins)
+    }
+    
+    func winCoins(coins: Int) {
+        coinsInPurse += Bank.vendCoins(coins)
+    }
+    
+    deinit {
+        Bank.receiveCoins(coinsInPurse)
+    }
+}
+
+var playerOne: Player14? = Player14(coins: 100)
+println("A new player has joined the game with \(playerOne!.coinsInPurse) coins")
+
+playerOne!.winCoins(2_000)
+println("PlayerOne won 2000 coins & now has \(playerOne!.coinsInPurse) coins")
+
+playerOne = nil
+println("PlayerOne has left the game")
+
+/*
+struct Checkerboard {
+    let boardColors: [Bool] = {
+        var temporaryBoard = Bool[]()
+        var isBlack = false
+        
+        for i in 1... 10 {
+            for j in 1... 10 {
+                temporaryBoad.append(isBlack)
+                isBlack = !isBlack
+            }
+            isBlack = !isBlack
+        }
+        return temporaryBoard
+    }()
+    
+    func squareIsBlackAtRow(row: Int, column: Int) -> Bool {
+        return boardColors[(row * 10) + column]
+    }
+}
+*/
+class Food {
+    var name: String
+    
+    init(name: String) {
+        self.name = name
+    }
+    convenience init() {
+        self.init(name: "[Unnamed]")
+    }
+}
+
+let namedMeat = Food(name: "Bacon")
+let mysteryMeat = Food()
+
+class RecipleIngredient: Food {
+    var quantity: Int
+    
+    init(name: String, quantity: Int) {
+        self.quantity = quantity
+        super.init(name: name);
+    }
+    
+    convenience override init(name: String) {
+        self.init(name: name, quantity: 1)
+    }
+}
+
+let oneMysteryItem = RecipleIngredient()
+let oneBacon = RecipleIngredient(name: "Bacon")
+let sixEggs = RecipleIngredient(name: "Eggs", quantity: 6)
+
+class ShoppingListItem: RecipleIngredient {
+    var purchased = false
+    var description: String {
+        var output = "\(quantity) x \(name.lowercaseString)"
+        output += purchased ? " purchased" : " unpurchased"
+        return output
+    }
+}
+
+var breakfastList = [
+    ShoppingListItem(),
+    ShoppingListItem(name: "Bacon"),
+    ShoppingListItem(name: "Eggs", quantity: 6),
+]
+
+breakfastList[0].name = "Orange juice"
+breakfastList[0].purchased = true
+
+for item in breakfastList {
+    println(item.description)
+}
+
+struct Size10 {
+    var width = 0.0, height = 0.0
+}
+
+struct Point10 {
+    var x = 0.0, y = 0.0
+}
+
+struct Rect {
+    var origin = Point10()
+    var size = Size10()
+    
+    init() {
+        
+    }
+    
+    init(origin: Point10, size: Size10) {
+        self.origin = origin
+        self.size = size
+    }
+    
+    init(center: Point10, size: Size10) {
+        let originX = center.x - (size.width / 2)
+        let originY = center.y - (size.height / 2)
+        self.init(origin: Point10(x: originX, y: originY), size: size)
+    }
+}
+
+let basicRect = Rect()
+
+
+struct Size {
+    var width = 0.0, height = 0.0
+}
+
+let twoByTwo = Size(width: 2.0, height: 2.0)
+
+class ShoppingListItem2 {
+    var name: String?
+    var quantity = 1
+    var purchased = false
+}
+
+var item = ShoppingListItem()
+
+class SurveryQuestion {
+    var text: String
+    var response: String?
+    
+    init(text: String) {
+        self.text = text
+    }
+    func ask() {
+        println(text)
+    }
+}
+
+let cheeseQuestion = SurveryQuestion(text: "Do you like cheese?")
+cheeseQuestion.ask()
+cheeseQuestion.response = "Yes, I do like cheese"
+
+struct Color5 {
+    var red = 0.0, green = 0.0, blue = 0.0
+    
+    init(red: Double, green: Double, blue: Double) {
+        self.red = red
+        self.green = green
+        self.blue = blue
+    }
+}
+
+let magenta = Color5(red: 1.0, green: 0.0, blue: 1.0)
+
+struct Fahrenheit {
+    var tempearture: Double
+    init() {
+        tempearture = 32.0
+    }
+}
+
+var f = Fahrenheit()
+println("The default templature is \(f.tempearture)")
+
+struct Celsius {
+    var temperatureInCelsius: Double = 0.0
+    
+    init(fromKelvin kelvin: Double) {
+        temperatureInCelsius = kelvin - 273.15
+    }
+
+}
+
+let boilingPointOfWater = Celsius(fromKelvin: 212.0)
+
+
 class Vehicle {
     var numberOfWheels: Int
     var maxPassengers: Int
@@ -24,6 +424,66 @@ class Vehicle {
 
 let someVehicle = Vehicle()
 println(someVehicle.description())
+
+class Bicycle: Vehicle {
+    override init() {
+        super.init()
+        numberOfWheels = 2
+    }
+}
+
+let bicycle = Bicycle()
+println("Bicycle: \(bicycle.description())")
+
+
+class Car: Vehicle {
+    var speed: Double = 0.0
+    
+    override init() {
+        super.init()
+        maxPassengers = 5
+        numberOfWheels = 4
+    }
+    
+    override func description() -> String {
+        return super.description() + "; " + "traveling at \(speed) mph"
+    }
+}
+
+let car = Car()
+println("Car: \(car.description())")
+
+class SpeedLimitedCar: Car {
+    override var speed: Double {
+        get {
+            return super.speed
+        }
+        set {
+            super.speed = min(newValue, 40.0)
+        }
+    }
+}
+
+let limitedCar = SpeedLimitedCar()
+limitedCar.speed = 60.0
+println("SpeedLimitedCar: \(limitedCar.description())")
+
+class AutomaticCar: Car {
+    var gear = 1
+    override var speed: Double {
+        didSet {
+            gear = Int(speed / 10.0) + 1
+        }
+    }
+    override func description() -> String {
+        return super.description() + " in gear \(gear)"
+    }
+}
+
+let automatic = AutomaticCar()
+automatic.speed = 35.0
+println("AutomaticCar: \(automatic.description())")
+
 
 struct Matrix {
     let rows: Int, columns: Int
@@ -133,7 +593,7 @@ enum TriStateSwitch {
 var ovenLight = TriStateSwitch.Low
 ovenLight.next()
 
-
+/*
 
 struct Point3 {
     var x = 0.0, y = 0.0
@@ -252,17 +712,17 @@ stepCounter.totalSteps = 100
 stepCounter.totalSteps = 200
 stepCounter.totalSteps = 300
 
-struct Point {
+struct Point11 {
     var x = 0.0, y = 0.0
 }
 
-struct Size {
+struct Size11 {
     var width = 0.0, height = 0.0
 }
 
-struct Rect {
-    var origin = Point()
-    var size = Size()
+struct Rect11 {
+    var origin = Point11()
+    var size = Size11()
     var center: Point {
         get {
             let centerX = origin.x + (size.width / 2)
@@ -276,7 +736,7 @@ struct Rect {
     }
 }
 
-var square = Rect(origin: Point(x: 0.0, y: 0.0), size: Size(width: 10.0, height: 10.0))
+var square = Rect(origin: Point11(x: 0.0, y: 0.0), size: Size11(width: 10.0, height: 10.0))
 let initialSquareCenter = square.center
 square.center = Point(x: 15.0, y: 15.0)
 println("Square.origin is now at (\(square.origin.x), \(square.origin.x))")
@@ -579,4 +1039,4 @@ enum Planet: Int {
 let earthsOrder = Planet.Earth.rawValue
 println(earthsOrder)
 
-
+*/
