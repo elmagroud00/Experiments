@@ -9,12 +9,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "testFunction/main.swift"
-            timestampString = "453809706.047458"
+            filePath = "HelloWorld/AppDelegate.m"
+            timestampString = "453826103.730481"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "674"
-            endingLineNumber = "674">
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "-application:willEncodeRestorableStateWithCoder:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

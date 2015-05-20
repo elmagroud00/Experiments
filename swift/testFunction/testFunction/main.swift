@@ -8,6 +8,469 @@
 
 import Foundation
 
+@objc protocol CounterDataSource {
+    optional func incrementForCount(count: Int) -> Int
+    optional var fixedIncrement: Int {get}
+}
+
+@objc class Counter {
+    var count = 0
+    var dataSource: CounterDataSource?
+    func increment() {
+        if let amount = dataSource?.incrementForCount?(count) {
+            count += amount
+        } else if let amount = dataSource?.fixedIncrement {
+            count += amount
+        }
+    }
+}
+
+class ThreeSource: CounterDataSource {
+    let fixedIncrement = 3
+}
+
+var counter = Counter()
+counter.dataSource = ThreeSource()
+for _ in 1...4 {
+    counter.increment()
+    println(counter.count)
+}
+
+class TowardsZeroSource: CounterDataSource {
+    func incrementForCount(count: Int) -> Int {
+        if count == 0 {
+            return 0
+        } else if count < 0 {
+            return 1
+        } else {
+            return -1
+        }
+        
+    }
+}
+
+counter.count = -4
+counter.dataSource = TowardsZeroSource()
+for _ in 1...5 {
+    counter.increment()
+    println(counter.count)
+}
+
+protocol HasArea {
+    var area: Double {get}
+}
+
+class Circle: HasArea {
+    let pi = 3.1415927
+    var radius: Double
+    var area: Double {return pi * radius * radius}
+    init(radius: Double) { self.radius = radius}
+}
+
+class Country: HasArea {
+    var area: Double
+    init(area: Double) {self.area = area}
+}
+
+class Animal {
+    var legs: Int
+    init(legs: Int) { self.legs = legs}
+}
+
+let objects: [AnyObject] = [
+    Circle(radius: 2.0),
+    Country(area: 243_610),
+    Animal(legs: 4)
+]
+
+for object in objects {
+    if let objectWithArea = object as? HasArea {
+        println("Area is \(objectWithArea.area)")
+    } else {
+        println("Something that does not hava an area")
+    }
+}
+
+
+
+protocol Named {
+    var name: String {get}
+}
+
+protocol Aged {
+    var age: Int {get}
+}
+
+struct Person000: Named, Aged {
+    var name: String
+    var age: Int
+}
+
+func wishHappyBirthday(celebrator: protocol<Named, Aged>) {
+    println("Happy birthday \(celebrator.name) - you are \(celebrator.age)")
+}
+
+let birthdayPerson = Person000(name: "Malcolm", age: 21)
+wishHappyBirthday(birthdayPerson)
+
+protocol Togglable {
+    mutating func toggle()
+}
+
+enum OnOffSwitch: Togglable {
+    case Off, On
+    
+    mutating func toggle() {
+        switch self {
+        case Off:
+            self = On
+        case On:
+            self = Off
+        }
+    }
+}
+
+var lightSwitch = OnOffSwitch.Off
+lightSwitch.toggle()
+
+
+protocol RandomNumberGenerator {
+    func random() -> Double
+}
+
+class LinearCongruentialGenerator: RandomNumberGenerator {
+    var lastRandom = 42.0
+    let m = 1223.0
+    let a = 3342.0
+    let c = 5984.0
+    
+    func random() -> Double {
+        lastRandom = ((lastRandom * a + c) % m)
+        return lastRandom / m
+    }
+}
+
+class Dice {
+    let sides: Int
+    let generator: RandomNumberGenerator
+    init(sides: Int, generator: RandomNumberGenerator) {
+        self.sides = sides
+        self.generator = generator
+    }
+    func roll() -> Int {
+        return Int(generator.random() * Double(sides)) + 1
+    }
+}
+
+protocol DiceGame {
+    var dice: Dice { get }
+    func play()
+}
+
+protocol DiceGameDelegate {
+    func gameDidStart(game: DiceGame)
+    func game(game: DiceGame, didStartNewTurnWithDiceRoll diceRoll: Int)
+    func gameDidEnd(game: DiceGame)
+}
+
+let generator = LinearCongruentialGenerator()
+/*
+class SnakeAndLadders: DiceGame {
+    let finalSquare = 25
+    let dic = Dice(sides: 6, generator: LinearCongruentialGenerator())
+    var square = 0
+    var board: [Int]
+    init() {
+        board = [Int](count: finalSquare + 1, repeatedValue: 0)
+        board[03] = +08
+        board[06] = +11
+        board[09] = +09
+        board[10] = +02
+        board[14] = -10
+        board[19] = -11
+        board[22] = -02
+        board[24] = -08
+    }
+    
+    var delegate: DiceGameDelegate?
+    func play() {
+        square = 0
+        delegate?.gameDidStart(self)
+        gameLoop: while square != finalSquare {
+            let diceRoll = dice.roll()
+        }
+    }
+}
+*/
+println("Here is a random number: \(generator.random())")
+println("And another one: \(generator.random())")
+
+protocol FullyNamed {
+    var fullName: String {get}
+}
+
+struct Person99: FullyNamed {
+    var fullName: String
+}
+let john = Person99(fullName: "John Appleseed")
+
+class Startship: FullyNamed {
+    var prefix: String?
+    var name: String
+    
+    init(name: String, prefix: String? = nil) {
+        self.name = name
+        self.prefix = prefix
+    }
+    var fullName: String {
+        return (prefix != nil ? prefix! + " " : " ") + name
+    }
+}
+var ncc1701 = Startship(name: "Enterprose", prefix: "USS")
+
+extension Character {
+    enum Kind {
+        case Vowel, Consonant, Other
+    }
+    
+    var kind: Kind {
+        switch String(self).lowercaseString {
+        case "a", "e", "i", "o", "u":
+            return .Vowel
+        case "b", "c", "d":
+            return .Consonant
+        default:
+            return .Other
+        }
+    }
+}
+
+func printLetterKinds(word: String) {
+    println("\(word) is made up of the following kinds of letters:")
+    
+    for character in word {
+        switch character.kind {
+        case .Vowel:
+            println("Vowel")
+        case .Consonant:
+            println("consonant")
+        case .Other:
+            println("other ")
+        }
+    }
+}
+
+printLetterKinds("Hello")
+
+extension Int {
+    subscript(digitIndex: Int) -> Int {
+        var decimalBase = 1
+        for _ in 0...digitIndex {
+            decimalBase *= 10
+        }
+        return (self / decimalBase) % 10
+    }
+}
+
+println(123456[0])
+
+extension Int {
+    func repetitions(task: () -> ()) {
+        for i in 1...self{
+            task()
+        }
+    }
+}
+
+3.repetitions({
+    println("Hello !")
+})
+
+5.repetitions {
+    println("Good !")
+}
+
+struct Size55 {
+    var width = 0.0, height = 0.0
+}
+
+struct Point55 {
+    var x = 0.0, y = 0.0
+}
+
+struct Rect55 {
+    var origin = Point55()
+    var size = Size55()
+}
+
+let defaultRect = Rect55()
+let memberwiseRect = Rect55(origin: Point55(x: 2.0, y: 2.0), size: Size55(width: 5.0, height: 5.0))
+
+extension Rect55 {
+    init(center: Point55, size: Size55) {
+        let originX = center.x - (size.width / 2)
+        let originY = center.y - (size.height / 2)
+        self.init(origin: Point55(x: originX, y: originY), size: size)
+    }
+}
+
+let centerRect = Rect55(center: Point55(x: 4.0, y: 4.0), size: Size55(width: 3.0, height: 3.0))
+
+
+extension Double {
+    var km: Double { return self * 1_000.0 }
+    var m: Double { return self }
+    var cm: Double { return self / 100.0 }
+    var mm: Double { return self / 1_000.0 }
+    var ft: Double { return self / 3.28 }
+}
+
+let oneInch = 25.4.mm
+println("One inch is \(oneInch) meters")
+let threeFeet = 3.ft
+println("Three feet is \(threeFeet) meters")
+
+
+struct BlackjackCard {
+    enum Suit: Character {
+        case Spades = "A", Hearts = "?", Diamonds = "!", Clubs = "M"
+    }
+    
+    enum Rank: Int {
+        case Two = 2, Three, Four, Five, Six, Seven, Eight, Nine, Ten
+        case Jack, Queue, King, Ace
+        
+        struct Values {
+            let first: Int?, second: Int?
+        }
+        var values: Values {
+            switch self {
+            case .Ace:
+                return Values(first: 1, second: 11)
+            case .Jack, .Queue, .King:
+                return Values(first: 10, second: nil)
+            default:
+                return Values(first: self.rawValue, second: nil)
+            }
+        }
+    }
+    let rank: Rank, suit: Suit
+    var description: String {
+        var output = "suit is \(suit.rawValue), "
+            output += " value is \(rank.values.first)"
+        if let second = rank.values.second {
+            output += " or \(second)"
+        }
+        return output
+    }
+}
+
+let heartSymbol = BlackjackCard.Suit.Hearts.rawValue
+
+let theAceOfSpades = BlackjackCard(rank: .Ace, suit: .Spades)
+println("theAceOfSpades: \(theAceOfSpades.description)")
+
+class MediaItem {
+    var name: String
+    
+    init(name: String) {
+        self.name = name
+    }
+}
+
+class Movie: MediaItem {
+    var director: String
+    init(name: String, director: String) {
+        self.director = director
+        super.init(name: name)
+    }
+}
+
+class Song: MediaItem {
+    var artist: String
+    init(name: String, artist: String) {
+        self.artist = artist
+        super.init(name: name)
+    }
+}
+
+
+let someObjects: [AnyObject] = [
+    Movie(name: "2001: A Space Odyssey", director: "Stanley Kubrick"),
+    Movie(name: "Moon", director: "Duncan Jones"),
+    Movie(name: "Alien", director: "Ridley Scott")
+]
+
+for object in someObjects {
+    let movie = object as! Movie
+    println("Movie: '\(movie.name)', dir. \(movie.director)")
+}
+
+var things = [Any]()
+things.append(0)
+things.append(0.0)
+things.append(42)
+things.append(3.14159)
+things.append("hello")
+things.append((3.0, 5.0))
+things.append(Movie(name: "Ghostbusters", director: "Ivan Reitman"))
+
+for thing in things {
+    switch thing {
+    case 0 as Int:
+        println("zero as an Int")
+    case 0 as Double:
+        println("zero as a double")
+    case let someInt as Int:
+        println("an Integer value of \(someInt)")
+    case let someDouble as Double where someDouble > 0:
+        println("a positive double value of \(someDouble)")
+    case is Double:
+        println("some other double value that I donnot want to print")
+    case let someString as String:
+        println("a string value of \(someString)")
+    case let (x, y) as (Double, Double):
+        println("an (x, y) point at \(x), \(y)")
+    case let movie as Movie:
+        println("a movie called \(movie.name), dir. \(movie.director)")
+    default:
+        println("something else")
+    }
+}
+    
+
+let library = [
+    Movie(name: "Casablanca", director: "Michael Curtiz"),
+    Song(name: "Blue Suede Shoes", artist: "Elvis Presley"),
+    Movie(name: "Citizen Kane", director: "Orson Welles"),
+    Song(name: "The One And Only", artist: "Chesney Hawkes"),
+    Song(name: "Never Gonna Give You UP", artist: "Rick Astley")
+    
+]
+
+var movieCount = 0
+var songCount = 0
+
+for item in library {
+    if item is Movie {
+        ++movieCount
+    } else if item is Song {
+        ++songCount
+    }
+}
+
+println("Media library contains \(movieCount) movies and \(songCount) songs")
+
+for item in library {
+    if let movie = item as? Movie {
+        println("Movie: '\(movie.name)', dir. \(movie.director) ")
+    } else if let song = item as? Song {
+        println("Song: '\(song.name)', by \(song.artist)")
+    }
+}
+
+
+
 class Person113 {
     var residence: Residence113?
 }
@@ -19,9 +482,20 @@ class Room113 {
     }
 }
 
-class Address {
+class Address113 {
     var buildingName: String?
-    var building
+    var buildingNumber: String?
+    var street: String?
+    
+    func buildingIdentifier() -> String? {
+        if buildingName != nil {
+            return buildingName
+        } else if buildingNumber != nil {
+            return buildingNumber
+        } else {
+            return nil
+        }
+    }
 }
 
 class Residence113 {
@@ -36,6 +510,45 @@ class Residence113 {
         println("The number of rooms is \(numberOfRooms)")
     }
     var address: Address113?
+}
+
+let john113 = Person113()
+if let roomCount = john113.residence?.numberOfRooms {
+    println("John's residence has \(roomCount) room(s).")
+} else {
+    println("Unable to retrieve the number of rooms.")
+}
+
+if let firstRoomName = john113.residence?[0].name {
+    println("The first room name is \(firstRoomName)")
+} else {
+    println("Unable to retrieve the first room name.")
+}
+
+let johnHouse = Residence113()
+johnHouse.rooms.append(Room113(name: "Living Room"))
+johnHouse.rooms.append(Room113(name: "Kitchen"))
+john113.residence = johnHouse
+
+if let firstRoomName = john113.residence?[0].name {
+    println("The first room name is \(firstRoomName)")
+} else {
+    println("Unable to retrieve the first room name.")
+}
+
+let johnAddress = Address113()
+johnAddress.buildingNumber = "The Larches"
+johnAddress.street = "Laurel Street"
+john113.residence!.address = johnAddress
+
+if let johnStreet = john113.residence?.address?.street {
+    println("John's street name is \(johnStreet).")
+} else {
+    println("Unable to retruve the address.")
+}
+
+if let upper = john113.residence?.address?.buildingIdentifier()?.uppercaseString {
+    println("John's uppercasr building identifier is \(upper).")
 }
 
 class Person112 {
@@ -157,12 +670,12 @@ class CreditCard {
         println("Card #\(number) is being deinitialized")
     }
 }
-
+/*
 var john: Customer?
 john = Customer(name: "John Appleseed")
 john!.card = CreditCard(number: 1234_567_999, customer: john!)
 john = nil
-
+*/
 
 /*
 class Person31 {
