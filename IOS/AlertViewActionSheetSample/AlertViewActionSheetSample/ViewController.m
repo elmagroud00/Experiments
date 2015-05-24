@@ -36,7 +36,7 @@
 
 - (IBAction)testAlertSheet:(UIButton *)sender {
     UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"破坏性按钮" otherButtonTitles:@"FaceBook", @"新浪微博", nil];
-    actionSheet.actionSheetStyle = UIActionSheetStyleAutomatic;
+    actionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
     [actionSheet showInView:self.view];
 }
 
