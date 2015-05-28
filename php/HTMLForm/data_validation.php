@@ -11,7 +11,8 @@ $tried = ($_POST['tried'] == 'yes');
 if ($tried) {
     $validate = (!empty($name) && !empty($mediaType) && !empty($filename));
     if (!validate) {?>
-        <p>The name, media type, and filename are required fields. Please fill them out to continue.</p>
+        <p>The name, media type, 
+            and filename are required fields. Please fill them out to continue.</p>
     <?php
     }
 }
