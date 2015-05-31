@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="i1b-t2-1Jn">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="v0r-g4-kqk">
+            <objects>
+                <tableViewController id="i1b-t2-1Jn" customClass="ViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="22" sectionFooterHeight="22" id="2mr-zo-XbQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search for Name" showsScopeBar="YES" id="Eka-1I-PEz">
+                            <rect key="frame" x="0.0" y="66" width="600" height="88"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>中文</string>
+                                <string>英文</string>
+                            </scopeButtonTitles>
+                            <connections>
+                                <outlet property="delegate" destination="i1b-t2-1Jn" id="hs8-Tt-6Pt"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="75" id="XhV-rC-mNN">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XhV-rC-mNN" id="2Vc-n4-B3t">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="i1b-t2-1Jn" id="6iZ-e4-RkL"/>
+                            <outlet property="delegate" destination="i1b-t2-1Jn" id="dge-yg-4ev"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="searchBar" destination="Eka-1I-PEz" id="DjR-KE-RKg"/>
+                        <outlet property="searchDisplayController" destination="J0K-zV-Mo6" id="hIP-zF-i5m"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gHc-8p-olI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="J0K-zV-Mo6">
+                    <connections>
+                        <outlet property="delegate" destination="i1b-t2-1Jn" id="lBH-OM-WGH"/>
+                        <outlet property="searchBar" destination="Eka-1I-PEz" id="Ho2-WR-PjV"/>
+                        <outlet property="searchContentsController" destination="i1b-t2-1Jn" id="8Zw-2Q-2ua"/>
+                        <outlet property="searchResultsDataSource" destination="i1b-t2-1Jn" id="LMc-sF-fF6"/>
+                        <outlet property="searchResultsDelegate" destination="i1b-t2-1Jn" id="WjZ-1H-RJp"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="150" y="91"/>
+        </scene>
+    </scenes>
+</document>

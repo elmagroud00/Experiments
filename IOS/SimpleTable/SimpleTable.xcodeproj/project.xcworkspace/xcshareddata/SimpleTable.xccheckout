@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>3E2B3350-EC5A-4501-9BB3-DD99426718C4</string>
+	<string>74252F37-6D00-4FA1-8129-7EE987629907</string>
 	<key>IDESourceControlProjectName</key>
-	<string>testFunction</string>
+	<string>SimpleTable</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>0BB1ACA3AD90E9CE562F129BF681290EAEA51713</key>
 		<string>github.com:lnmcc/Experiments.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>swift/testFunction/testFunction.xcodeproj</string>
+	<string>IOS/SimpleTable/SimpleTable.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>0BB1ACA3AD90E9CE562F129BF681290EAEA51713</key>

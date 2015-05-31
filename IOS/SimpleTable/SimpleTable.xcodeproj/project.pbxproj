@@ -1,0 +1,451 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		311CB64F1B1776F9002DCAA0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 311CB64E1B1776F9002DCAA0 /* main.m */; };
+		311CB6521B1776F9002DCAA0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 311CB6511B1776F9002DCAA0 /* AppDelegate.m */; };
+		311CB6551B1776F9002DCAA0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 311CB6541B1776F9002DCAA0 /* ViewController.m */; };
+		311CB6581B1776F9002DCAA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 311CB6561B1776F9002DCAA0 /* Main.storyboard */; };
+		311CB65A1B1776F9002DCAA0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 311CB6591B1776F9002DCAA0 /* Images.xcassets */; };
+		311CB65D1B1776F9002DCAA0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 311CB65B1B1776F9002DCAA0 /* LaunchScreen.xib */; };
+		311CB6691B1776F9002DCAA0 /* SimpleTableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 311CB6681B1776F9002DCAA0 /* SimpleTableTests.m */; };
+		311CB6731B181C5A002DCAA0 /* team.plist in Resources */ = {isa = PBXBuildFile; fileRef = 311CB6721B181C5A002DCAA0 /* team.plist */; };
+		311CB6761B1834AC002DCAA0 /* Mexico.gif in Resources */ = {isa = PBXBuildFile; fileRef = 311CB6751B1834AC002DCAA0 /* Mexico.gif */; };
+		311CB6781B1834B5002DCAA0 /* SouthAfrica.gif in Resources */ = {isa = PBXBuildFile; fileRef = 311CB6771B1834B5002DCAA0 /* SouthAfrica.gif */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		311CB6631B1776F9002DCAA0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 311CB6411B1776F9002DCAA0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 311CB6481B1776F9002DCAA0;
+			remoteInfo = SimpleTable;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		311CB6491B1776F9002DCAA0 /* SimpleTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		311CB64D1B1776F9002DCAA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		311CB64E1B1776F9002DCAA0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		311CB6501B1776F9002DCAA0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		311CB6511B1776F9002DCAA0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		311CB6531B1776F9002DCAA0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		311CB6541B1776F9002DCAA0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		311CB6571B1776F9002DCAA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		311CB6591B1776F9002DCAA0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		311CB65C1B1776F9002DCAA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		311CB6621B1776F9002DCAA0 /* SimpleTableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleTableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		311CB6671B1776F9002DCAA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		311CB6681B1776F9002DCAA0 /* SimpleTableTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleTableTests.m; sourceTree = "<group>"; };
+		311CB6721B181C5A002DCAA0 /* team.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = team.plist; sourceTree = "<group>"; };
+		311CB6751B1834AC002DCAA0 /* Mexico.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Mexico.gif; sourceTree = "<group>"; };
+		311CB6771B1834B5002DCAA0 /* SouthAfrica.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SouthAfrica.gif; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		311CB6461B1776F9002DCAA0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		311CB65F1B1776F9002DCAA0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		311CB6401B1776F9002DCAA0 = {
+			isa = PBXGroup;
+			children = (
+				311CB64B1B1776F9002DCAA0 /* SimpleTable */,
+				311CB6651B1776F9002DCAA0 /* SimpleTableTests */,
+				311CB64A1B1776F9002DCAA0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		311CB64A1B1776F9002DCAA0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				311CB6491B1776F9002DCAA0 /* SimpleTable.app */,
+				311CB6621B1776F9002DCAA0 /* SimpleTableTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		311CB64B1B1776F9002DCAA0 /* SimpleTable */ = {
+			isa = PBXGroup;
+			children = (
+				311CB6741B18345A002DCAA0 /* team */,
+				311CB6501B1776F9002DCAA0 /* AppDelegate.h */,
+				311CB6511B1776F9002DCAA0 /* AppDelegate.m */,
+				311CB6531B1776F9002DCAA0 /* ViewController.h */,
+				311CB6541B1776F9002DCAA0 /* ViewController.m */,
+				311CB6561B1776F9002DCAA0 /* Main.storyboard */,
+				311CB6591B1776F9002DCAA0 /* Images.xcassets */,
+				311CB65B1B1776F9002DCAA0 /* LaunchScreen.xib */,
+				311CB64C1B1776F9002DCAA0 /* Supporting Files */,
+			);
+			path = SimpleTable;
+			sourceTree = "<group>";
+		};
+		311CB64C1B1776F9002DCAA0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				311CB64D1B1776F9002DCAA0 /* Info.plist */,
+				311CB64E1B1776F9002DCAA0 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		311CB6651B1776F9002DCAA0 /* SimpleTableTests */ = {
+			isa = PBXGroup;
+			children = (
+				311CB6681B1776F9002DCAA0 /* SimpleTableTests.m */,
+				311CB6661B1776F9002DCAA0 /* Supporting Files */,
+			);
+			path = SimpleTableTests;
+			sourceTree = "<group>";
+		};
+		311CB6661B1776F9002DCAA0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				311CB6671B1776F9002DCAA0 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		311CB6741B18345A002DCAA0 /* team */ = {
+			isa = PBXGroup;
+			children = (
+				311CB6771B1834B5002DCAA0 /* SouthAfrica.gif */,
+				311CB6751B1834AC002DCAA0 /* Mexico.gif */,
+				311CB6721B181C5A002DCAA0 /* team.plist */,
+			);
+			name = team;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		311CB6481B1776F9002DCAA0 /* SimpleTable */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 311CB66C1B1776F9002DCAA0 /* Build configuration list for PBXNativeTarget "SimpleTable" */;
+			buildPhases = (
+				311CB6451B1776F9002DCAA0 /* Sources */,
+				311CB6461B1776F9002DCAA0 /* Frameworks */,
+				311CB6471B1776F9002DCAA0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpleTable;
+			productName = SimpleTable;
+			productReference = 311CB6491B1776F9002DCAA0 /* SimpleTable.app */;
+			productType = "com.apple.product-type.application";
+		};
+		311CB6611B1776F9002DCAA0 /* SimpleTableTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 311CB66F1B1776F9002DCAA0 /* Build configuration list for PBXNativeTarget "SimpleTableTests" */;
+			buildPhases = (
+				311CB65E1B1776F9002DCAA0 /* Sources */,
+				311CB65F1B1776F9002DCAA0 /* Frameworks */,
+				311CB6601B1776F9002DCAA0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				311CB6641B1776F9002DCAA0 /* PBXTargetDependency */,
+			);
+			name = SimpleTableTests;
+			productName = SimpleTableTests;
+			productReference = 311CB6621B1776F9002DCAA0 /* SimpleTableTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		311CB6411B1776F9002DCAA0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = lnmcc;
+				TargetAttributes = {
+					311CB6481B1776F9002DCAA0 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					311CB6611B1776F9002DCAA0 = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 311CB6481B1776F9002DCAA0;
+					};
+				};
+			};
+			buildConfigurationList = 311CB6441B1776F9002DCAA0 /* Build configuration list for PBXProject "SimpleTable" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 311CB6401B1776F9002DCAA0;
+			productRefGroup = 311CB64A1B1776F9002DCAA0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				311CB6481B1776F9002DCAA0 /* SimpleTable */,
+				311CB6611B1776F9002DCAA0 /* SimpleTableTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		311CB6471B1776F9002DCAA0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				311CB6781B1834B5002DCAA0 /* SouthAfrica.gif in Resources */,
+				311CB6581B1776F9002DCAA0 /* Main.storyboard in Resources */,
+				311CB65D1B1776F9002DCAA0 /* LaunchScreen.xib in Resources */,
+				311CB65A1B1776F9002DCAA0 /* Images.xcassets in Resources */,
+				311CB6761B1834AC002DCAA0 /* Mexico.gif in Resources */,
+				311CB6731B181C5A002DCAA0 /* team.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		311CB6601B1776F9002DCAA0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		311CB6451B1776F9002DCAA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				311CB6551B1776F9002DCAA0 /* ViewController.m in Sources */,
+				311CB6521B1776F9002DCAA0 /* AppDelegate.m in Sources */,
+				311CB64F1B1776F9002DCAA0 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		311CB65E1B1776F9002DCAA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				311CB6691B1776F9002DCAA0 /* SimpleTableTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		311CB6641B1776F9002DCAA0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 311CB6481B1776F9002DCAA0 /* SimpleTable */;
+			targetProxy = 311CB6631B1776F9002DCAA0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		311CB6561B1776F9002DCAA0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				311CB6571B1776F9002DCAA0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		311CB65B1B1776F9002DCAA0 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				311CB65C1B1776F9002DCAA0 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		311CB66A1B1776F9002DCAA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		311CB66B1B1776F9002DCAA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		311CB66D1B1776F9002DCAA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SimpleTable/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		311CB66E1B1776F9002DCAA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SimpleTable/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		311CB6701B1776F9002DCAA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SimpleTableTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleTable.app/SimpleTable";
+			};
+			name = Debug;
+		};
+		311CB6711B1776F9002DCAA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SimpleTableTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleTable.app/SimpleTable";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		311CB6441B1776F9002DCAA0 /* Build configuration list for PBXProject "SimpleTable" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				311CB66A1B1776F9002DCAA0 /* Debug */,
+				311CB66B1B1776F9002DCAA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		311CB66C1B1776F9002DCAA0 /* Build configuration list for PBXNativeTarget "SimpleTable" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				311CB66D1B1776F9002DCAA0 /* Debug */,
+				311CB66E1B1776F9002DCAA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		311CB66F1B1776F9002DCAA0 /* Build configuration list for PBXNativeTarget "SimpleTableTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				311CB6701B1776F9002DCAA0 /* Debug */,
+				311CB6711B1776F9002DCAA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 311CB6411B1776F9002DCAA0 /* Project object */;
+}
