@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>74252F37-6D00-4FA1-8129-7EE987629907</string>
+	<string>AD0D7CA0-FF55-4083-8943-8832287BD4D0</string>
 	<key>IDESourceControlProjectName</key>
 	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,7 +14,7 @@
 		<string>github.com:lnmcc/Experiments.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>IOS/SimpleTable/SimpleTable.xcodeproj/project.xcworkspace</string>
+	<string>IOS/DeleteAddCell/DeleteAddCell.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>0BB1ACA3AD90E9CE562F129BF681290EAEA51713</key>
