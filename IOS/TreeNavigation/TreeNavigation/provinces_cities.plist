@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>江苏省</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>苏州</string>
+			<key>url</key>
+			<string>www.lnmcc.net</string>
+		</dict>
+		<dict>
+			<key>url</key>
+			<string>www.lnmcc.net</string>
+			<key>name</key>
+			<string>南京</string>
+		</dict>
+	</array>
+	<key>黑龙江省</key>
+	<array/>
+</dict>
+</plist>
