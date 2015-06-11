@@ -33,9 +33,15 @@
     NSDictionary *attrsDic = @{NSTextEffectAttributeName:NSTextEffectLetterpressStyle};
     NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:_textView.text attributes:attrsDic];
     [textStorage setAttributedString:attrStr];
-    
+    [self markWord:@"我" inTextStorage:textStorage];
     [textStorage endEditing];
     _textView.textContainer.exclusionPaths = @[[self translatedBezierPath]];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(preferredContentSizeChanged:) name:UIContentSizeCategoryDidChangeNotification object:nil];
+}
+
+- (void)preferredContentSizeChanged: (NSNotification*) notification {
+    self.textView.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
 }
 
 - (UIBezierPath*) translatedBezierPath {
@@ -50,7 +56,12 @@
 }
 
 - (void) markWord:(NSString *)word inTextStorage:(NSTextStorage *)textStorage {
-    
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:word options:0 error:nil];
+    NSArray *matches = [regex matchesInString:_textView.text options:0 range:NSMakeRange(0, [_textView.text length])];
+    for (NSTextCheckingResult *match in matches) {
+        NSRange matchRange = [match range];
+        [textStorage addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:matchRange];
+    }
 }
 
 @end

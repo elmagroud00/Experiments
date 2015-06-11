@@ -20,8 +20,8 @@
     [self.view addSubview:redView];
     
     UIView *blueView = [[UIView alloc]init];
-    blueView.frame = CGRectInset(redView.frame, 50, 50);
-    blueView.backgroundColor = [UIColor blueColor];
+    blueView.frame = CGRectInset(redView.frame, -50, -50);
+    blueView.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:1.0 alpha:0.5];
     [self.view addSubview:blueView];
 }
 
