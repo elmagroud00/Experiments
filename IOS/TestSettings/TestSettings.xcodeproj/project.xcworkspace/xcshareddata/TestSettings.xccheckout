@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>4081768F-2C6F-4ECD-83DE-2D1DDDA00BCD</string>
+	<string>33CB2ABE-6C88-422E-95D2-46E943A6B046</string>
 	<key>IDESourceControlProjectName</key>
-	<string>TreeNavigation</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>0BB1ACA3AD90E9CE562F129BF681290EAEA51713</key>
 		<string>github.com:lnmcc/Experiments.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>IOS/TreeNavigation/TreeNavigation.xcodeproj</string>
+	<string>IOS/TestSettings/TestSettings.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>0BB1ACA3AD90E9CE562F129BF681290EAEA51713</key>
