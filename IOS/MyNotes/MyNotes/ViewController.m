@@ -42,8 +42,6 @@
         if ([detailControl respondsToSelector:@selector(setData:)]) {
             [detailControl setValue:currentNote.content forKey:@"data"];
         }
-        //[detailControl setText:@"Hello, are you OK!"];
-        //detailControl.noteDetail.text = @"This is a test";//currentNote.content;
     }
 
 }

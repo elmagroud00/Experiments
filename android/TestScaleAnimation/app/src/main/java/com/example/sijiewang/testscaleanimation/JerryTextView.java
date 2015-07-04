@@ -50,7 +50,6 @@ public class JerryTextView extends TextView {
             default:
                 break;
         }
-        //return super.onTouchEvent(event);
         return true;
     }
 
@@ -73,7 +72,4 @@ public class JerryTextView extends TextView {
         startY = getY();
     }
 
-    public void spingBack() {
-
-    }
 }

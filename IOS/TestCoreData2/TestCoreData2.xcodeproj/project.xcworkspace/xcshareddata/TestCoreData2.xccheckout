@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>8A3C4F2A-828E-4144-B76C-794AA93B6A90</string>
+	<string>4C185C17-0FFD-490B-9FC0-B641F5117B63</string>
 	<key>IDESourceControlProjectName</key>
-	<string>MyNotes</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>0BB1ACA3AD90E9CE562F129BF681290EAEA51713</key>
 		<string>github.com:lnmcc/Experiments.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>IOS/MyNotes/MyNotes.xcodeproj</string>
+	<string>IOS/TestCoreData2/TestCoreData2.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>0BB1ACA3AD90E9CE562F129BF681290EAEA51713</key>
