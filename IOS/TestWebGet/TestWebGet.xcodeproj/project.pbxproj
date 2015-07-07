@@ -16,6 +16,7 @@
 		3152292F1B47D5A800EBEC25 /* TestWebGetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3152292E1B47D5A800EBEC25 /* TestWebGetTests.m */; };
 		3152293E1B47E8D800EBEC25 /* String+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 3152293D1B47E8D800EBEC25 /* String+URLEncoding.m */; };
 		315229401B492F3300EBEC25 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3152293F1B492F3300EBEC25 /* CoreFoundation.framework */; };
+		315229431B4963FA00EBEC25 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 315229421B4963FA00EBEC25 /* AddViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,8 @@
 		3152293C1B47E8D800EBEC25 /* String+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "String+URLEncoding.h"; sourceTree = "<group>"; };
 		3152293D1B47E8D800EBEC25 /* String+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "String+URLEncoding.m"; sourceTree = "<group>"; };
 		3152293F1B492F3300EBEC25 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		315229411B4963FA00EBEC25 /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		315229421B4963FA00EBEC25 /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,8 @@
 				3152291F1B47D5A800EBEC25 /* Images.xcassets */,
 				315229211B47D5A800EBEC25 /* LaunchScreen.xib */,
 				315229121B47D5A800EBEC25 /* Supporting Files */,
+				315229411B4963FA00EBEC25 /* AddViewController.h */,
+				315229421B4963FA00EBEC25 /* AddViewController.m */,
 			);
 			path = TestWebGet;
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				315229431B4963FA00EBEC25 /* AddViewController.m in Sources */,
 				3152291B1B47D5A800EBEC25 /* ViewController.m in Sources */,
 				315229181B47D5A800EBEC25 /* AppDelegate.m in Sources */,
 				315229151B47D5A800EBEC25 /* main.m in Sources */,

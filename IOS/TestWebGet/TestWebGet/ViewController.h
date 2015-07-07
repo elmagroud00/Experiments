@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "String+URLEncoding.h"
 
-@interface ViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+@interface ViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource, NSURLConnectionDataDelegate>
 
 @property (nonatomic, strong) NSMutableArray *listData;
+@property (strong, nonatomic) NSMutableData *datas;
 
 -(void)reloadView:(NSDictionary*)res;
 -(void)startRequest;

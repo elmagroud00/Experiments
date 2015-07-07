@@ -22,10 +22,33 @@
 }
 
 -(void)startRequest {
-    NSString *strURL = [[NSString alloc]initWithFormat:@"http://iosbook1.com/service/mynotes/webservice.php?email=%@&type=%@&action=%@", @"[a###]lnmcc@hotmail.com", @"JSON", @"query"];
+    NSString *strURL = [[NSString alloc]initWithFormat:@"http://lnmcc.net"];
     NSURL *url = [NSURL URLWithString:[strURL URLEncodedString]];
     NSLog(@"URL Encoded = %@",[strURL URLEncodedString]);
+    NSURLRequest *request = [[NSURLRequest alloc]initWithURL:url];
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    if (connection) {
+        _datas = [NSMutableData new];
+    }
 }
+
+#pragma mark- NSURLConnection回调方法
+-(void)connection:(NSURLConnection*)connection didReceiveData:(NSData *)data {
+    [_datas appendData:data];
+    //NSLog(@"Received Data: %s", data);
+}
+
+-(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    NSLog(@"%@", [error localizedDescription]);
+}
+
+-(void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    NSLog(@"请求完成...");
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:_datas options:NSJSONReadingAllowFragments error:nil];
+    [self reloadView:dict];
+}
+
 
 #pragma mark - Table View
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
