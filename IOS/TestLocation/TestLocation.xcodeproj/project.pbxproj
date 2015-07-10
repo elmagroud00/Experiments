@@ -15,6 +15,7 @@
 		315229931B4C162F00EBEC25 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 315229911B4C162F00EBEC25 /* LaunchScreen.xib */; };
 		3152299F1B4C162F00EBEC25 /* TestLocationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3152299E1B4C162F00EBEC25 /* TestLocationTests.m */; };
 		315229A91B4C164100EBEC25 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 315229A81B4C164100EBEC25 /* CoreLocation.framework */; };
+		315229AB1B4C292E00EBEC25 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 315229AA1B4C292E00EBEC25 /* AddressBook.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		3152299D1B4C162F00EBEC25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3152299E1B4C162F00EBEC25 /* TestLocationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestLocationTests.m; sourceTree = "<group>"; };
 		315229A81B4C164100EBEC25 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		315229AA1B4C292E00EBEC25 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				315229AB1B4C292E00EBEC25 /* AddressBook.framework in Frameworks */,
 				315229A91B4C164100EBEC25 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,6 +69,7 @@
 		315229761B4C162F00EBEC25 = {
 			isa = PBXGroup;
 			children = (
+				315229AA1B4C292E00EBEC25 /* AddressBook.framework */,
 				315229A81B4C164100EBEC25 /* CoreLocation.framework */,
 				315229811B4C162F00EBEC25 /* TestLocation */,
 				3152299B1B4C162F00EBEC25 /* TestLocationTests */,

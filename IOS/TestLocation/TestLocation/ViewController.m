@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <AddressBook/AddressBook.h>
 
 @interface ViewController ()
 
@@ -20,7 +21,7 @@
     _locationManager = [[CLLocationManager alloc]init];
     _locationManager.delegate = self;
     _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    _locationManager.distanceFilter = 1000.0f;
+    _locationManager.distanceFilter = 100.0f;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -49,4 +50,25 @@
     NSLog(@"error: %@", error);
 }
 
+- (IBAction)geocodeQuery:(UIButton *)sender {
+    if (_txtQueryKey.text == nil || [_txtQueryKey.text length] == 0) {
+        return;
+    }
+    
+    CLGeocoder *geocoder = [[CLGeocoder alloc]init];
+    [geocoder geocodeAddressString:_txtQueryKey.text completionHandler:^(NSArray *placemarks, NSError *error) {
+        if ([placemarks count] > 0) {
+            CLPlacemark *placemark = [placemarks objectAtIndex:0];
+            CLLocationCoordinate2D coordinate = placemark.location.coordinate;
+            NSDictionary *addressDictionary = placemark.addressDictionary;
+            NSString *address = [addressDictionary objectForKey:(NSString*)kABPersonAddressStreetKey];
+            address = address == nil ? @"" : address;
+            NSString *city = [addressDictionary objectForKey:(NSString*)kABPersonAddressCityKey];
+            city = city == nil ? @"" : city;
+            
+            _txtView.text = [NSString stringWithFormat:@"%@", city];
+            [_txtQueryKey resignFirstResponder];
+        }
+    }];
+}
 @end

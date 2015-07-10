@@ -16,6 +16,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtLat;
 @property (weak, nonatomic) IBOutlet UITextField *txtAlt;
 @property (nonatomic, strong) CLLocationManager *locationManager;
+@property (weak, nonatomic) IBOutlet UITextView *txtView;
+@property (strong, nonatomic) IBOutlet UITextField *txtQueryKey;
+- (IBAction)geocodeQuery:(UIButton *)sender;
 
 @end
 
