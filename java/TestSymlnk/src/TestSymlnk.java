@@ -4,6 +4,9 @@ import java.io.IOException;
 public class TestSymlnk {
 
     public static void main(String[] args) {
+        
+        System.out.println((-1 % 360 + 360) % 360);
+        
         String path1 = "/home/sijiewang/Project";
         String path2 = "/home/sijiewang/Project/OTA/system/a";
         
