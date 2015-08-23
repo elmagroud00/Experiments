@@ -26,6 +26,19 @@
     return  sharedStore;
 }
 
+- (void)moveItemAtIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex {
+    if (fromIndex == toIndex) {
+        return;
+    }
+    BNRItem *item = self.privateItems[fromIndex];
+    [self.privateItems removeObjectAtIndex:fromIndex];
+    [self.privateItems insertObject:item atIndex:toIndex];
+}
+
+- (void)removeItem:(BNRItem *)item {
+    [self.privateItems removeObjectIdenticalTo:item];
+}
+
 - (instancetype)init {
     @throw [NSException exceptionWithName:@"Singleton" reason:@"User + [BNRItemStore sharedStore]" userInfo:nil];
     return nil;

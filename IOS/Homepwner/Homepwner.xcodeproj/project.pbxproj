@@ -17,6 +17,7 @@
 		316988991B80D9370064F570 /* HeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 316988981B80D9370064F570 /* HeadView.xib */; };
 		3169889D1B862ED80064F570 /* BNRDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3169889B1B862ED80064F570 /* BNRDetailViewController.m */; };
 		3169889E1B862ED80064F570 /* BNRDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3169889C1B862ED80064F570 /* BNRDetailViewController.xib */; };
+		316988A11B8A0A0C0064F570 /* BNRImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 316988A01B8A0A0C0064F570 /* BNRImageStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		3169889A1B862ED80064F570 /* BNRDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRDetailViewController.h; sourceTree = "<group>"; };
 		3169889B1B862ED80064F570 /* BNRDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRDetailViewController.m; sourceTree = "<group>"; };
 		3169889C1B862ED80064F570 /* BNRDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNRDetailViewController.xib; sourceTree = "<group>"; };
+		3169889F1B8A0A0C0064F570 /* BNRImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImageStore.h; sourceTree = "<group>"; };
+		316988A01B8A0A0C0064F570 /* BNRImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,8 @@
 				316988951B7E4FCF0064F570 /* BNRItemStore.h */,
 				316988961B7E4FCF0064F570 /* BNRItemStore.m */,
 				316988931B7E413E0064F570 /* BNRItem.m */,
+				3169889F1B8A0A0C0064F570 /* BNRImageStore.h */,
+				316988A01B8A0A0C0064F570 /* BNRImageStore.m */,
 			);
 			path = Homepwner;
 			sourceTree = "<group>";
@@ -236,6 +241,7 @@
 			files = (
 				3169889D1B862ED80064F570 /* BNRDetailViewController.m in Sources */,
 				316988971B7E4FCF0064F570 /* BNRItemStore.m in Sources */,
+				316988A11B8A0A0C0064F570 /* BNRImageStore.m in Sources */,
 				316988911B7E3E670064F570 /* BNRItemsViewController.m in Sources */,
 				316988941B7E413E0064F570 /* BNRItem.m in Sources */,
 				3169886F1B7E3D140064F570 /* AppDelegate.m in Sources */,

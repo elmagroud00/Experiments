@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BNRDetailViewController : UIViewController
+@class BNRItem;
+
+@interface BNRDetailViewController : UIViewController <UINavigationBarDelegate, UIImagePickerControllerDelegate>
+
+@property (nonatomic, strong) BNRItem *item;
 
 @end
