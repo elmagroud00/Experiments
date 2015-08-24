@@ -10,7 +10,7 @@
 
 @class BNRItem;
 
-@interface BNRDetailViewController : UIViewController <UINavigationBarDelegate, UIImagePickerControllerDelegate>
+@interface BNRDetailViewController : UIViewController <UINavigationBarDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate>
 
 @property (nonatomic, strong) BNRItem *item;
 

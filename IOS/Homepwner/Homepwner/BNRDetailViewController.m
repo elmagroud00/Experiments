@@ -9,6 +9,7 @@
 #import "BNRDetailViewController.h"
 #import "BNRItem.h"
 #import "BNRImageStore.h"
+#import <MobileCoreServices/MobileCoreServices.h>
 
 @interface BNRDetailViewController ()
 
@@ -30,6 +31,9 @@
 }
  */
  
+- (IBAction)backgroundTapped:(id)sender {
+    [self.view endEditing:YES];
+}
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     UIImage *image = info[UIImagePickerControllerOriginalImage];
@@ -38,6 +42,21 @@
     
     self.imageView.image = image;
     [self dismissViewControllerAnimated:YES completion:nil];
+    /*
+    NSURL *videoURL = info[UIImagePickerControllerReferenceURL];
+    if (videoURL) {
+        if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum([videoURL path])) {
+            UISaveVideoAtPathToSavedPhotosAlbum([videoURL path], nil, nil, nil);
+            [[NSFileManager defaultManager] removeItemAtPath:[videoURL path] error:nil];
+        }
+      }
+     
+    UIImagePickerController *videoCapture = [[UIImagePickerController alloc] init];
+    NSArray *availableTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
+    if ([availableTypes containsObject:(__bridge NSString *)kUTTypeMovie]) {
+        [videoCapture setMediaTypes:@[(__bridge NSString *)kUTTypeMovie)]];
+    }
+     */
 }
 
 - (IBAction)takePicture:(id)sender {
@@ -50,6 +69,14 @@
     }
     imagePicker.delegate = self;
     [self presentViewController:imagePicker animated:YES completion:nil];
+}
+
+- (void)takeVideo {
+    UIImagePickerController *camera = [[UIImagePickerController alloc] init];
+    NSArray *availableTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
+    camera.mediaTypes = availableTypes;
+    camera.sourceType = UIImagePickerControllerSourceTypeCamera;
+    camera.delegate = self;
 }
 
 - (void)setItem:(BNRItem *)item {
@@ -66,7 +93,7 @@
     item.valueInDollars = [self.valueField.text intValue];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     BNRItem *item = self.item;
     self.nameField.text = item.itemName;
@@ -80,7 +107,15 @@
         dateFormatter.timeStyle = NSDateFormatterNoStyle;
     }
     self.dateLabel.text = [dateFormatter stringFromDate:item.dateCreated];
+    
+    NSString *itemKey = self.item.itemKey;
+    UIImage *imageToDisplay = [[BNRImageStore sharedStore] imageForKey:itemKey];
+    self.imageView.image = imageToDisplay;
 }
 
+- (BOOL) textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
 
 @end
