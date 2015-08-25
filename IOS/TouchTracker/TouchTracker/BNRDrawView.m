@@ -14,6 +14,7 @@
 //@property (nonatomic, strong) BNRLine *currentLine;
 @property (nonatomic, strong) NSMutableDictionary *linesInProgress;
 @property (nonatomic, strong) NSMutableArray *finishedLines;
+@property (nonatomic, weak) BNRLine *selectedLine;
 
 @end
 
@@ -27,9 +28,36 @@
         self.linesInProgress = [[NSMutableDictionary alloc] init];
         self.backgroundColor = [UIColor grayColor];
         self.multipleTouchEnabled = YES;
+        
+        UITapGestureRecognizer *doubleTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTap:)];
+        doubleTapRecognizer.numberOfTapsRequired = 2;
+        doubleTapRecognizer.delaysTouchesBegan = YES;
+        [self addGestureRecognizer:doubleTapRecognizer];
+        
+        UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
+        tapRecognizer.delaysTouchesBegan = YES;
+        [tapRecognizer requireGestureRecognizerToFail:doubleTapRecognizer];
+        [self addGestureRecognizer:tapRecognizer];
+
     }
     
     return self;
+}
+
+- (void)tap:(UIGestureRecognizer *)gr {
+    NSLog(@"Recognized tap");
+    
+    CGPoint point = [gr locationInView:self];
+    [self setSelectedLine:[self lineAtPoint:point]];
+     [self setNeedsDisplay];
+
+}
+- (void)doubleTap:(UIGestureRecognizer *)gr {
+    NSLog(@"%Recongized Double Tap");
+    
+    [self.linesInProgress removeAllObjects];
+    [self.finishedLines removeAllObjects];
+    [self setNeedsDisplay];
 }
 
 - (void)strokeLine:(BNRLine *)line {
@@ -40,6 +68,23 @@
     [bp moveToPoint:line.begine];
     [bp addLineToPoint:line.end];
     [bp stroke];
+}
+
+- (BNRLine *)lineAtPoint:(CGPoint)p {
+    for (BNRLine *l in self.finishedLines) {
+        CGPoint start = l.begine;
+        CGPoint end = l.end;
+        
+        for (float t = 0.0; t <= 1.0; t +=0.05) {
+            float x = start.x + t * (end.x - start.x);
+            float y = start.y + t * (end.y - start.y);
+            
+            if (hypot(x - p.x, y - p.y) < 20.0) {
+                return l;
+            }
+        }
+    }
+    return nil;
 }
 
 - (void)drawRect:(CGRect)rect {
@@ -56,6 +101,11 @@
     [[UIColor redColor] set];
     for (NSValue *key in self.linesInProgress) {
         [self strokeLine:self.linesInProgress[key]];
+    }
+    
+    if (self.selectedLine) {
+        [[UIColor greenColor] set];
+        [self strokeLine:self.selectedLine];
     }
 }
 
