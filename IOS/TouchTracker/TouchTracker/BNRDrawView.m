@@ -8,10 +8,12 @@
 
 #import "BNRDrawView.h"
 #import "BNRLine.h"
+#import <UIKit/UIKit.h>
 
-@interface BNRDrawView ()
+@interface BNRDrawView () <UIGestureRecognizerDelegate>
 
 //@property (nonatomic, strong) BNRLine *currentLine;
+@property (nonatomic, strong) UIPanGestureRecognizer *moveRecognizer;
 @property (nonatomic, strong) NSMutableDictionary *linesInProgress;
 @property (nonatomic, strong) NSMutableArray *finishedLines;
 @property (nonatomic, weak) BNRLine *selectedLine;
@@ -38,10 +40,44 @@
         tapRecognizer.delaysTouchesBegan = YES;
         [tapRecognizer requireGestureRecognizerToFail:doubleTapRecognizer];
         [self addGestureRecognizer:tapRecognizer];
+        
+        self.moveRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(moveLine:)];
+        self.moveRecognizer.delegate = self;
+        self.moveRecognizer.cancelsTouchesInView = NO;
+        [self addGestureRecognizer:self.moveRecognizer];
 
     }
     
     return self;
+}
+
+- (void)moveLine:(UIPanGestureRecognizer *)gr {
+    if (!self.selectedLine) {
+        return;
+    }
+    if (gr.state == UIGestureRecognizerStateChanged) {
+        CGPoint translation = [gr translationInView:self];
+        CGPoint begin = self.selectedLine.begine;
+        CGPoint end = self.selectedLine.end;
+        begin.x += translation.x;
+        begin.y += translation.y;
+        end.x += translation.x;
+        end.y += translation.y;
+        
+        self.selectedLine.begine = begin;
+        self.selectedLine.end = end;
+        
+        [self setNeedsDisplay];
+        
+        [gr setTranslation:CGPointZero inView:self];
+    }
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    if (gestureRecognizer == self.moveRecognizer) {
+        return YES;
+    }
+    return NO;
 }
 
 - (void)tap:(UIGestureRecognizer *)gr {
@@ -49,9 +85,34 @@
     
     CGPoint point = [gr locationInView:self];
     [self setSelectedLine:[self lineAtPoint:point]];
-     [self setNeedsDisplay];
+    
+    if (self.selectedLine) {
+        [self becomeFirstResponder];
+        UIMenuController *menu = [UIMenuController sharedMenuController];
+        UIMenuItem *deleteItem = [[UIMenuItem alloc] initWithTitle:@"Delete" action:@selector(deleteLine:)];
+        menu.menuItems = @[deleteItem];
+        
+        [menu setTargetRect:CGRectMake(point.x, point.y, 2, 2) inView:self];
+        [menu setMenuVisible:YES animated:YES];
+        NSLog(@"pop menu");
+        
+    } else {
+        [[UIMenuController sharedMenuController] setMenuVisible:NO animated:YES];
+    }
+    
+    [self setNeedsDisplay];
 
 }
+
+- (void)deleteLine: (id)sender {
+    [self.finishedLines removeObject:self.selectedLine];
+    [self setNeedsDisplay];
+}
+
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
 - (void)doubleTap:(UIGestureRecognizer *)gr {
     NSLog(@"%Recongized Double Tap");
     
