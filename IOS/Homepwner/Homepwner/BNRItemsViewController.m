@@ -41,7 +41,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    BNRDetailViewController *detailViewController = [[BNRDetailViewController alloc]init];
+    //BNRDetailViewController *detailViewController = [[BNRDetailViewController alloc]init];
+    BNRDetailViewController *detailViewController = [[BNRDetailViewController alloc] initForNewItem:NO];
     NSArray *items = [[BNRItemStore sharedStore] allItems];
     BNRItem *selectedItem = items[indexPath.row];
     detailViewController.item = selectedItem;
