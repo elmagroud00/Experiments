@@ -39,6 +39,11 @@
     return self;
 }
 
+- (instancetype) init {
+    @throw [NSException exceptionWithName:@"Singleton" reason:@"PLS use +[BNRImageStore sharedStore]" userInfo:nil];
+    return nil;
+}
+
 - (void) setImage:(UIImage *)image forKey:(NSString *)key {
     [self.dictionary setObject:image forKey:key];
 }
