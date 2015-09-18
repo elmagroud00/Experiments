@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BNRItem.h"
+#import "BNRItemStore.h"
+#import "BNRImageStore.h"
 
 @class BNRItem;
 
 @interface BNRDetailViewController : UIViewController 
 
 @property (nonatomic, strong) BNRItem *item;
+@property (nonatomic, copy) void (^dismissBlock)(void);
 
 - (instancetype)initForNewItem:(BOOL)isNew;
 

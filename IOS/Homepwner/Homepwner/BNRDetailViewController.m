@@ -71,6 +71,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //[self.view setFrame:CGRectMake(100, 100, 500, 500)];
+    
     UIImageView *iv = [[UIImageView alloc] initWithImage:nil];
     iv.contentMode = UIViewContentModeScaleAspectFit;
     iv.translatesAutoresizingMaskIntoConstraints = NO;
@@ -131,6 +133,15 @@
         }
     }
     return self;
+}
+
+- (void)save:(id)sender {
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:self.dismissBlock];
+}
+
+- (void)cancel:(id)sender {
+    [[BNRItemStore sharedStore] removeItem:self.item];
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:self.dismissBlock];
 }
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {

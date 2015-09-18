@@ -163,7 +163,7 @@
             <connections>
                 <action selector="backgroundTapped:" destination="-1" eventType="touchUpInside" id="tId-Ah-nM8"/>
             </connections>
-            <point key="canvasLocation" x="105.5" y="362.5"/>
+            <point key="canvasLocation" x="10.5" y="359.5"/>
         </view>
     </objects>
 </document>
