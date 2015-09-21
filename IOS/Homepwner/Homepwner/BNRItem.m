@@ -8,7 +8,15 @@
 
 #import "BNRItem.h"
 
-@implementation BNRItem
+#define ITEM_NAME "itemName"
+#define SERIAL_NUMBER "serialNumber"
+#define DATE_CREATED "dateCreated"
+#define ITEM_KEY "itemKey"
+#define VALUE_IN_DOLLARS "valueInDollars"
+
+@implementation BNRItem {
+
+}
 
 - (instancetype)initWithItemName:(NSString*)name valueInDollars:(int)value serialNumber:(NSString*)sNumber {
     self = [super init];
@@ -22,6 +30,25 @@
         NSUUID *uuid = [[NSUUID alloc]init];
         NSString *key = [uuid UUIDString];
         _itemKey = key;
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:self.itemName forKey:@ITEM_NAME];
+    [aCoder encodeObject:self.serialNumber forKey:@SERIAL_NUMBER];
+    [aCoder encodeObject:self.dateCreated forKey:@DATE_CREATED];
+    [aCoder encodeObject:self.itemKey forKey:@ITEM_KEY];
+    [aCoder encodeInt:self.valueInDollars forKey:@VALUE_IN_DOLLARS];
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super init];
+    if (self) {
+        _itemName = [aDecoder decodeObjectForKey:@ITEM_NAME];
+        _serialNumber = [aDecoder decodeObjectForKey:@SERIAL_NUMBER];
+        _dateCreated = [aDecoder decodeObjectForKey:@DATE_CREATED];
+        _valueInDollars = [aDecoder decodeIntForKey:@VALUE_IN_DOLLARS];
     }
     return self;
 }
