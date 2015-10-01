@@ -13,6 +13,7 @@
 #define DATE_CREATED "dateCreated"
 #define ITEM_KEY "itemKey"
 #define VALUE_IN_DOLLARS "valueInDollars"
+#define THUMBNAIL "thumbnail"
 
 @implementation BNRItem {
 
@@ -40,6 +41,7 @@
     [aCoder encodeObject:self.dateCreated forKey:@DATE_CREATED];
     [aCoder encodeObject:self.itemKey forKey:@ITEM_KEY];
     [aCoder encodeInt:self.valueInDollars forKey:@VALUE_IN_DOLLARS];
+    [aCoder encodeObject:self.thumbnail forKey:@THUMBNAIL];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
@@ -49,6 +51,7 @@
         _serialNumber = [aDecoder decodeObjectForKey:@SERIAL_NUMBER];
         _dateCreated = [aDecoder decodeObjectForKey:@DATE_CREATED];
         _valueInDollars = [aDecoder decodeIntForKey:@VALUE_IN_DOLLARS];
+        _thumbnail = [aDecoder decodeObjectForKey:@THUMBNAIL];
     }
     return self;
 }

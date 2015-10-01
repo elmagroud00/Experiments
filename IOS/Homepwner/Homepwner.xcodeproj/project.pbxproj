@@ -20,6 +20,7 @@
 		316988A11B8A0A0C0064F570 /* BNRImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 316988A01B8A0A0C0064F570 /* BNRImageStore.m */; };
 		319D01D41BBCCAAB00516110 /* BNRItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 319D01D31BBCCAAB00516110 /* BNRItemCell.m */; settings = {ASSET_TAGS = (); }; };
 		319D01D81BBCCC0700516110 /* BNRItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 319D01D71BBCCC0700516110 /* BNRItemCell.xib */; settings = {ASSET_TAGS = (); }; };
+		319D01DB1BBD40D800516110 /* BNRImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 319D01DA1BBD40D800516110 /* BNRImageViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		319D01D21BBCCAAB00516110 /* BNRItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BNRItemCell.h; path = ../BNRItemCell.h; sourceTree = "<group>"; };
 		319D01D31BBCCAAB00516110 /* BNRItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BNRItemCell.m; path = ../BNRItemCell.m; sourceTree = "<group>"; };
 		319D01D71BBCCC0700516110 /* BNRItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNRItemCell.xib; sourceTree = "<group>"; };
+		319D01D91BBD40D800516110 /* BNRImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImageViewController.h; sourceTree = "<group>"; };
+		319D01DA1BBD40D800516110 /* BNRImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 				319D01D21BBCCAAB00516110 /* BNRItemCell.h */,
 				319D01D31BBCCAAB00516110 /* BNRItemCell.m */,
 				3169888F1B7E3E670064F570 /* BNRItemsViewController.h */,
+				319D01D91BBD40D800516110 /* BNRImageViewController.h */,
+				319D01DA1BBD40D800516110 /* BNRImageViewController.m */,
 				316988901B7E3E670064F570 /* BNRItemsViewController.m */,
 				316988981B80D9370064F570 /* HeadView.xib */,
 				3169886D1B7E3D140064F570 /* AppDelegate.h */,
@@ -250,6 +255,7 @@
 			files = (
 				3169889D1B862ED80064F570 /* BNRDetailViewController.m in Sources */,
 				319D01D41BBCCAAB00516110 /* BNRItemCell.m in Sources */,
+				319D01DB1BBD40D800516110 /* BNRImageViewController.m in Sources */,
 				316988971B7E4FCF0064F570 /* BNRItemStore.m in Sources */,
 				316988A11B8A0A0C0064F570 /* BNRImageStore.m in Sources */,
 				316988911B7E3E670064F570 /* BNRItemsViewController.m in Sources */,
