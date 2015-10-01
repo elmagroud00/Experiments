@@ -73,7 +73,7 @@
             <connections>
                 <outlet property="nameLabel" destination="DcZ-Qt-69H" id="QCs-Gc-lWH"/>
                 <outlet property="serialNumberLabel" destination="P6P-sO-WIh" id="LVu-nn-P2A"/>
-                <outlet property="thumbnilView" destination="Oaq-qc-R6G" id="PxX-Gp-FQV"/>
+                <outlet property="thumbnailView" destination="Oaq-qc-R6G" id="4nM-bG-4zv"/>
                 <outlet property="valueLabel" destination="zeN-ln-nre" id="Jdg-1W-REO"/>
             </connections>
             <point key="canvasLocation" x="134" y="303"/>
