@@ -22,6 +22,10 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cameraButton;
 @property (strong, nonatomic) UIPopoverController *imagePickerPopover;
 
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *serialNumberLabel;
+@property (weak, nonatomic) IBOutlet UILabel *valueLabel;
+
 @end
 
 @implementation BNRDetailViewController
@@ -32,7 +36,18 @@
     [[BNRImageStore sharedStore] deleteImageForKey:key];
 }
  */
- 
+
+- (void)updateFonts {
+    UIFont *font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+    self.nameLabel.font = font;
+    self.serialNumberLabel.font = font;
+    self.dateLabel.font = font;
+    
+    self.nameField.font = font;
+    self.serialNumberField.font = font;
+    self.valueField.font = font;
+}
+
 - (IBAction)backgroundTapped:(id)sender {
     [self.view endEditing:YES];
 }
@@ -133,8 +148,16 @@
             UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
             self.navigationItem.leftBarButtonItem = cancelItem;
         }
+        
+        NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
+        [defaultCenter addObserver:self selector:@selector(updateFonts) name:UIContentSizeCategoryDidChangeNotification object:nil];
     }
     return self;
+}
+
+- (void)dealloc {
+    NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
+    [defaultCenter removeObserver:self];
 }
 
 - (void)save:(id)sender {
@@ -220,6 +243,8 @@
     NSString *itemKey = self.item.itemKey;
     UIImage *imageToDisplay = [[BNRImageStore sharedStore] imageForKey:itemKey];
     self.imageView.image = imageToDisplay;
+    
+    [self updateFonts];
 }
 
 - (BOOL) textFieldShouldReturn:(UITextField *)textField {
