@@ -10,13 +10,14 @@
 
 @interface BNRCoursesViewController ()
 @property (nonatomic) NSURLSession *session;
+@property (nonatomic, copy) NSArray *courses;
 @end
 
 @implementation BNRCoursesViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,17 +45,37 @@
         //NSString *json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         //NSLog(@"%@", json);
         NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        NSLog(@"%@", jsonObject);
+        //NSLog(@"%@", jsonObject);
+        self.courses = jsonObject[@"courses"];
+        //[self.tableView reloadData];
+        NSLog(@"%@", self.courses);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
     }];
     [dataTask resume];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return self.courses.count;
+}
+
+- (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    NSDictionary *course = self.courses[indexPath.row];
+    NSURL *URL = [NSURL URLWithString:course[@"url"]];
+    self.webViewController.title = course[@"title"];
+    self.webViewController.URL = URL;
+    [self.navigationController pushViewController:self.webViewController animated:YES];
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return nil;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
+    NSDictionary *course = self.courses[indexPath.row];
+    cell.textLabel.text = course[@"title"];
+    
+    return cell;
 }
 
 /*

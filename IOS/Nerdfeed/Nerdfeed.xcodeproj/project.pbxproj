@@ -14,6 +14,7 @@
 		31389A8E1BC96E670063F7E4 /* NerdfeedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 31389A8D1BC96E670063F7E4 /* NerdfeedTests.m */; };
 		31389A991BC96E670063F7E4 /* NerdfeedUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 31389A981BC96E670063F7E4 /* NerdfeedUITests.m */; };
 		31389AA81BC96EDE0063F7E4 /* BNRCoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31389AA71BC96EDE0063F7E4 /* BNRCoursesViewController.m */; settings = {ASSET_TAGS = (); }; };
+		31389AAB1BCD55920063F7E4 /* BNRWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31389AAA1BCD55920063F7E4 /* BNRWebViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		31389A9A1BC96E670063F7E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31389AA61BC96EDE0063F7E4 /* BNRCoursesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRCoursesViewController.h; sourceTree = "<group>"; };
 		31389AA71BC96EDE0063F7E4 /* BNRCoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRCoursesViewController.m; sourceTree = "<group>"; };
+		31389AA91BCD55920063F7E4 /* BNRWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRWebViewController.h; sourceTree = "<group>"; };
+		31389AAA1BCD55920063F7E4 /* BNRWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRWebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,8 @@
 				31389A731BC96E670063F7E4 /* Supporting Files */,
 				31389AA61BC96EDE0063F7E4 /* BNRCoursesViewController.h */,
 				31389AA71BC96EDE0063F7E4 /* BNRCoursesViewController.m */,
+				31389AA91BCD55920063F7E4 /* BNRWebViewController.h */,
+				31389AAA1BCD55920063F7E4 /* BNRWebViewController.m */,
 			);
 			path = Nerdfeed;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 				31389A7B1BC96E670063F7E4 /* ViewController.m in Sources */,
 				31389A781BC96E670063F7E4 /* AppDelegate.m in Sources */,
 				31389AA81BC96EDE0063F7E4 /* BNRCoursesViewController.m in Sources */,
+				31389AAB1BCD55920063F7E4 /* BNRWebViewController.m in Sources */,
 				31389A751BC96E670063F7E4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
