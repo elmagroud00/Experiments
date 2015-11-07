@@ -9,10 +9,13 @@
 #import "BNRItemStore.h"
 #import "BNRItem.h"
 #import "BNRImageStore.h"
-
+#import <CoreData/CoreData.h>
 @interface BNRItemStore()
 
 @property (nonatomic) NSMutableArray *privateItems;
+@property (nonatomic, strong) NSMutableArray *allAssertTypes;
+@property (nonatomic, strong) NSManagedObjectContext *context;
+@property (nonatomic, strong) NSManagedObjectModel *model;
 
 @end
 
@@ -41,13 +44,19 @@
     NSString *documentDirectory = [documentDirectories firstObject];
     NSLog(@"Document Directory: %@", documentDirectory);
     
-    return [documentDirectory stringByAppendingPathComponent:@"items.archive"];
+    //return [documentDirectory stringByAppendingPathComponent:@"items.archive"];
+    return [documentDirectory stringByAppendingPathComponent:@"store.data"];
 }
 
 - (BOOL)saveChanges {
-    NSString *path = [self itemArchivePath];
-    
-    return [NSKeyedArchiver archiveRootObject:self.privateItems toFile:path];
+    //NSString *path = [self itemArchivePath];
+    //return [NSKeyedArchiver archiveRootObject:self.privateItems toFile:path];
+    NSError *error;
+    BOOL successful = [self.context save:&error];
+    if (!successful) {
+        NSLog(@"Error saving: %@", [error localizedDescription]);
+    }
+    return successful;
 }
 
 - (void)moveItemAtIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex {
@@ -72,21 +81,29 @@
 
 - (instancetype)initPrivate {
     self = [super init];
-    /*if (self) {
-        _privateItems = [[NSMutableArray alloc]init];
-    }*/
-    NSString *path = [self itemArchivePath];
-    _privateItems = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
-    
-    if (!_privateItems) {
-        _privateItems = [[NSMutableArray alloc] init];
+    if (self) {
+        // 读取Homepowner.xcdatamodeld
+        _model = [NSManagedObjectModel mergedModelFromBundles:nil];
+        NSPersistentStoreCoordinator *psc = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:_model];
+        //设置SQLite文件路径
+        NSString *path = [self itemArchivePath];
+        NSURL *storeURL = [NSURL fileURLWithPath: path];
+        NSError *error = nil;
+        if (![psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error: &error]) {
+            @throw [NSException exceptionWithName:@"OpenFailure" reason:[error localizedDescription] userInfo:nil];
+        }
+        _context = [[NSManagedObjectContext alloc] init];
+        _context.persistentStoreCoordinator = psc;
     }
-    
     return self;
 }
 
 - (NSArray *)allItems {
     return self.privateItems;
+}
+
+- (void)loadAllItems {
+    
 }
 
 - (BNRItem *)createItem {
