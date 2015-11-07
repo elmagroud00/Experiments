@@ -55,9 +55,9 @@
 
 - (IBAction)addNewItem:(id)sender {
     /*
-    NSInteger lastRow = [self.tableView numberOfRowsInSection:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRow inSection:0];
-      [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
+        NSInteger lastRow = [self.tableView numberOfRowsInSection:0];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRow inSection:0];
+        [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
      */
     
     BNRItem *newItem = [[BNRItemStore sharedStore] createItem];

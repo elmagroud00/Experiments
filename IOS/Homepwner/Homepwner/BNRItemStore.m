@@ -71,6 +71,7 @@
 - (void)removeItem:(BNRItem *)item {
     NSString *key = item.itemKey;
     [[BNRImageStore sharedStore] deleteImageForKey:key];
+    [self.context deleteObject: item];
     [self.privateItems removeObjectIdenticalTo:item];
 }
 
@@ -94,6 +95,7 @@
         }
         _context = [[NSManagedObjectContext alloc] init];
         _context.persistentStoreCoordinator = psc;
+        [self loadAllItems];
     }
     return self;
 }
@@ -103,12 +105,33 @@
 }
 
 - (void)loadAllItems {
-    
+    if (!self.privateItems) {
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        NSEntityDescription *e = [NSEntityDescription entityForName:@"BNRItem" inManagedObjectContext:self.context];
+        request.entity = e;
+        NSSortDescriptor *sd = [NSSortDescriptor sortDescriptorWithKey:@"orderingValue" ascending:YES];
+        request.sortDescriptors = @[sd];
+        NSError *error;
+        NSArray *result = [self.context executeFetchRequest:request error:&error];
+        if (!result) {
+            [NSException raise:@"fetch failed" format:@"Reason: %@", [error localizedDescription]];
+        }
+        self.privateItems = [[NSMutableArray alloc] initWithArray:result];
+    }
 }
 
 - (BNRItem *)createItem {
-    //BNRItem *item = [BNRItem randomItem];
-    BNRItem *item = [[BNRItem alloc] init];
+    double order;
+    if ([self.allItems count] == 0) {
+        order = 1.0;
+    } else {
+        order = [[self.privateItems lastObject] orderingValue] + 1.0;
+    }
+    NSLog(@"Adding after %lu items, order = %.2f", (unsigned long)[self.privateItems count], order);
+    
+    BNRItem *item = [NSEntityDescription insertNewObjectForEntityForName:@"BNRItem" inManagedObjectContext:self.context];
+    item.orderingValue = order;
+    
     [self.privateItems addObject:item];
     return item;
 }

@@ -18,11 +18,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nullable, nonatomic, retain) NSString *itemName;
 @property (nullable, nonatomic, retain) NSString *serialNumber;
-@property (nullable, nonatomic) int *valueInDollars;
+@property (nonatomic) int valueInDollars;
 @property (nullable, nonatomic, retain) NSDate *dateCreated;
 @property (nullable, nonatomic, retain) NSString *itemKey;
 @property (nullable, nonatomic, retain) UIImage* thumbnail;
-@property (nullable, nonatomic) double *orderingValue;
+@property (nonatomic) double orderingValue;
 @property (nullable, nonatomic, retain) NSManagedObject *assertType;
 
 @end
