@@ -13,7 +13,7 @@
 
 @class BNRItem;
 
-@interface BNRDetailViewController : UIViewController 
+@interface BNRDetailViewController : UIViewController <UIViewControllerRestoration>
 
 @property (nonatomic, strong) BNRItem *item;
 @property (nonatomic, copy) void (^dismissBlock)(void);

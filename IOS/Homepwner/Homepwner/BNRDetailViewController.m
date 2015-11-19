@@ -152,6 +152,8 @@
     self = [super initWithNibName:nil bundle:nil];
     
     if (self) {
+        self.restorationClass = [self class];
+        self.restorationIdentifier = NSStringFromClass([self class]);
         if (isNew) {
             UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(save:)];
             self.navigationItem.rightBarButtonItem = doneItem;
@@ -230,6 +232,14 @@
     item.itemName = self.nameField.text;
     item.serialNumber = self.serialNumberField.text;
     item.valueInDollars = [self.valueField.text intValue];
+}
+
++ (UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents coder:(NSCoder *)coder {
+    BOOL isNew = NO;
+    if ([identifierComponents count] == 3) {
+        isNew = YES;
+    }
+    return [[self alloc] initForNewItem:isNew];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

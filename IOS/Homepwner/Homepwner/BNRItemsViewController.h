@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface BNRItemsViewController : UITableViewController <UITableViewDataSource>
+@interface BNRItemsViewController : UITableViewController <UITableViewDataSource, UIViewControllerRestoration>
+
 
 @end

@@ -68,6 +68,7 @@
     };
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:detailViewController];
+    navController.restorationIdentifier = NSStringFromClass([navController class]);
     navController.modalPresentationStyle = UIModalPresentationFormSheet;
     //navController.modalPresentationStyle = UIModalPresentationCurrentContext;
     //self.definesPresentationContext = YES;
@@ -110,6 +111,9 @@
     if (self) {
         UINavigationItem *navItem = self.navigationItem;
         navItem.title = @"Homepwner";
+        
+        self.restorationIdentifier = NSStringFromClass([self class]);
+        self.restorationClass = [self class];
         
         UIBarButtonItem *bbi = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewItem:)];
         navItem.rightBarButtonItem = bbi;
@@ -174,6 +178,10 @@
     };
     
     return  cell;
+}
+
++ (UIViewController *) viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents coder:(NSCoder *)coder {
+    return [[self alloc] init];
 }
 
 - (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
