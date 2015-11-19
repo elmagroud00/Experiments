@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BNRItem : NSManagedObject
 
+@property (nonatomic, strong) NSManagedObject* assertType;
+
 - (void)setThumbnailFromImage:(UIImage*)image;
 
 @end

@@ -137,6 +137,37 @@
     }
 }
 
+- (NSArray *)allAssertTypes {
+    if (!_allAssertTypes) {
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        NSEntityDescription *e = [NSEntityDescription entityForName:@"BNRAssertType" inManagedObjectContext:self.context];
+        request.entity = e;
+        
+        NSError *error = nil;
+        NSArray *result = [self.context executeFetchRequest:request error:&error];
+        
+        if (!result) {
+            [NSException raise:@"Fetch failed" format:@"Reason: %@", [error localizedDescription]];
+        }
+        _allAssertTypes = [result mutableCopy];
+    }
+    if ([_allAssertTypes count] == 0) {
+        NSManagedObject *type;
+        type = [NSEntityDescription insertNewObjectForEntityForName:@"BNRAssertType" inManagedObjectContext:self.context];
+        [type setValue:@"Furniture" forKey:@"label"];
+        [_allAssertTypes addObject:type];
+        
+        type = [NSEntityDescription insertNewObjectForEntityForName:@"BNRAssertType" inManagedObjectContext:self.context];
+        [type setValue:@"Jewelry" forKey:@"label"];
+        [_allAssertTypes addObject: type];
+        
+        type = [NSEntityDescription insertNewObjectForEntityForName:@"BNRAssertType"  inManagedObjectContext:self.context];
+        [type setValue:@"Electornics" forKey:@"label"];
+        [_allAssertTypes addObject:type];
+    }
+    return _allAssertTypes;
+}
+
 - (BNRItem *)createItem {
     double order;
     if ([self.allItems count] == 0) {

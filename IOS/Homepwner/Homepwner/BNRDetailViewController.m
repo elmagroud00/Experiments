@@ -10,6 +10,7 @@
 #import "BNRItem.h"
 #import "BNRImageStore.h"
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "BNRAssertTypeViewController.h"
 
 @interface BNRDetailViewController () <UINavigationBarDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate ,UINavigationControllerDelegate, UIPopoverControllerDelegate>
 
@@ -25,10 +26,20 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *serialNumberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *valueLabel;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *assetTypeButton;
+//- (IBAction)showAssetTypePicker:(UIBarButtonItem *)sender;
 
 @end
 
 @implementation BNRDetailViewController
+
+- (IBAction)showAssetTypePicker:(UIBarButtonItem *)sender {
+    [self.view endEditing:YES];
+    BNRAssertTypeViewController *avc = [[BNRAssertTypeViewController alloc] init];
+    avc.item = self.item;
+    [self.navigationController pushViewController:avc animated:YES];
+}
+
 
 /*
 - (void)removeItem: (BNRItem *)item {
@@ -243,6 +254,13 @@
     NSString *itemKey = self.item.itemKey;
     UIImage *imageToDisplay = [[BNRImageStore sharedStore] imageForKey:itemKey];
     self.imageView.image = imageToDisplay;
+    
+    NSString *typeLabel = [self.item.assertType valueForKey:@"label"];
+    if (!typeLabel) {
+        typeLabel = @"None";
+    }
+    self.assetTypeButton.title = [NSString stringWithFormat:@"%@", typeLabel];
+    self.title = [NSString stringWithFormat:@"%@", typeLabel];
     
     [self updateFonts];
 }

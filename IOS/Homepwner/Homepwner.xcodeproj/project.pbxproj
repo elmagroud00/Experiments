@@ -17,6 +17,7 @@
 		3169889D1B862ED80064F570 /* BNRDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3169889B1B862ED80064F570 /* BNRDetailViewController.m */; };
 		3169889E1B862ED80064F570 /* BNRDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3169889C1B862ED80064F570 /* BNRDetailViewController.xib */; };
 		316988A11B8A0A0C0064F570 /* BNRImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 316988A01B8A0A0C0064F570 /* BNRImageStore.m */; };
+		318246881BFA27DD0037A7B5 /* BNRAssertTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 318246871BFA27DD0037A7B5 /* BNRAssertTypeViewController.m */; };
 		319D01D41BBCCAAB00516110 /* BNRItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 319D01D31BBCCAAB00516110 /* BNRItemCell.m */; };
 		319D01D81BBCCC0700516110 /* BNRItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 319D01D71BBCCC0700516110 /* BNRItemCell.xib */; };
 		319D01DB1BBD40D800516110 /* BNRImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 319D01DA1BBD40D800516110 /* BNRImageViewController.m */; };
@@ -56,6 +57,8 @@
 		3169889C1B862ED80064F570 /* BNRDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNRDetailViewController.xib; sourceTree = "<group>"; };
 		3169889F1B8A0A0C0064F570 /* BNRImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImageStore.h; sourceTree = "<group>"; };
 		316988A01B8A0A0C0064F570 /* BNRImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageStore.m; sourceTree = "<group>"; };
+		318246861BFA27DD0037A7B5 /* BNRAssertTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRAssertTypeViewController.h; sourceTree = "<group>"; };
+		318246871BFA27DD0037A7B5 /* BNRAssertTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRAssertTypeViewController.m; sourceTree = "<group>"; };
 		319D01D21BBCCAAB00516110 /* BNRItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BNRItemCell.h; path = ../BNRItemCell.h; sourceTree = "<group>"; };
 		319D01D31BBCCAAB00516110 /* BNRItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BNRItemCell.m; path = ../BNRItemCell.m; sourceTree = "<group>"; };
 		319D01D71BBCCC0700516110 /* BNRItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNRItemCell.xib; sourceTree = "<group>"; };
@@ -130,6 +133,8 @@
 				316988691B7E3D140064F570 /* Supporting Files */,
 				316988951B7E4FCF0064F570 /* BNRItemStore.h */,
 				316988961B7E4FCF0064F570 /* BNRItemStore.m */,
+				318246861BFA27DD0037A7B5 /* BNRAssertTypeViewController.h */,
+				318246871BFA27DD0037A7B5 /* BNRAssertTypeViewController.m */,
 				3169889F1B8A0A0C0064F570 /* BNRImageStore.h */,
 				316988A01B8A0A0C0064F570 /* BNRImageStore.m */,
 				319D01D71BBCCC0700516110 /* BNRItemCell.xib */,
@@ -269,6 +274,7 @@
 			files = (
 				3169889D1B862ED80064F570 /* BNRDetailViewController.m in Sources */,
 				31DE83E21BEE301A00BBFB91 /* BNRItem.m in Sources */,
+				318246881BFA27DD0037A7B5 /* BNRAssertTypeViewController.m in Sources */,
 				319D01D41BBCCAAB00516110 /* BNRItemCell.m in Sources */,
 				319D01DB1BBD40D800516110 /* BNRImageViewController.m in Sources */,
 				316988971B7E4FCF0064F570 /* BNRItemStore.m in Sources */,
