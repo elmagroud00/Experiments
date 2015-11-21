@@ -8,8 +8,11 @@
 
 #import "BNRHypnosisViewController.h"
 
-@implementation BNRHypnosisViewController
+@interface BNRHypnosisViewController() <UITextFieldDelegate>
+@property (nonatomic, weak) UITextField *textField;
+@end
 
+@implementation BNRHypnosisViewController
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -20,12 +23,16 @@
     return self;
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    
+}
+
 - (void)loadView {
     CGRect frame = [UIScreen mainScreen].bounds;
     //BNRHypnosisterView *backgroundView = [[BNRHypnosisterView alloc]init];
     BNRHypnosisterView *backgroundView = [[BNRHypnosisterView alloc]initWithFrame:frame];
     
-    CGRect textFieldRect = CGRectMake(40, 70, 240, 30);
+    CGRect textFieldRect = CGRectMake(40, -20, 240, 30);
     UITextField *textField = [[UITextField alloc]initWithFrame:textFieldRect];
     
     textField.borderStyle = UITextBorderStyleRoundedRect;
@@ -33,6 +40,8 @@
     textField.returnKeyType = UIReturnKeyDone;
     textField.delegate = self;
     
+    
+    _textField = textField;
     [backgroundView addSubview:textField];
     
     self.view = backgroundView;
@@ -59,6 +68,10 @@
         messageLabel.frame = frame;
         
         [self.view addSubview:messageLabel];
+        messageLabel.alpha = 0.0;
+        [UIView animateWithDuration:0.5 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            messageLabel.alpha = 1.0;
+        } completion:NULL];
     }
 }
 
