@@ -10,6 +10,7 @@
 #import "BNRItem.h"
 #import "BNRImageStore.h"
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "AppDelegate.h"
 #import "BNRAssertTypeViewController.h"
 
 @interface BNRDetailViewController () <UINavigationBarDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate ,UINavigationControllerDelegate, UIPopoverControllerDelegate>
@@ -231,7 +232,15 @@
     BNRItem *item = self.item;
     item.itemName = self.nameField.text;
     item.serialNumber = self.serialNumberField.text;
-    item.valueInDollars = [self.valueField.text intValue];
+    
+    int newValue = [self.valueField.text intValue];
+    if (newValue != item.valueInDollars) {
+        item.valueInDollars = newValue;
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setInteger:newValue forKey:BNRNextItemValuePrefsKey];
+    }
+    
+    //item.valueInDollars = [self.valueField.text intValue];
 }
 
 + (UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents coder:(NSCoder *)coder {

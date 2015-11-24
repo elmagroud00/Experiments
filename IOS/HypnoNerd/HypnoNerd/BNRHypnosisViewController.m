@@ -24,7 +24,11 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    
+    [super viewDidAppear:animated];
+    [UIView animateWithDuration:2.0 delay:0.0 usingSpringWithDamping:0.25 initialSpringVelocity:0.0 options:0 animations:^{
+        CGRect frame = CGRectMake(40, 70, 240, 30);
+        self.textField.frame = frame;
+    } completion:NULL];
 }
 
 - (void)loadView {
@@ -41,7 +45,7 @@
     textField.delegate = self;
     
     
-    _textField = textField;
+    self.textField = textField;
     [backgroundView addSubview:textField];
     
     self.view = backgroundView;
