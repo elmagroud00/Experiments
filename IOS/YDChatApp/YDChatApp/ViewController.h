@@ -1,8 +1,8 @@
 //
 //  ViewController.h
-//  MyPersonalLibrary
+//  YDChatApp
 //
-//  Created by sijiewang on 11/26/15.
+//  Created by sijiewang on 12/1/15.
 //  Copyright © 2015 lnmcc. All rights reserved.
 //
 

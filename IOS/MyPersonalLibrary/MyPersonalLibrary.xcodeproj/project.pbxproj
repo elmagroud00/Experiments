@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		31DDDCDD1C0691610027F3C9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31DDDCDC1C0691610027F3C9 /* main.m */; };
 		31DDDCE01C0691610027F3C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31DDDCDF1C0691610027F3C9 /* AppDelegate.m */; };
-		31DDDCE31C0691610027F3C9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31DDDCE21C0691610027F3C9 /* ViewController.m */; };
+		31DDDCE31C0691610027F3C9 /* YDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31DDDCE21C0691610027F3C9 /* YDViewController.m */; };
 		31DDDCE61C0691610027F3C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31DDDCE41C0691610027F3C9 /* Main.storyboard */; };
 		31DDDCE81C0691610027F3C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31DDDCE71C0691610027F3C9 /* Assets.xcassets */; };
 		31DDDCEB1C0691610027F3C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31DDDCE91C0691610027F3C9 /* LaunchScreen.storyboard */; };
@@ -22,6 +22,8 @@
 		31DDDD241C06A1CB0027F3C9 /* YDRegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31DDDD221C06A1CB0027F3C9 /* YDRegistrationViewController.xib */; };
 		31DDDD281C06B6120027F3C9 /* YDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31DDDD261C06B6120027F3C9 /* YDLoginViewController.m */; };
 		31DDDD291C06B6120027F3C9 /* YDLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31DDDD271C06B6120027F3C9 /* YDLoginViewController.xib */; };
+		31DDDD2F1C0823A70027F3C9 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 31DDDD2E1C0823A70027F3C9 /* NSString+MD5.m */; };
+		31DDDD321C0976AB0027F3C9 /* YDCrashHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 31DDDD311C0976AB0027F3C9 /* YDCrashHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,8 +48,8 @@
 		31DDDCDC1C0691610027F3C9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		31DDDCDE1C0691610027F3C9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		31DDDCDF1C0691610027F3C9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		31DDDCE11C0691610027F3C9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		31DDDCE21C0691610027F3C9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		31DDDCE11C0691610027F3C9 /* YDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDViewController.h; sourceTree = "<group>"; };
+		31DDDCE21C0691610027F3C9 /* YDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDViewController.m; sourceTree = "<group>"; };
 		31DDDCE51C0691610027F3C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		31DDDCE71C0691610027F3C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31DDDCEA1C0691610027F3C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -71,6 +73,10 @@
 		31DDDD251C06B6120027F3C9 /* YDLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDLoginViewController.h; sourceTree = "<group>"; };
 		31DDDD261C06B6120027F3C9 /* YDLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDLoginViewController.m; sourceTree = "<group>"; };
 		31DDDD271C06B6120027F3C9 /* YDLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YDLoginViewController.xib; sourceTree = "<group>"; };
+		31DDDD2D1C0823A70027F3C9 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		31DDDD2E1C0823A70027F3C9 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		31DDDD301C0976AB0027F3C9 /* YDCrashHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDCrashHandler.h; sourceTree = "<group>"; };
+		31DDDD311C0976AB0027F3C9 /* YDCrashHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDCrashHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,8 +138,8 @@
 				31DDDD0E1C0691A50027F3C9 /* Definitions */,
 				31DDDCDE1C0691610027F3C9 /* AppDelegate.h */,
 				31DDDCDF1C0691610027F3C9 /* AppDelegate.m */,
-				31DDDCE11C0691610027F3C9 /* ViewController.h */,
-				31DDDCE21C0691610027F3C9 /* ViewController.m */,
+				31DDDCE11C0691610027F3C9 /* YDViewController.h */,
+				31DDDCE21C0691610027F3C9 /* YDViewController.m */,
 				31DDDCE41C0691610027F3C9 /* Main.storyboard */,
 				31DDDCE71C0691610027F3C9 /* Assets.xcassets */,
 				31DDDCE91C0691610027F3C9 /* LaunchScreen.storyboard */,
@@ -219,6 +225,8 @@
 		31DDDD1E1C06A1700027F3C9 /* CrashHandler */ = {
 			isa = PBXGroup;
 			children = (
+				31DDDD301C0976AB0027F3C9 /* YDCrashHandler.h */,
+				31DDDD311C0976AB0027F3C9 /* YDCrashHandler.m */,
 			);
 			name = CrashHandler;
 			sourceTree = "<group>";
@@ -226,6 +234,8 @@
 		31DDDD1F1C06A1790027F3C9 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				31DDDD2D1C0823A70027F3C9 /* NSString+MD5.h */,
+				31DDDD2E1C0823A70027F3C9 /* NSString+MD5.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -366,10 +376,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				31DDDD231C06A1CB0027F3C9 /* YDRegistrationViewController.m in Sources */,
-				31DDDCE31C0691610027F3C9 /* ViewController.m in Sources */,
+				31DDDCE31C0691610027F3C9 /* YDViewController.m in Sources */,
+				31DDDD2F1C0823A70027F3C9 /* NSString+MD5.m in Sources */,
 				31DDDCE01C0691610027F3C9 /* AppDelegate.m in Sources */,
 				31DDDD281C06B6120027F3C9 /* YDLoginViewController.m in Sources */,
 				31DDDCDD1C0691610027F3C9 /* main.m in Sources */,
+				31DDDD321C0976AB0027F3C9 /* YDCrashHandler.m in Sources */,
 				31DDDD191C069F350027F3C9 /* KeychainItemWrapper.m in Sources */,
 				31DDDD141C0695A40027F3C9 /* YDConfigurationHelper.m in Sources */,
 			);
@@ -599,6 +611,7 @@
 				31DDDD071C0691610027F3C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		31DDDD081C0691610027F3C9 /* Build configuration list for PBXNativeTarget "MyPersonalLibraryTests" */ = {
 			isa = XCConfigurationList;
@@ -607,6 +620,7 @@
 				31DDDD0A1C0691610027F3C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		31DDDD0B1C0691610027F3C9 /* Build configuration list for PBXNativeTarget "MyPersonalLibraryUITests" */ = {
 			isa = XCConfigurationList;
@@ -615,6 +629,7 @@
 				31DDDD0D1C0691610027F3C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

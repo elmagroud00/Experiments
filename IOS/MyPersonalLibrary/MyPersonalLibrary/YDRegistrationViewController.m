@@ -50,7 +50,7 @@
         [alert show];
     } else {
         KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"YDAPPNAME" accessGroup:nil];
-        [keychain setObject:self.nameField.text forKey:(__bridge id)kSecAttrAccount)];
+        [[keychain setObject:self.nameField.text forKey:(__bridge id)kSecAttrAccount)];
         [keychain setObject:[self.passwordField.text MD5] forKey:(__bridge id)kSecValueData)];
         //TODO:
         [YDConfigurationHelper setBoolValueForConfigurationKey:bYDRegistered withValue:YES];

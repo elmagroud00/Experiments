@@ -6,13 +6,13 @@
 //  Copyright © 2015 lnmcc. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "YDViewController.h"
 
-@interface ViewController ()
+@interface YDViewController ()
 
 @end
 
-@implementation ViewController
+@implementation YDViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
