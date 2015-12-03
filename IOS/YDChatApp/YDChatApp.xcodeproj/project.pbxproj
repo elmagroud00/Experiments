@@ -16,6 +16,10 @@
 		31A4FB3F1C0DE28100A1CF70 /* YDChatData.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A4FB3E1C0DE28100A1CF70 /* YDChatData.m */; };
 		31A4FB421C0DEF2300A1CF70 /* YDChatTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A4FB411C0DEF2300A1CF70 /* YDChatTableView.m */; };
 		31A4FB451C0E9DA000A1CF70 /* YDChatTableViewHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A4FB441C0E9DA000A1CF70 /* YDChatTableViewHeaderCell.m */; };
+		31A4FB481C0EA0F400A1CF70 /* YDChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A4FB471C0EA0F400A1CF70 /* YDChatTableViewCell.m */; };
+		31A4FB4D1C0FEAD300A1CF70 /* yoububble.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 31A4FB4C1C0FEAD300A1CF70 /* yoububble.jpg */; };
+		31A4FB4F1C0FEB2C00A1CF70 /* mebubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 31A4FB4E1C0FEB2C00A1CF70 /* mebubble.png */; };
+		31A4FB521C0FECAB00A1CF70 /* YDChatUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A4FB511C0FECAB00A1CF70 /* YDChatUser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,12 @@
 		31A4FB411C0DEF2300A1CF70 /* YDChatTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDChatTableView.m; sourceTree = "<group>"; };
 		31A4FB431C0E9DA000A1CF70 /* YDChatTableViewHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDChatTableViewHeaderCell.h; sourceTree = "<group>"; };
 		31A4FB441C0E9DA000A1CF70 /* YDChatTableViewHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDChatTableViewHeaderCell.m; sourceTree = "<group>"; };
+		31A4FB461C0EA0F400A1CF70 /* YDChatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDChatTableViewCell.h; sourceTree = "<group>"; };
+		31A4FB471C0EA0F400A1CF70 /* YDChatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDChatTableViewCell.m; sourceTree = "<group>"; };
+		31A4FB4C1C0FEAD300A1CF70 /* yoububble.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = yoububble.jpg; path = ../../../../../Pictures/FOTO/yoububble.jpg; sourceTree = "<group>"; };
+		31A4FB4E1C0FEB2C00A1CF70 /* mebubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mebubble.png; path = ../../../../../Pictures/FOTO/mebubble.png; sourceTree = "<group>"; };
+		31A4FB501C0FECAB00A1CF70 /* YDChatUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDChatUser.h; sourceTree = "<group>"; };
+		31A4FB511C0FECAB00A1CF70 /* YDChatUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDChatUser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +78,7 @@
 		31A4FB211C0DDE1800A1CF70 /* YDChatApp */ = {
 			isa = PBXGroup;
 			children = (
+				31A4FB4B1C0FEA8C00A1CF70 /* Images */,
 				31A4FB251C0DDE1800A1CF70 /* AppDelegate.h */,
 				31A4FB261C0DDE1800A1CF70 /* AppDelegate.m */,
 				31A4FB281C0DDE1800A1CF70 /* ViewController.h */,
@@ -84,6 +95,10 @@
 				31A4FB411C0DEF2300A1CF70 /* YDChatTableView.m */,
 				31A4FB431C0E9DA000A1CF70 /* YDChatTableViewHeaderCell.h */,
 				31A4FB441C0E9DA000A1CF70 /* YDChatTableViewHeaderCell.m */,
+				31A4FB461C0EA0F400A1CF70 /* YDChatTableViewCell.h */,
+				31A4FB471C0EA0F400A1CF70 /* YDChatTableViewCell.m */,
+				31A4FB501C0FECAB00A1CF70 /* YDChatUser.h */,
+				31A4FB511C0FECAB00A1CF70 /* YDChatUser.m */,
 			);
 			path = YDChatApp;
 			sourceTree = "<group>";
@@ -94,6 +109,15 @@
 				31A4FB231C0DDE1800A1CF70 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		31A4FB4B1C0FEA8C00A1CF70 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				31A4FB4E1C0FEB2C00A1CF70 /* mebubble.png */,
+				31A4FB4C1C0FEAD300A1CF70 /* yoububble.jpg */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,9 +178,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31A4FB4D1C0FEAD300A1CF70 /* yoububble.jpg in Resources */,
 				31A4FB321C0DDE1800A1CF70 /* LaunchScreen.storyboard in Resources */,
 				31A4FB2F1C0DDE1800A1CF70 /* Assets.xcassets in Resources */,
 				31A4FB2D1C0DDE1800A1CF70 /* Main.storyboard in Resources */,
+				31A4FB4F1C0FEB2C00A1CF70 /* mebubble.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,8 +193,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31A4FB481C0EA0F400A1CF70 /* YDChatTableViewCell.m in Sources */,
 				31A4FB2A1C0DDE1800A1CF70 /* ViewController.m in Sources */,
 				31A4FB271C0DDE1800A1CF70 /* AppDelegate.m in Sources */,
+				31A4FB521C0FECAB00A1CF70 /* YDChatUser.m in Sources */,
 				31A4FB3F1C0DE28100A1CF70 /* YDChatData.m in Sources */,
 				31A4FB451C0E9DA000A1CF70 /* YDChatTableViewHeaderCell.m in Sources */,
 				31A4FB241C0DDE1800A1CF70 /* main.m in Sources */,

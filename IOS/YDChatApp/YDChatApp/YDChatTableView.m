@@ -8,7 +8,8 @@
 
 #import "YDChatTableView.h"
 #import "YDChatData.h"
-#import "YDChatHeaderTableViewCell.h"
+#import "YDChatTableViewHeaderCell.h"
+#import "YDChatTableViewCell.h"
 
 @interface YDChatTableView() <UITableViewDelegate, UITableViewDataSource>
 
@@ -37,7 +38,7 @@
 }
 
 - (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style {
-    self = [self initWithFrame:frame style:UITableViewStylePlain];
+    self = [super initWithFrame:frame style:UITableViewStylePlain];
     if (self) {
         [self initializer];
     }
@@ -94,10 +95,10 @@
     return [[self.bubbleSection objectAtIndex:section] count] + 1;
 }
 
-- (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     // Header
     if (indexPath.row == 0) {
-        return [YDChatHeaderTableViewCell height];
+        return [YDChatTableViewHeaderCell height];
     }
     YDChatData *data = [[self.bubbleSection objectAtIndex:indexPath.section] objectAtIndex:indexPath.row - 1];
     return MAX(data.insets.top + data.view.frame.size.height + data.insets.bottom, 52);
@@ -107,16 +108,16 @@
     //Header based on snapInternal
     if (indexPath.row == 0) {
         static NSString *cellId = @"HeaderCell";
-        YDChatHeaderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+        YDChatTableViewHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
         YDChatData *data = [[self.bubbleSection objectAtIndex:indexPath.section] objectAtIndex:0];
         if (cell == nil) {
-            cell = [[YDChatHeaderTableViewCell alloc] init];
+            cell = [[YDChatTableViewHeaderCell alloc] init];
             cell.date = data.date;
         }
         return cell;
     }
     // Standard
-    static NString *cellId = @"ChatCell";
+    static NSString *cellId = @"ChatCell";
     YDChatTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: cellId];
     YDChatData *data = [[self.bubbleSection objectAtIndex:indexPath.section] objectAtIndex:indexPath.row -1];
     if (cell == nil) {

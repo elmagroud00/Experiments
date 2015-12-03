@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-@interface YDChatTableViewHeaderCell : UITableView
+@interface YDChatTableViewHeaderCell : UITableViewCell
+
+@property (nonatomic, strong) NSDate *date;
+
++ (CGFloat)height;
 
 @end

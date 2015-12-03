@@ -7,13 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "YDChatData.h"
+#import "YDChatTableView.h"
 
 @class YDChatData;
-@class TDChatTableView;
+@class YDChatTableView;
 
 @protocol YDChatTableViewDataSource <NSObject>
 
-- (NSInteger) rowsForChatTable: (YDChatTableView *)tableView;
-- (YDChatData *) chatTableView: (YDChatTableView *)tableView  dataForRow: (NSInteger)row;
+- (NSInteger)rowsForChatTable: (YDChatTableView *)tableView;
+- (YDChatData *)chatTableView: (YDChatTableView *)tableView  dataForRow: (NSInteger)row;
 
 @end

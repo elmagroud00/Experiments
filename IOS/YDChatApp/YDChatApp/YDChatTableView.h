@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YDChatTableViewDataSource.h"
 
 typedef enum _CharBubbleTypeingType {
     ChatBubbleTypingTypeNobody = 0,
