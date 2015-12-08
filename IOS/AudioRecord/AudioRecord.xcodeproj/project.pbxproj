@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31494FE61C1668D800946C1A /* YDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31494FE41C1668D800946C1A /* YDViewController.m */; };
+		31494FE71C1668D800946C1A /* YDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31494FE51C1668D800946C1A /* YDViewController.xib */; };
 		31A4FC6E1C1339E400A1CF70 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A4FC6D1C1339E400A1CF70 /* main.m */; };
 		31A4FC711C1339E400A1CF70 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A4FC701C1339E400A1CF70 /* AppDelegate.m */; };
 		31A4FC791C1339E400A1CF70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31A4FC781C1339E400A1CF70 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		31494FE31C1668D800946C1A /* YDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YDViewController.h; path = ../YDViewController.h; sourceTree = "<group>"; };
+		31494FE41C1668D800946C1A /* YDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YDViewController.m; path = ../YDViewController.m; sourceTree = "<group>"; };
+		31494FE51C1668D800946C1A /* YDViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YDViewController.xib; path = ../YDViewController.xib; sourceTree = "<group>"; };
 		31A4FC691C1339E400A1CF70 /* AudioRecord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioRecord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31A4FC6D1C1339E400A1CF70 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		31A4FC6F1C1339E400A1CF70 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +56,9 @@
 		31A4FC6B1C1339E400A1CF70 /* AudioRecord */ = {
 			isa = PBXGroup;
 			children = (
+				31494FE31C1668D800946C1A /* YDViewController.h */,
+				31494FE41C1668D800946C1A /* YDViewController.m */,
+				31494FE51C1668D800946C1A /* YDViewController.xib */,
 				31A4FC6F1C1339E400A1CF70 /* AppDelegate.h */,
 				31A4FC701C1339E400A1CF70 /* AppDelegate.m */,
 				31A4FC781C1339E400A1CF70 /* Assets.xcassets */,
@@ -127,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31A4FC791C1339E400A1CF70 /* Assets.xcassets in Resources */,
+				31494FE71C1668D800946C1A /* YDViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31A4FC711C1339E400A1CF70 /* AppDelegate.m in Sources */,
+				31494FE61C1668D800946C1A /* YDViewController.m in Sources */,
 				31A4FC6E1C1339E400A1CF70 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,6 +278,7 @@
 				31A4FC821C1339E400A1CF70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
