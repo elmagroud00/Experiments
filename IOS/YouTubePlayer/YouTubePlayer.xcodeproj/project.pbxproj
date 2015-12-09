@@ -1,0 +1,285 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		31289B411C1730F0003ABE56 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31289B401C1730F0003ABE56 /* main.m */; };
+		31289B441C1730F0003ABE56 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31289B431C1730F0003ABE56 /* AppDelegate.m */; };
+		31289B4C1C1730F0003ABE56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31289B4B1C1730F0003ABE56 /* Assets.xcassets */; };
+		31289B591C17311E003ABE56 /* YDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31289B571C17311E003ABE56 /* YDViewController.m */; };
+		31289B5A1C17311E003ABE56 /* YDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31289B581C17311E003ABE56 /* YDViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		31289B3C1C1730F0003ABE56 /* YouTubePlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouTubePlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		31289B401C1730F0003ABE56 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		31289B421C1730F0003ABE56 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		31289B431C1730F0003ABE56 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		31289B4B1C1730F0003ABE56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		31289B501C1730F0003ABE56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31289B561C17311E003ABE56 /* YDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDViewController.h; sourceTree = "<group>"; };
+		31289B571C17311E003ABE56 /* YDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDViewController.m; sourceTree = "<group>"; };
+		31289B581C17311E003ABE56 /* YDViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YDViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		31289B391C1730F0003ABE56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		31289B331C1730F0003ABE56 = {
+			isa = PBXGroup;
+			children = (
+				31289B3E1C1730F0003ABE56 /* YouTubePlayer */,
+				31289B3D1C1730F0003ABE56 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		31289B3D1C1730F0003ABE56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				31289B3C1C1730F0003ABE56 /* YouTubePlayer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		31289B3E1C1730F0003ABE56 /* YouTubePlayer */ = {
+			isa = PBXGroup;
+			children = (
+				31289B421C1730F0003ABE56 /* AppDelegate.h */,
+				31289B431C1730F0003ABE56 /* AppDelegate.m */,
+				31289B4B1C1730F0003ABE56 /* Assets.xcassets */,
+				31289B501C1730F0003ABE56 /* Info.plist */,
+				31289B3F1C1730F0003ABE56 /* Supporting Files */,
+				31289B561C17311E003ABE56 /* YDViewController.h */,
+				31289B571C17311E003ABE56 /* YDViewController.m */,
+				31289B581C17311E003ABE56 /* YDViewController.xib */,
+			);
+			path = YouTubePlayer;
+			sourceTree = "<group>";
+		};
+		31289B3F1C1730F0003ABE56 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				31289B401C1730F0003ABE56 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		31289B3B1C1730F0003ABE56 /* YouTubePlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 31289B531C1730F0003ABE56 /* Build configuration list for PBXNativeTarget "YouTubePlayer" */;
+			buildPhases = (
+				31289B381C1730F0003ABE56 /* Sources */,
+				31289B391C1730F0003ABE56 /* Frameworks */,
+				31289B3A1C1730F0003ABE56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YouTubePlayer;
+			productName = YouTubePlayer;
+			productReference = 31289B3C1C1730F0003ABE56 /* YouTubePlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		31289B341C1730F0003ABE56 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = lnmcc;
+				TargetAttributes = {
+					31289B3B1C1730F0003ABE56 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 86T226662Y;
+					};
+				};
+			};
+			buildConfigurationList = 31289B371C1730F0003ABE56 /* Build configuration list for PBXProject "YouTubePlayer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 31289B331C1730F0003ABE56;
+			productRefGroup = 31289B3D1C1730F0003ABE56 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				31289B3B1C1730F0003ABE56 /* YouTubePlayer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		31289B3A1C1730F0003ABE56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31289B4C1C1730F0003ABE56 /* Assets.xcassets in Resources */,
+				31289B5A1C17311E003ABE56 /* YDViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		31289B381C1730F0003ABE56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31289B441C1730F0003ABE56 /* AppDelegate.m in Sources */,
+				31289B591C17311E003ABE56 /* YDViewController.m in Sources */,
+				31289B411C1730F0003ABE56 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		31289B511C1730F0003ABE56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		31289B521C1730F0003ABE56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		31289B541C1730F0003ABE56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = YouTubePlayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.lnmcc.YouTubePlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		31289B551C1730F0003ABE56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = YouTubePlayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.lnmcc.YouTubePlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		31289B371C1730F0003ABE56 /* Build configuration list for PBXProject "YouTubePlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31289B511C1730F0003ABE56 /* Debug */,
+				31289B521C1730F0003ABE56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		31289B531C1730F0003ABE56 /* Build configuration list for PBXNativeTarget "YouTubePlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31289B541C1730F0003ABE56 /* Debug */,
+				31289B551C1730F0003ABE56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 31289B341C1730F0003ABE56 /* Project object */;
+}
