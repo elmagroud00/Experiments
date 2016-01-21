@@ -25,6 +25,7 @@
     [queue addOperation:myTask1];
     MyTask *myTask2 = [[MyTask alloc] init];
     [queue addOperation:myTask2];
+    
 }
 
 - (void)didReceiveMemoryWarning {
