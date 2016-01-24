@@ -1,0 +1,19 @@
+//
+//  CoreDemo-Prefix.pch
+//  CoreDemo
+//
+//  Created by sijiewang on 1/21/16.
+//  Copyright © 2016 lnmcc. All rights reserved.
+//
+
+#ifndef CoreDemo_Prefix_pch
+#define CoreDemo_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+
+#endif /* CoreDemo_Prefix_pch */
