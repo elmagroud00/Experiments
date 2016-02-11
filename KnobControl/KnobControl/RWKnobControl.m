@@ -1,0 +1,123 @@
+//
+//  RWKnobControl.m
+//  KnobControl
+//
+//  Created by sijiewang on 2/11/16.
+//  Copyright © 2016 RayWenderlich. All rights reserved.
+//
+
+#import "RWKnobControl.h"
+#import "RWKnobRenderer.h"
+
+@implementation RWKnobControl {
+    RWKnobRenderer *_knobRenderer;
+}
+
+@dynamic lineWidth;
+@dynamic startAngle;
+@dynamic endAngle;
+@dynamic pointerLength;
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        // Initialization code
+        //self.backgroundColor = [UIColor blueColor];
+        
+        _minimumValue = 0.0;
+        _maximumValue = 1.0;
+        _value = 0.0;
+        _continuous = YES;
+        [self createKnobUI];
+    }
+    return self;
+}
+
+#pragma mark - API Method
+- (void)setValue:(CGFloat)value animated:(BOOL)animated {
+    if (value != _value) {
+        [self willChangeValueForKey:@"value"];
+        // Save the value to the backing ivar
+        // Make sure we limit it to the requested bounds
+        _value = MIN(self.maximumValue, MAX(self.minimumValue, value));
+        // Now lets update the knob with the correct angle
+        CGFloat angleRange = self.endAngle - self.startAngle;
+        CGFloat valueRange = self.maximumValue - self.minimumValue;
+        CGFloat angleForValue = (_value - self.maximumValue) / valueRange * angleRange + self.startAngle;
+        [_knobRenderer setPointerAngle:angleForValue animate:animated];
+        [self didChangeValueForKey:@"value"];
+    }
+}
+
+#pragma mark - Property overrides
+- (void)setValue:(CGFloat)value {
+    // Chain with the animation method version
+    [self setValue:value animated:NO];
+}
+
+- (void)createKnobUI {
+    _knobRenderer = [[RWKnobRenderer alloc] init];
+    [_knobRenderer updateWithBounds:self.bounds];
+    _knobRenderer.color = self.tintColor;
+    _knobRenderer.startAngle = -M_PI * 11 / 8.0;
+    _knobRenderer.endAngle = M_PI * 3 / 8.0;
+    _knobRenderer.pointerAngle = _knobRenderer.startAngle;
+    _knobRenderer.lineWidth = 2.0;
+    _knobRenderer.pointerLength = 6.0;
+    [self.layer addSublayer:_knobRenderer.trackLayer];
+    [self.layer addSublayer:_knobRenderer.pointerLayer];
+}
+
+- (CGFloat)lineWidth {
+    return _knobRenderer.lineWidth;
+}
+
+- (void)setLineWidth:(CGFloat)lineWidth {
+    _knobRenderer.lineWidth = lineWidth;
+}
+
+- (CGFloat)startAngle {
+    return _knobRenderer.startAngle;
+}
+
+- (void)setStartAngle:(CGFloat)startAngle {
+    _knobRenderer.startAngle = startAngle;
+}
+
+- (CGFloat)endAngle {
+    return _knobRenderer.endAngle;
+}
+
+- (void)setEndAngle:(CGFloat)endAngle {
+    _knobRenderer.endAngle = endAngle;
+}
+
+- (CGFloat)pointerLength {
+    return _knobRenderer.pointerLength;
+}
+
+- (void)setPointerLength:(CGFloat)pointerLength {
+    _knobRenderer.pointerLength = pointerLength;
+}
+
+- (void)tintColorDidChange {
+    _knobRenderer.color = self.tintColor;
+}
+
++ (BOOL) automaticallyNotifiesObserversForKey:(NSString *)key {
+    if ([key isEqualToString:@"value"]) {
+        return NO;
+    } else {
+        return [super automaticallyNotifiesObserversForKey:key];
+    }
+}
+
+/*
+// Only override drawRect: if you perform custom drawing.
+// An empty implementation adversely affects performance during animation.
+- (void)drawRect:(CGRect)rect {
+    // Drawing code
+}
+*/
+
+@end
