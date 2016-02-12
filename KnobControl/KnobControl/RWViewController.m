@@ -26,8 +26,12 @@
     _knobControl.pointerLength = 8.0;
     [self.knobPlaceholder addSubview:_knobControl];
     [_knobControl addObserver:self forKeyPath:@"value" options:0 context:NULL];
+<<<<<<< HEAD
     // Hooks up the knob control
     [_knobControl addTarget:self action:@selector(handleValueChanged:) forControlEvents:UIControlEventValueChanged];
+=======
+	// Do any additional setup after loading the view, typically from a nib.
+>>>>>>> deac650587f5c64b62d9f550d803d37f4fc6d2cd
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,11 +41,15 @@
 }
 
 - (IBAction)handleValueChanged:(id)sender {
+<<<<<<< HEAD
     if (sender == self.valueSlider) {
         _knobControl.value = self.valueSlider.value;
     } else if(sender == _knobControl) {
         self.valueSlider.value = _knobControl.value;
     }
+=======
+    _knobControl.value = self.valueSlider.value;
+>>>>>>> deac650587f5c64b62d9f550d803d37f4fc6d2cd
 }
 
 - (IBAction)handleRandomButtonPressed:(id)sender {

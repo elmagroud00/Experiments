@@ -8,11 +8,17 @@
 
 #import "RWKnobControl.h"
 #import "RWKnobRenderer.h"
+<<<<<<< HEAD
 #import "RWRotationGestureRecognizer.h"
 
 @implementation RWKnobControl {
     RWKnobRenderer *_knobRenderer;
     RWRotationGestureRecognizer *_gestureRecognizer;
+=======
+
+@implementation RWKnobControl {
+    RWKnobRenderer *_knobRenderer;
+>>>>>>> deac650587f5c64b62d9f550d803d37f4fc6d2cd
 }
 
 @dynamic lineWidth;
@@ -30,8 +36,11 @@
         _maximumValue = 1.0;
         _value = 0.0;
         _continuous = YES;
+<<<<<<< HEAD
         _gestureRecognizer = [[RWRotationGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
         [self addGestureRecognizer:_gestureRecognizer];
+=======
+>>>>>>> deac650587f5c64b62d9f550d803d37f4fc6d2cd
         [self createKnobUI];
     }
     return self;
@@ -116,6 +125,7 @@
     }
 }
 
+<<<<<<< HEAD
 - (void)handleGesture:(RWRotationGestureRecognizer *)gesture {
     // 1. Mid-point angle
     CGFloat midPointAngle = (2 * M_PI + self.startAngle - self.endAngle) / 2 + self.endAngle;
@@ -148,6 +158,8 @@
     }
 }
 
+=======
+>>>>>>> deac650587f5c64b62d9f550d803d37f4fc6d2cd
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

@@ -7,6 +7,7 @@
 //
 
 #import "RWRotationGestureRecognizer.h"
+<<<<<<< HEAD
 #import <UIKit/UIGestureRecognizerSubclass.h>
 
 @implementation RWRotationGestureRecognizer
@@ -42,4 +43,9 @@
     return self;
 }
 
+=======
+
+@implementation RWRotationGestureRecognizer
+
+>>>>>>> deac650587f5c64b62d9f550d803d37f4fc6d2cd
 @end
