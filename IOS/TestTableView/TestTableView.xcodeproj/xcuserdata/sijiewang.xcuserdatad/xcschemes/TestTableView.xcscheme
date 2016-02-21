@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3184574A1C62DEEC0034BBC1"
-               BuildableName = "TestXib.app"
-               BlueprintName = "TestXib"
-               ReferencedContainer = "container:TestXib.xcodeproj">
+               BlueprintIdentifier = "31F094691C747FB9002F83C5"
+               BuildableName = "TestTableView.app"
+               BlueprintName = "TestTableView"
+               ReferencedContainer = "container:TestTableView.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,17 +32,17 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3184574A1C62DEEC0034BBC1"
-            BuildableName = "TestXib.app"
-            BlueprintName = "TestXib"
-            ReferencedContainer = "container:TestXib.xcodeproj">
+            BlueprintIdentifier = "31F094691C747FB9002F83C5"
+            BuildableName = "TestTableView.app"
+            BlueprintName = "TestTableView"
+            ReferencedContainer = "container:TestTableView.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3184574A1C62DEEC0034BBC1"
-            BuildableName = "TestXib.app"
-            BlueprintName = "TestXib"
-            ReferencedContainer = "container:TestXib.xcodeproj">
+            BlueprintIdentifier = "31F094691C747FB9002F83C5"
+            BuildableName = "TestTableView.app"
+            BlueprintName = "TestTableView"
+            ReferencedContainer = "container:TestTableView.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3184574A1C62DEEC0034BBC1"
-            BuildableName = "TestXib.app"
-            BlueprintName = "TestXib"
-            ReferencedContainer = "container:TestXib.xcodeproj">
+            BlueprintIdentifier = "31F094691C747FB9002F83C5"
+            BuildableName = "TestTableView.app"
+            BlueprintName = "TestTableView"
+            ReferencedContainer = "container:TestTableView.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
@@ -86,7 +86,6 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
-      customArchiveName = "TestXib"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
