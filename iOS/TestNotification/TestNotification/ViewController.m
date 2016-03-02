@@ -31,13 +31,16 @@
     NSLog(@"viewWillAppear");
     [[NSNotificationCenter defaultCenter] addObserverForName:@"Test_NOTIY" object:self queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
         NSLog(@"In Observer: Thread = %@", [NSThread currentThread]);
-        [NSThread sleepForTimeInterval:5];
+        //[NSThread sleepForTimeInterval:5];
+        for (int i = 0; i < 100; i++) {
+            NSLog(@"Observer");
+        }
     }];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSLog(@"post: Thread = %@", [NSThread currentThread]);
         [[NSNotificationCenter defaultCenter] postNotificationName:@"Test_NOTIY" object:self];
-        NSLog(@"at post thread");
+        NSLog(@"post thread Finished");
     });
     //[[NSNotificationCenter defaultCenter] postNotificationName:@"Test_NOTIY" object:self];
     
