@@ -7,6 +7,7 @@
 //
 
 #import "MyObserved.h"
+#import "NSNotificationCenter+MG.h"
 
 @implementation MyObserved
 
@@ -20,7 +21,7 @@
 
 -(void)postNotification {
     NSLog(@"MyObserved Thread: %@", [NSThread currentThread]);
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"MyNotification" object:self userInfo:nil];
+    [[NSNotificationCenter defaultCenter] mgPostNotificationNameOnMainThread:@"MyNotification" object:self userInfo:nil];
 }
 
 @end

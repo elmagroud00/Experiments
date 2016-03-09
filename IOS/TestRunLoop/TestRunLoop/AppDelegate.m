@@ -1,13 +1,12 @@
 //
 //  AppDelegate.m
-//  TestNSNotificationCenterThread
+//  TestRunLoop
 //
-//  Created by sijiewang on 3/2/16.
+//  Created by sijiewang on 3/8/16.
 //  Copyright © 2016 lnmcc. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "MyObserver.h"
 
 @interface AppDelegate ()
 
@@ -18,10 +17,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    NSLog(@"Main Thread: %@", [NSThread currentThread]);
-    MyObserver *myObserver = [[MyObserver alloc] init];
-    //myObserver = [[MyObserver alloc] init];
-    NSLog(@"myObserver %@", myObserver);
     return YES;
 }
 

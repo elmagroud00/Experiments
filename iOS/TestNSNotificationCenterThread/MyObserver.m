@@ -21,7 +21,7 @@
     self = [super init];
     if (self != nil) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(observedNotification:) name:@"MyNotification" object:nil];
-        _myObserved = [[MyObserved alloc] init];
+         _myObserved = [[MyObserved alloc] init];
     }
     return self;
 }

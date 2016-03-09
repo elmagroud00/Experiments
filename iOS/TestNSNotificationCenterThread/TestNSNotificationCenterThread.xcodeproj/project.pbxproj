@@ -15,6 +15,7 @@
 		316FA1031C86C2FD001BC9D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 316FA1011C86C2FD001BC9D2 /* LaunchScreen.storyboard */; };
 		316FA10F1C86C3BC001BC9D2 /* MyObserved.m in Sources */ = {isa = PBXBuildFile; fileRef = 316FA10E1C86C3BC001BC9D2 /* MyObserved.m */; };
 		316FA1121C86C454001BC9D2 /* MyObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 316FA1111C86C454001BC9D2 /* MyObserver.m */; };
+		316FA1151C86CECA001BC9D2 /* NSNotificationCenter+MG.m in Sources */ = {isa = PBXBuildFile; fileRef = 316FA1141C86CECA001BC9D2 /* NSNotificationCenter+MG.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		316FA10E1C86C3BC001BC9D2 /* MyObserved.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyObserved.m; sourceTree = "<group>"; };
 		316FA1101C86C454001BC9D2 /* MyObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyObserver.h; sourceTree = "<group>"; };
 		316FA1111C86C454001BC9D2 /* MyObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyObserver.m; sourceTree = "<group>"; };
+		316FA1131C86CECA001BC9D2 /* NSNotificationCenter+MG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+MG.h"; sourceTree = "<group>"; };
+		316FA1141C86CECA001BC9D2 /* NSNotificationCenter+MG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+MG.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +51,8 @@
 		316FA0E71C86C2FC001BC9D2 = {
 			isa = PBXGroup;
 			children = (
+				316FA1131C86CECA001BC9D2 /* NSNotificationCenter+MG.h */,
+				316FA1141C86CECA001BC9D2 /* NSNotificationCenter+MG.m */,
 				316FA10D1C86C3BC001BC9D2 /* MyObserved.h */,
 				316FA10E1C86C3BC001BC9D2 /* MyObserved.m */,
 				316FA1101C86C454001BC9D2 /* MyObserver.h */,
@@ -164,6 +169,7 @@
 				316FA0F81C86C2FC001BC9D2 /* AppDelegate.m in Sources */,
 				316FA1121C86C454001BC9D2 /* MyObserver.m in Sources */,
 				316FA0F51C86C2FC001BC9D2 /* main.m in Sources */,
+				316FA1151C86CECA001BC9D2 /* NSNotificationCenter+MG.m in Sources */,
 				316FA10F1C86C3BC001BC9D2 /* MyObserved.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
