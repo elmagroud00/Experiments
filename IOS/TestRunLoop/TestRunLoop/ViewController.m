@@ -9,17 +9,47 @@
 #import "ViewController.h"
 
 @interface ViewController () {
-Boolean end;
+    Boolean end;
 }
 @end
 
 @implementation ViewController
 
+static void myRunLoopObserver(CFRunLoopObserverRef observer, CFRunLoopActivity activity, void *info) {
+    NSLog(@"runloop_callback");
+}
+
+- (void)doFireTimer {
+    
+}
+
+- (void)threadMain {
+    CFRunLoopObserverCallBack *myRunLoopObserver;
+    // The application uses garbage collection, so no autorelease pool is needed.
+    NSRunLoop* myRunLoop = [NSRunLoop currentRunLoop];
+    // Create a run loop observer and attach it to the run loop.
+    CFRunLoopObserverContext context = {0, (__bridge void *)(self), NULL, NULL, NULL};
+    CFRunLoopObserverRef observer = CFRunLoopObserverCreate(kCFAllocatorDefault,kCFRunLoopAllActivities, YES, 0, (CFRunLoopObserverCallBack)&myRunLoopObserver, &context);
+    if (observer){
+        CFRunLoopRef cfLoop = [myRunLoop getCFRunLoop];
+        CFRunLoopAddObserver(cfLoop, observer, kCFRunLoopDefaultMode);
+    }
+    // Create and schedule the timer.
+    [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(doFireTimer) userInfo:nil repeats:YES];
+    NSInteger loopCount = 10;
+    do{
+        // Run the run loop 10 times to let the timer fire.
+        [myRunLoop runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1]];
+        loopCount--;
+    } while (loopCount);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     end = NO;
-    
+    [self threadMain];
+    /*
     NSLog(@"start new thread ...");
     [NSThread detachNewThreadSelector:@selector(runOnNewThread) toTarget:self withObject:nil];
     while (!end) {
@@ -27,7 +57,7 @@ Boolean end;
         [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
         NSLog(@"runloop end.");
     }
-    NSLog(@"ok");
+    NSLog(@"ok");*/
 }
 
 - (void)runOnNewThread {
